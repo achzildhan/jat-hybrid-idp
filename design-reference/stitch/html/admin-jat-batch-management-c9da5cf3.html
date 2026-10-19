@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"status-accepted-bg":"#ECFDF5","secondary-fixed-dim":"#9eceda","error-container":"#ffdad6","text-muted":"#64748B","outline":"#6d797d","tertiary-container":"#8aad4c","on-tertiary-fixed-variant":"#354e00","on-primary-fixed":"#001f25","on-primary":"#ffffff","surface-card":"#FFFFFF","primary":"#006878","surface":"#f9f9ff","surface-container-highest":"#d8e3fb","background":"#f9f9ff","status-waiting-border":"#F59E0B","surface-bright":"#f9f9ff","tertiary":"#496809","status-waiting-text":"#B45309","inverse-on-surface":"#ecf1ff","primary-fixed-dim":"#52d7f2","status-declined-border":"#EF4444","on-secondary-fixed-variant":"#1a4d57","primary-container":"#0bb1cb","on-primary-container":"#003e49","tertiary-fixed-dim":"#aed36c","border-subtle":"#E2E8F0","surface-canvas":"#F8FAFC","border-strong":"#CBD5E1","surface-container-high":"#dee8ff","secondary-fixed":"#baebf7","on-secondary-container":"#3a6974","on-primary-fixed-variant":"#004e5b","status-waiting-bg":"#FFFBEB","on-tertiary":"#ffffff","on-background":"#111c2d","on-error-container":"#93000a","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary-fixed":"#131f00","primary-fixed":"#a7eeff","secondary":"#356570","on-surface-variant":"#3d494c","inverse-primary":"#52d7f2","surface-variant":"#d8e3fb","surface-container":"#e7eeff","on-error":"#ffffff","status-declined-bg":"#FEF2F2","text-primary":"#1E293B","status-declined-text":"#B91C1C","brand-accent-sky":"#0EA5E9","status-accepted-text":"#047857","surface-tint":"#006878","outline-variant":"#bcc9cc","surface-container-low":"#f0f3ff","status-accepted-border":"#10B981","on-surface":"#111c2d","secondary-container":"#b7e8f4","text-secondary":"#475569","surface-subtle":"#F1F5F9","tertiary-fixed":"#c9f085","inverse-surface":"#263143","on-tertiary-container":"#293e00","error":"#ba1a1a","surface-dim":"#cfdaf2","on-secondary-fixed":"#001f25","brand-accent-teal":"#00A5B5"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"0.75rem","space-xs":"0.25rem","gutter":"1rem","margin-lg":"2rem","gutter-lg":"1.5rem","space-3xl":"2.5rem","margin":"1rem","space-2xl":"2rem","space-xl":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-md":"1.5rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"title-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col h-full overflow-hidden"><div class="h-16 px-space-xl flex items-center gap-space-sm shrink-0"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">school</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">dibimbing<span class="text-primary-container">.</span></span><span class="font-label-sm text-label-sm text-text-muted uppercase">Talent Admin</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="font-label-md text-label-md">Admission</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-label-md text-label-md">Bootcamp</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="payment-mentor" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Payment Mentor</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-bootcamp-students" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">All Bootcamp Student</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-label-md text-label-md">Talent Support</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-hiring-partners" href="#"><span class="material-symbols-outlined text-[20px]">handshake</span><span class="font-label-md text-label-md">All Hiring Partner</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="talent-recommendations" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Talent Recommend</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="student-job-preferences" href="#"><span class="material-symbols-outlined text-[20px]">manage_search</span><span class="font-label-md text-label-md">Student Job Preference</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="job-application-tracking" href="#"><span class="material-symbols-outlined text-[20px]">business_center</span><span class="font-label-md text-label-md">Job Application Tracking</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">domain</span><span class="font-label-md text-label-md">Job Portal</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div></nav></div><div class="p-space-md border-t border-border-subtle shrink-0 flex items-center justify-between"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><div class="flex items-center gap-space-xs"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-card/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md max-w-md w-full"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-text-muted text-[18px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-canvas rounded-lg text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container/20 border border-border-subtle" placeholder="Search applicants, batch, or company..." type="text"></div></div><div class="flex items-center gap-space-lg"><button class="relative p-space-xs rounded-full text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-brand-accent-teal"></span></button><div class="h-6 w-[1px] bg-border-subtle"></div><div class="flex items-center gap-space-md cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-text-primary leading-none">Admin Dibimbing</span><span class="font-label-sm text-label-sm text-text-muted leading-tight">Talent Support</span></div><span class="material-symbols-outlined text-text-muted text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-surface-canvas min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-bold">
+        Job Application Tracking (JAT)
+      </h1>
+<p class="font-body-sm text-body-sm text-text-muted">
+        Manage active bootcamp student application cohorts, monitoring milestones, and phase schedules.
+      </p>
+</div>
+<!-- Segmented Tab Switcher -->
+<div class="flex items-center gap-space-sm">
+<button class="px-space-lg py-1.5 rounded-full font-label-md text-label-md bg-secondary-fixed text-on-secondary-container font-semibold transition-all shadow-sm" id="tab-batch" type="button">
+        Daftar Batch JAT
+      </button>
+<button class="px-space-lg py-1.5 rounded-full font-label-md text-label-md bg-surface-card text-text-secondary hover:text-text-primary hover:bg-surface-subtle transition-all" id="tab-request" type="button">
+        Request
+        <span class="ml-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-status-waiting-bg text-status-waiting-text">4</span>
+</button>
+</div>
+</div>
+<!-- Search & Action Bar -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md mb-space-lg">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-text-muted text-[20px]">
+        search
+      </span>
+<input class="w-full h-11 pl-11 pr-space-md bg-surface-card rounded-lg text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container/20 shadow-sm" id="batch-search" placeholder="Cari nama batch..." type="text">
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="relative h-11 px-space-md bg-surface-card text-text-secondary hover:text-text-primary rounded-lg font-label-md text-label-md flex items-center gap-space-xs shadow-sm transition-all" onclick="document.getElementById('filter-dropdown').classList.toggle('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Filter Status</span>
+<div class="hidden absolute top-12 right-0 w-48 bg-surface-card shadow-lg rounded-lg p-2 z-30 flex flex-col gap-1" id="filter-dropdown">
+<label class="flex items-center gap-2 p-2 hover:bg-surface-subtle rounded cursor-pointer text-body-sm text-text-primary">
+<input checked="" class="rounded accent-primary-container" type="checkbox"> Active Batches
+          </label>
+<label class="flex items-center gap-2 p-2 hover:bg-surface-subtle rounded cursor-pointer text-body-sm text-text-primary">
+<input checked="" class="rounded accent-primary-container" type="checkbox"> Completed
+          </label>
+<label class="flex items-center gap-2 p-2 hover:bg-surface-subtle rounded cursor-pointer text-body-sm text-text-primary">
+<input class="rounded accent-primary-container" type="checkbox"> High Enrollment
+          </label>
+</div>
+</button>
+<button class="h-11 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs shadow-sm transition-transform active:scale-[0.98]" onclick="document.getElementById('create-batch-drawer').classList.remove('translate-x-full')" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Buat Batch Baru</span>
+</button>
+</div>
+</div>
+<!-- Table Container Card -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<!-- Top Header Level -->
+<tr class="bg-surface-subtle text-text-primary font-title-sm text-title-sm">
+<th class="py-3 px-space-lg font-title-sm text-title-sm text-text-primary align-middle w-[220px]" rowspan="2">
+<div class="flex items-center gap-1 cursor-pointer select-none group">
+<span>Batch</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted group-hover:text-text-primary">unfold_more</span>
+</div>
+</th>
+<th class="py-2.5 px-space-lg font-title-sm text-title-sm text-center bg-surface-subtle/80 uppercase tracking-wider text-[11px] text-text-secondary" colspan="2">
+              Phase 1
+            </th>
+<th class="py-2.5 px-space-lg font-title-sm text-title-sm text-center bg-surface-subtle/40 uppercase tracking-wider text-[11px] text-text-secondary" colspan="2">
+              Phase 2
+            </th>
+<th class="py-3 px-space-md font-title-sm text-title-sm text-text-primary text-center align-middle whitespace-nowrap" rowspan="2">
+<div class="flex items-center justify-center gap-1 cursor-pointer select-none group">
+<span>NUMBER OF PARTICIPANT</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted group-hover:text-text-primary">unfold_more</span>
+</div>
+</th>
+<th class="py-3 px-space-lg font-title-sm text-title-sm text-text-primary text-center align-middle w-24" rowspan="2">
+              ACTION
+            </th>
+</tr>
+<!-- Sub-Header Level -->
+<tr class="bg-surface-subtle text-text-secondary font-label-sm text-label-sm uppercase">
+<th class="py-2 px-space-lg font-semibold tracking-wide text-[11px] text-text-secondary">START DATE</th>
+<th class="py-2 px-space-lg font-semibold tracking-wide text-[11px] text-text-secondary">END DATE</th>
+<th class="py-2 px-space-lg font-semibold tracking-wide text-[11px] text-text-secondary">START DATE</th>
+<th class="py-2 px-space-lg font-semibold tracking-wide text-[11px] text-text-secondary">END DATE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle/40 font-body-md text-body-md text-text-secondary" id="batch-table-body">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors">
+<td class="py-4 px-space-lg font-title-sm text-title-sm text-text-primary">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-accepted-border"></span>
+<span>JAT Batch 1</span>
+</div>
+</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">31 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Juni 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">30 Juni 2024</td>
+<td class="py-4 px-space-md text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-primary">
+                20
+              </span>
+</td>
+<td class="py-4 px-space-lg text-center">
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary inline-flex items-center justify-center transition-colors shadow-sm" onclick="openBatchDetail('JAT Batch 1', 20)" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors">
+<td class="py-4 px-space-lg font-title-sm text-title-sm text-text-primary">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-accepted-border"></span>
+<span>JAT Batch 2</span>
+</div>
+</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">31 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Juni 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">30 Juni 2024</td>
+<td class="py-4 px-space-md text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-primary">
+                20
+              </span>
+</td>
+<td class="py-4 px-space-lg text-center">
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary inline-flex items-center justify-center transition-colors shadow-sm" onclick="openBatchDetail('JAT Batch 2', 20)" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors">
+<td class="py-4 px-space-lg font-title-sm text-title-sm text-text-primary">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-accepted-border"></span>
+<span>JAT Batch 3</span>
+</div>
+</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">31 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Juni 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">30 Juni 2024</td>
+<td class="py-4 px-space-md text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-primary">
+                20
+              </span>
+</td>
+<td class="py-4 px-space-lg text-center">
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary inline-flex items-center justify-center transition-colors shadow-sm" onclick="openBatchDetail('JAT Batch 3', 20)" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors">
+<td class="py-4 px-space-lg font-title-sm text-title-sm text-text-primary">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-accepted-border"></span>
+<span>JAT Batch 4</span>
+</div>
+</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">31 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Juni 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">30 Juni 2024</td>
+<td class="py-4 px-space-md text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-primary">
+                20
+              </span>
+</td>
+<td class="py-4 px-space-lg text-center">
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary inline-flex items-center justify-center transition-colors shadow-sm" onclick="openBatchDetail('JAT Batch 4', 20)" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors">
+<td class="py-4 px-space-lg font-title-sm text-title-sm text-text-primary">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-waiting-border"></span>
+<span>JAT Batch 5</span>
+</div>
+</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">31 Maret 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Juni 2024</td>
+<td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">30 Juni 2024</td>
+<td class="py-4 px-space-md text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-primary">
+                20
+              </span>
+</td>
+<td class="py-4 px-space-lg text-center">
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary inline-flex items-center justify-center transition-colors shadow-sm" onclick="openBatchDetail('JAT Batch 5', 20)" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-xl py-space-md bg-surface-card flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-text-secondary">Show:</span>
+<div class="relative">
+<select class="appearance-none bg-surface-subtle text-text-primary font-body-sm text-body-sm rounded-lg pl-3 pr-8 py-1.5 focus:outline-none cursor-pointer">
+<option>10 Data</option>
+<option>25 Data</option>
+<option>50 Data</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted text-[16px] pointer-events-none">
+            expand_more
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Previous Page" class="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-surface-subtle transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-sm" type="button">
+          1
+        </button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-subtle font-label-sm text-label-sm transition-colors" type="button">
+          2
+        </button>
+<button aria-label="Next Page" class="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-surface-subtle transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Performance Overview / Cohort Health Metrics (Inline SVGs) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mt-space-2xl">
+<div class="bg-surface-card p-space-lg rounded-xl shadow-sm flex items-center gap-space-lg">
+<div class="w-12 h-12 rounded-xl bg-status-accepted-bg text-status-accepted-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Total Active Cohorts</span>
+<span class="font-headline-md text-headline-md font-bold text-text-primary">5 Batches</span>
+<span class="font-body-sm text-body-sm text-status-accepted-text flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 100% On-track
+        </span>
+</div>
+</div>
+<div class="bg-surface-card p-space-lg rounded-xl shadow-sm flex items-center gap-space-lg">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">group_add</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Enrolled Participants</span>
+<span class="font-headline-md text-headline-md font-bold text-text-primary">100 Students</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-0.5">Distributed in 2 Phases</span>
+</div>
+</div>
+<div class="bg-surface-card p-space-lg rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Application Submission Rate</span>
+<span class="font-headline-md text-headline-md font-bold text-text-primary">84.2%</span>
+<span class="font-body-sm text-body-sm text-status-waiting-text mt-0.5">4 reviews waiting</span>
+</div>
+<!-- Inline Sparkline / Progress Ring SVG -->
+<div class="relative w-14 h-14 flex items-center justify-center shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-subtle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="84, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-sm text-label-sm font-bold text-text-primary">84%</span>
+</div>
+</div>
+</div>
+<!-- Create New Batch Slide-over Drawer -->
+<div class="fixed inset-y-0 right-0 w-full max-w-md bg-surface-card shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between" id="create-batch-drawer">
+<div class="flex items-center justify-between p-space-xl bg-surface-subtle">
+<div class="flex flex-col">
+<h2 class="font-title-md text-title-md text-text-primary font-bold">Buat Batch JAT Baru</h2>
+<span class="font-body-sm text-body-sm text-text-muted">Configure period dates and student limits</span>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-surface-card transition-colors" onclick="document.getElementById('create-batch-drawer').classList.add('translate-x-full')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-xl overflow-y-auto flex-1 flex flex-col gap-space-lg">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-primary font-semibold">Nama Batch</label>
+<input class="h-11 px-space-md bg-surface-canvas rounded-lg text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container/20" placeholder="e.g. JAT Batch 6" type="text">
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm text-text-muted uppercase font-bold tracking-wider">Phase 1 Milestones</span>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary">Start Date</label>
+<input class="h-10 px-3 bg-surface-canvas rounded-lg text-body-sm font-body-sm text-text-primary focus:outline-none" type="date" value="2024-04-01">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary">End Date</label>
+<input class="h-10 px-3 bg-surface-canvas rounded-lg text-body-sm font-body-sm text-text-primary focus:outline-none" type="date" value="2024-04-30">
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm text-text-muted uppercase font-bold tracking-wider">Phase 2 Milestones</span>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary">Start Date</label>
+<input class="h-10 px-3 bg-surface-canvas rounded-lg text-body-sm font-body-sm text-text-primary focus:outline-none" type="date" value="2024-07-01">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary">End Date</label>
+<input class="h-10 px-3 bg-surface-canvas rounded-lg text-body-sm font-body-sm text-text-primary focus:outline-none" type="date" value="2024-07-31">
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-primary font-semibold">Number of Participants</label>
+<input class="h-11 px-space-md bg-surface-canvas rounded-lg text-body-md font-body-md text-text-primary focus:outline-none focus:ring-2 focus:ring-primary-container/20" type="number" value="20">
+</div>
+<div class="p-space-md rounded-lg bg-surface-subtle flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-primary-container text-[20px] shrink-0">info</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">
+          Creating a new cohort automatically prepares verification queues for career mentors and talent acceleration tracking.
+        </p>
+</div>
+</div>
+<div class="p-space-xl bg-surface-card flex items-center justify-end gap-space-md shadow-[0_-4px_12px_rgba(0,0,0,0.03)]">
+<button class="h-10 px-space-lg rounded-lg text-text-secondary hover:bg-surface-subtle font-label-md text-label-md transition-colors" onclick="document.getElementById('create-batch-drawer').classList.add('translate-x-full')" type="button">
+        Cancel
+      </button>
+<button class="h-10 px-space-xl bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold transition-colors shadow-sm" onclick="addNewBatchSimulated()" type="button">
+        Simpan Batch
+      </button>
+</div>
+</div>
+<!-- Detail Modal Dialog -->
+<div class="fixed inset-0 bg-text-primary/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-space-lg" id="detail-modal">
+<div class="bg-surface-card rounded-xl max-w-lg w-full p-space-xl shadow-xl flex flex-col gap-space-lg animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">event_note</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-text-primary font-bold" id="modal-batch-name">JAT Batch Details</h3>
+<span class="font-body-sm text-body-sm text-text-muted">Overview and status inspection</span>
+</div>
+</div>
+<button class="text-text-muted hover:text-text-primary p-1 rounded-full hover:bg-surface-subtle" onclick="document.getElementById('detail-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-space-md bg-surface-canvas p-space-md rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Phase 1 Window</span>
+<p class="font-body-md text-body-md text-text-primary font-semibold mt-0.5">01 Mar - 31 Mar 2024</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Phase 2 Window</span>
+<p class="font-body-md text-body-md text-text-primary font-semibold mt-0.5">01 Jun - 30 Jun 2024</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Quota Allocated</span>
+<p class="font-body-md text-body-md text-text-primary font-semibold mt-0.5" id="modal-batch-count">20 Students</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Status</span>
+<span class="inline-block mt-0.5 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-status-accepted-bg text-status-accepted-text font-bold">
+            Active Running
+          </span>
+</div>
+</div>
+<div class="flex justify-end gap-space-sm pt-space-xs">
+<button class="h-9 px-space-lg rounded-lg text-text-secondary hover:bg-surface-subtle font-label-md text-label-md transition-colors" onclick="document.getElementById('detail-modal').classList.add('hidden')" type="button">
+          Close
+        </button>
+<button class="h-9 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg transition-colors" onclick="document.getElementById('detail-modal').classList.add('hidden')" type="button">
+          Manage Applicants
+        </button>
+</div>
+</div>
+</div>
+<script>
+    // Tab switching interaction
+    const tabBatch = document.getElementById('tab-batch');
+    const tabRequest = document.getElementById('tab-request');
+
+    tabBatch.addEventListener('click', () => {
+      tabBatch.className = 'px-space-lg py-1.5 rounded-full font-label-md text-label-md bg-secondary-fixed text-on-secondary-container font-semibold transition-all shadow-sm';
+      tabRequest.className = 'px-space-lg py-1.5 rounded-full font-label-md text-label-md bg-surface-card text-text-secondary hover:text-text-primary hover:bg-surface-subtle transition-all';
+    });
+
+    tabRequest.addEventListener('click', () => {
+      tabRequest.className = 'px-space-lg py-1.5 rounded-full font-label-md text-label-md bg-secondary-fixed text-on-secondary-container font-semibold transition-all shadow-sm';
+      tabBatch.className = 'px-space-lg py-1.5 rounded-full font-label-md text-label-md bg-surface-card text-text-secondary hover:text-text-primary hover:bg-surface-subtle transition-all';
+    });
+
+    // Detail Modal Trigger
+    function openBatchDetail(name, count) {
+      document.getElementById('modal-batch-name').innerText = name;
+      document.getElementById('modal-batch-count').innerText = count + ' Students';
+      document.getElementById('detail-modal').classList.remove('hidden');
+    }
+
+    // Filter table by search
+    document.getElementById('batch-search').addEventListener('input', function(e) {
+      const term = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('#batch-table-body tr');
+      rows.forEach(row => {
+        const text = row.querySelector('td:first-child').innerText.toLowerCase();
+        row.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+
+    // Simulated new batch creation
+    function addNewBatchSimulated() {
+      const tbody = document.getElementById('batch-table-body');
+      const newIndex = tbody.children.length + 1;
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-surface-subtle/50 transition-colors animate-in fade-in duration-200';
+      tr.innerHTML = `
+        <td class="py-4 px-space-lg font-title-sm text-title-sm text-text-primary">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+            <span>JAT Batch ${newIndex}</span>
+          </div>
+        </td>
+        <td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Apr 2024</td>
+        <td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">30 Apr 2024</td>
+        <td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">1 Jul 2024</td>
+        <td class="py-4 px-space-lg whitespace-nowrap text-text-secondary">31 Jul 2024</td>
+        <td class="py-4 px-space-md text-center">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-container">
+            20
+          </span>
+        </td>
+        <td class="py-4 px-space-lg text-center">
+          <button 
+            type="button" 
+            title="View details" 
+            onclick="openBatchDetail('JAT Batch ${newIndex}', 20)"
+            class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary inline-flex items-center justify-center transition-colors shadow-sm"
+          >
+            <span class="material-symbols-outlined text-[18px]">visibility</span>
+          </button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+      document.getElementById('create-batch-drawer').classList.add('translate-x-full');
+    }
+  </script>
+</div></div></main></div></body></html>

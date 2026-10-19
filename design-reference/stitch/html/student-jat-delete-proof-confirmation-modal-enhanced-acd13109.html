@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dibimbing LMS - Job Application Tracking Batch List</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Font: Inter / Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Custom Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              500: '#06b6d4',
+              teal: '#00A5B5',
+              'teal-dark': '#008b99',
+              'teal-light': '#E6F7F9'
+            },
+            sidebar: '#FFFFFF',
+            canvas: '#FAFBFC'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for specialized fine-tuned styling -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+<meta content="web_dashboard" name="shell-type"></head>
+<body class="bg-[#FAFBFC] font-sans text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-800">
+<!-- BEGIN: ApplicationLayout -->
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-30" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="h-20 flex items-center px-6 gap-3" data-purpose="brand-logo">
+<div class="w-10 h-10 rounded-xl bg-[#00A5B5] flex items-center justify-center text-white shadow-sm shadow-cyan-200">
+<!-- Dibimbing stylized loop icon -->
+<svg class="w-6 h-6 stroke-current fill-none stroke-2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.5 0 4.79-.92 6.56-2.45L12 12V2z"></path>
+<circle class="fill-white stroke-none" cx="12" cy="12" r="4"></circle>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 font-sans">Dibimbing</span>
+</div>
+<!-- Navigation Menu -->
+<nav class="px-3 py-2 space-y-1" data-purpose="primary-navigation">
+<!-- Item: Dashboard -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect>
+</svg>
+            Dashboard
+          </a>
+<!-- Item: Materi -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Materi
+          </a>
+<!-- Item: Test -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Test
+          </a>
+<!-- Item: Project -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Project
+          </a>
+<!-- Item: Tata Tertib -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Tata Tertib
+          </a>
+<!-- Item: Modul -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Modul
+          </a>
+<!-- Item: Talent Support (ACTIVE) -->
+<div class="relative">
+<!-- Active indicator vertical bar -->
+<span class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-[#00A5B5] rounded-r-md"></span>
+<a class="flex items-center gap-3.5 pl-6 pr-4 py-2.5 rounded-lg text-[#00A5B5] font-semibold text-sm transition-colors" data-purpose="active-menu-item" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Talent Support
+            </a>
+</div>
+<!-- Item: Rekaman Latihan -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Rekaman Latihan
+          </a>
+<!-- Item: Connection -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Connection
+          </a>
+<!-- Item: Pre-Assessment -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Pre-Assessment
+          </a>
+</nav>
+</div>
+<!-- Footer Mode Toggle -->
+<div class="p-6" data-purpose="theme-toggle-container">
+<div class="flex items-center gap-3 text-xs text-slate-500 font-medium">
+<span>Light</span>
+<!-- Pill toggle -->
+<button aria-label="Toggle theme mode" class="w-12 h-6 bg-[#00A5B5] rounded-full p-0.5 flex items-center justify-end transition-colors focus:outline-none cursor-pointer" type="button">
+<div class="w-5 h-5 bg-white rounded-full shadow-sm flex items-center justify-center">
+<!-- Small sun/sparkle icon inside knob -->
+<svg class="w-3.5 h-3.5 text-[#00A5B5]" fill="currentColor" viewBox="0 0 20 20">
+<path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 2.36a1 1 0 011.42 0l.7.7a1 1 0 01-1.42 1.42l-.7-.7a1 1 0 010-1.42zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-2.36 5.64a1 1 0 010 1.42l-.7.7a1 1 0 01-1.42-1.42l.7-.7a1 1 0 011.42 0zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zm-5.64-2.36a1 1 0 01-1.42 0l-.7-.7a1 1 0 011.42-1.42l.7.7a1 1 0 010 1.42zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm2.36-5.64a1 1 0 010-1.42l.7-.7a1 1 0 111.42 1.42l-.7.7a1 1 0 01-1.42 0zM10 6a4 4 0 100 8 4 4 0 000-8z"></path>
+</svg>
+</div>
+</button>
+<span>Dark</span>
+</div>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- BEGIN: TopBar -->
+<header class="h-20 bg-white border-b border-slate-200/80 px-8 flex items-center justify-between sticky top-0 z-20" data-purpose="top-navigation-header">
+<!-- Left: Course context & back button -->
+<div class="flex items-center gap-4">
+<button class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition-colors" title="Back">
+<svg class="w-4 h-4 stroke-current stroke-2" fill="none" viewBox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div>
+<h1 class="text-base font-bold text-slate-900 tracking-tight leading-tight">UI/UX Design Batch 17</h1>
+<span class="text-xs text-slate-500 font-medium">Bootcamp</span>
+</div>
+</div>
+<!-- Center & Right: Search, Notifications & Profile -->
+<div class="flex items-center gap-6">
+<!-- Search input pill -->
+<div class="relative w-80" data-purpose="global-search">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4 stroke-current stroke-2" fill="none" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full pl-10 pr-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-1 focus:ring-[#00A5B5] transition-all" placeholder="Cari materi, test, project..." type="text">
+</div>
+<!-- Notification Bell -->
+<button aria-label="Notifications" class="relative p-2 text-slate-600 hover:text-slate-900 transition-colors">
+<svg class="w-5 h-5 stroke-current stroke-2" fill="none" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-2" data-purpose="user-profile">
+<span class="text-sm font-semibold text-slate-800">Annette Black</span>
+<img alt="Annette Black avatar" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARnXqqkW1qYQazAMssTOEMXJ7gvwNUFXYtyN4_oXhLb63SJHj8jMClP9Sj5qJI0Rz5nzvYp0fC31Cg9cNaKguHGpN40NZ6PhInbS6_ta4W96wrXphnHUeso2XwkgLYFz_Qp9BTwQ3duONSs90lznGylxLrjCrsMn7I5_VqIQVapVfI_yAYpfAq-5b3yJbAOouYmzL-6ZqBnq-HYkjedI3Ob8LSSvh2936XtvN2SSP37u8_CGD9qfYC">
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: PageMainBody -->
+<main class="flex-1 p-8 max-w-7xl w-full mx-auto" data-purpose="main-content-area"><div class="flex flex-col w-full relative"><div class="flex flex-wrap items-center justify-between gap-4 mb-6"><div class="flex flex-col gap-1"><div class="flex items-center gap-2"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-container/15 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>Active Tracking Cohort</span><span class="text-xs text-text-muted font-medium bg-surface-subtle px-2.5 py-0.5 rounded-md">Batch 2 • UI/UX</span></div><h2 class="text-2xl font-bold text-text-primary tracking-tight">Job Application Tracking — Batch 2</h2><p class="text-sm text-text-muted">Pantau progres milestone lamaran kerja dan status verifikasi Talent Support kamu.</p></div><div class="flex items-center gap-3"><button class="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm flex items-center gap-2 shadow-sm"><span class="material-symbols-outlined text-[18px]">download</span>Export CSV</button><button class="px-4 py-2.5 rounded-xl bg-primary text-white hover:opacity-95 font-semibold text-sm flex items-center gap-2 shadow-sm"><span class="material-symbols-outlined text-[18px]">headset_mic</span>Bantuan Mentor</button></div></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"><div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm flex items-center justify-between"><div class="flex flex-col"><span class="text-xs font-medium text-text-muted mb-1">Progres Milestone</span><span class="text-2xl font-bold text-text-primary leading-tight">47.5%</span><span class="text-xs text-text-muted mt-1">19 dari 40 Lamaran</span></div><div class="w-14 h-14 rounded-full border-4 border-[#00A5B5] border-t-slate-100 flex items-center justify-center font-bold text-xs text-primary">47.5%</div></div><div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="text-xs font-medium text-text-muted">Total Diajukan</span><span class="material-symbols-outlined text-primary text-[20px]">send</span></div><span class="text-2xl font-bold text-text-primary mt-2">19 Lamaran</span><div class="flex items-center gap-2 mt-2 text-xs"><span class="text-status-accepted-text font-semibold">15 Acc</span><span>•</span><span class="text-status-waiting-text font-semibold">1 Wait</span><span>•</span><span class="text-status-declined-text font-semibold">3 Dec</span></div></div><div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="text-xs font-medium text-text-muted">Phase 1 Quota</span><span class="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-medium">On Track</span></div><span class="text-2xl font-bold text-text-primary mt-2">10/20</span><div class="w-full bg-slate-100 rounded-full h-2 mt-3 overflow-hidden"><div class="bg-primary h-2 rounded-full" style="width: 50%"></div></div></div><div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="text-xs font-medium text-text-muted">Review Velocity</span><span class="material-symbols-outlined text-amber-500 text-[20px]">speed</span></div><span class="text-2xl font-bold text-text-primary mt-2">94.7%</span><span class="text-xs text-text-muted mt-1">High Quality Verification</span></div></div><div class="bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden flex flex-col"><div class="p-5 border-b border-slate-100 flex flex-wrap items-center justify-between gap-4"><div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0"><button class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#00A5B5] text-white">Semua (19)</button><button class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200">Accepted (15)</button><button class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200">Waiting Confirmation (1)</button><button class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200">Declined (3)</button></div><div class="flex items-center gap-3"><div class="relative w-64"><input class="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-700 placeholder-slate-400 focus:outline-none" placeholder="Cari perusahaan, role..." type="text"><span class="material-symbols-outlined text-[16px] text-slate-400 absolute left-2.5 top-2">search</span></div><button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-white text-xs font-semibold flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">add</span>Add Proof</button></div></div><table class="w-full text-left text-xs"><thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100"><tr><th class="px-6 py-3.5">Perusahaan &amp; Role</th><th class="px-6 py-3.5">Tanggal Pengajuan</th><th class="px-6 py-3.5">Fase</th><th class="px-6 py-3.5">Status</th><th class="px-6 py-3.5 text-right">Aksi</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-800"><tr><td class="px-6 py-4 flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-red-100 text-red-700 font-bold flex items-center justify-center text-xs shrink-0">PTM</div><div><span class="font-bold block text-slate-900">PT Pertamina (Persero)</span><span class="text-slate-500">UI/UX Designer • Fulltime</span></div></td><td class="px-6 py-4 text-slate-600">10 Feb 2025</td><td class="px-6 py-4"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium text-[11px]">Phase 1</span></td><td class="px-6 py-4"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Waiting Confirmation</span></td><td class="px-6 py-4 text-right"><span class="material-symbols-outlined text-slate-400 cursor-pointer">more_vert</span></td></tr><tr><td class="px-6 py-4 flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-xs shrink-0">BMRI</div><div><span class="font-bold block text-slate-900">Bank Mandiri</span><span class="text-slate-500">Product Designer • Fulltime</span></div></td><td class="px-6 py-4 text-slate-600">08 Feb 2025</td><td class="px-6 py-4"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium text-[11px]">Phase 1</span></td><td class="px-6 py-4"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Accepted</span></td><td class="px-6 py-4 text-right"><span class="material-symbols-outlined text-slate-400 cursor-pointer">more_vert</span></td></tr><tr><td class="px-6 py-4 flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-green-100 text-green-700 font-bold flex items-center justify-center text-xs shrink-0">TKP</div><div><span class="font-bold block text-slate-900">Tokopedia</span><span class="text-slate-500">UX Researcher • Internship</span></div></td><td class="px-6 py-4 text-slate-600">04 Feb 2025</td><td class="px-6 py-4"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium text-[11px]">Phase 1</span></td><td class="px-6 py-4"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>Declined</span></td><td class="px-6 py-4 text-right"><span class="material-symbols-outlined text-slate-400 cursor-pointer">more_vert</span></td></tr></tbody></table></div><div class="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-40 flex items-center justify-center p-4"><div class="bg-white rounded-2xl max-w-[480px] w-full border border-rose-100 shadow-[0_20px_50px_rgba(225,29,72,0.15)] p-6 sm:p-7 relative z-50 flex flex-col"><button aria-label="Close dialog" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg p-2 transition-colors cursor-pointer"><span class="material-symbols-outlined text-[20px]">close</span></button><div class="w-12 h-12 rounded-full bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center mb-4 ring-8 ring-rose-50/50"><span class="material-symbols-outlined text-[24px]">delete_forever</span></div><div class="flex flex-col mb-2"><h3 class="text-xl font-bold text-slate-900">Hapus Bukti Lamaran</h3><span class="text-xs text-rose-600 font-medium tracking-wide mt-0.5">Tindakan ini tidak dapat dibatalkan (Permanent Action)</span></div><p class="text-sm text-slate-600 leading-relaxed mt-2">Apakah kamu yakin ingin menghapus data pengajuan bukti lamaran untuk:</p><div class="border border-slate-200 rounded-xl p-3.5 my-4 bg-slate-50 flex items-center gap-3.5"><div class="w-11 h-11 rounded-xl bg-red-100 text-red-700 font-bold flex items-center justify-center text-xs shrink-0 border border-red-200">PTM</div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center justify-between gap-2"><span class="font-bold text-slate-900 text-sm truncate">PT Pertamina (Persero)</span><span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200 shrink-0">Waiting Confirmation</span></div><div class="flex items-center gap-2 text-xs text-slate-500 mt-0.5"><span>UI/UX Designer</span><span>•</span><span>10 Februari 2025</span></div></div></div><div class="bg-amber-50 border border-amber-200 text-amber-900 rounded-lg p-3 text-xs flex items-start gap-2.5 leading-relaxed"><span class="material-symbols-outlined text-amber-600 text-[18px] shrink-0 mt-0.5">warning</span><span>Menghapus bukti lamaran ini akan membatalkan antrean verifikasi Talent Support dan mengurangi progres total kuota batch kamu.</span></div><div class="flex items-center justify-end gap-3 mt-6 pt-4 border-t border-slate-100"><button class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold hover:bg-slate-100 transition cursor-pointer text-sm">Batal</button><button class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold shadow-lg shadow-rose-600/30 flex items-center justify-center gap-2 transition cursor-pointer text-sm"><span class="material-symbols-outlined text-[18px]">delete</span>Hapus Bukti Lamaran</button></div></div></div></div></main>
+<!-- END: PageMainBody -->
+</div>
+<!-- END: MainContent -->
+</div>
+<!-- END: ApplicationLayout -->
+</body></html>

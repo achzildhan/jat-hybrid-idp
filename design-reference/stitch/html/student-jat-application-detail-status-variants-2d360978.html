@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dibimbing LMS - Job Application Tracking Batch List</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Font: Inter / Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Custom Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              500: '#06b6d4',
+              teal: '#00A5B5',
+              'teal-dark': '#008b99',
+              'teal-light': '#E6F7F9'
+            },
+            sidebar: '#FFFFFF',
+            canvas: '#FAFBFC'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for specialized fine-tuned styling -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+<meta content="web_dashboard" name="shell-type"/></head>
+<body class="bg-[#FAFBFC] font-sans text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-800">
+<!-- BEGIN: ApplicationLayout -->
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-30" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="h-20 flex items-center px-6 gap-3" data-purpose="brand-logo">
+<div class="w-10 h-10 rounded-xl bg-[#00A5B5] flex items-center justify-center text-white shadow-sm shadow-cyan-200">
+<!-- Dibimbing stylized loop icon -->
+<svg class="w-6 h-6 stroke-current fill-none stroke-2" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.5 0 4.79-.92 6.56-2.45L12 12V2z"></path>
+<circle class="fill-white stroke-none" cx="12" cy="12" r="4"></circle>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 font-sans">Dibimbing</span>
+</div>
+<!-- Navigation Menu -->
+<nav class="px-3 py-2 space-y-1" data-purpose="primary-navigation">
+<!-- Item: Dashboard -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect>
+</svg>
+            Dashboard
+          </a>
+<!-- Item: Materi -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Materi
+          </a>
+<!-- Item: Test -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Test
+          </a>
+<!-- Item: Project -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Project
+          </a>
+<!-- Item: Tata Tertib -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Tata Tertib
+          </a>
+<!-- Item: Modul -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Modul
+          </a>
+<!-- Item: Talent Support (ACTIVE) -->
+<div class="relative">
+<!-- Active indicator vertical bar -->
+<span class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-[#00A5B5] rounded-r-md"></span>
+<a class="flex items-center gap-3.5 pl-6 pr-4 py-2.5 rounded-lg text-[#00A5B5] font-semibold text-sm transition-colors" data-purpose="active-menu-item" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Talent Support
+            </a>
+</div>
+<!-- Item: Rekaman Latihan -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Rekaman Latihan
+          </a>
+<!-- Item: Connection -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Connection
+          </a>
+<!-- Item: Pre-Assessment -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Pre-Assessment
+          </a>
+</nav>
+</div>
+<!-- Footer Mode Toggle -->
+<div class="p-6" data-purpose="theme-toggle-container">
+<div class="flex items-center gap-3 text-xs text-slate-500 font-medium">
+<span>Light</span>
+<!-- Pill toggle -->
+<button aria-label="Toggle theme mode" class="w-12 h-6 bg-[#00A5B5] rounded-full p-0.5 flex items-center justify-end transition-colors focus:outline-none cursor-pointer" type="button">
+<div class="w-5 h-5 bg-white rounded-full shadow-sm flex items-center justify-center">
+<!-- Small sun/sparkle icon inside knob -->
+<svg class="w-3.5 h-3.5 text-[#00A5B5]" fill="currentColor" viewbox="0 0 20 20">
+<path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 2.36a1 1 0 011.42 0l.7.7a1 1 0 01-1.42 1.42l-.7-.7a1 1 0 010-1.42zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-2.36 5.64a1 1 0 010 1.42l-.7.7a1 1 0 01-1.42-1.42l.7-.7a1 1 0 011.42 0zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zm-5.64-2.36a1 1 0 01-1.42 0l-.7-.7a1 1 0 011.42-1.42l.7.7a1 1 0 010 1.42zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm2.36-5.64a1 1 0 010-1.42l.7-.7a1 1 0 111.42 1.42l-.7.7a1 1 0 01-1.42 0zM10 6a4 4 0 100 8 4 4 0 000-8z"></path>
+</svg>
+</div>
+</button>
+<span>Dark</span>
+</div>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- BEGIN: TopBar -->
+<header class="h-20 bg-white border-b border-slate-200/80 px-8 flex items-center justify-between sticky top-0 z-20" data-purpose="top-navigation-header">
+<!-- Left: Course context & back button -->
+<div class="flex items-center gap-4">
+<button class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition-colors" title="Back">
+<svg class="w-4 h-4 stroke-current stroke-2" fill="none" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div>
+<h1 class="text-base font-bold text-slate-900 tracking-tight leading-tight">UI/UX Design Batch 17</h1>
+<span class="text-xs text-slate-500 font-medium">Bootcamp</span>
+</div>
+</div>
+<!-- Center & Right: Search, Notifications & Profile -->
+<div class="flex items-center gap-6">
+<!-- Search input pill -->
+<div class="relative w-80" data-purpose="global-search">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4 stroke-current stroke-2" fill="none" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full pl-10 pr-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-1 focus:ring-[#00A5B5] transition-all" placeholder="Cari materi, test, project..." type="text"/>
+</div>
+<!-- Notification Bell -->
+<button aria-label="Notifications" class="relative p-2 text-slate-600 hover:text-slate-900 transition-colors">
+<svg class="w-5 h-5 stroke-current stroke-2" fill="none" viewbox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-2" data-purpose="user-profile">
+<span class="text-sm font-semibold text-slate-800">Annette Black</span>
+<img alt="Annette Black avatar" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARnXqqkW1qYQazAMssTOEMXJ7gvwNUFXYtyN4_oXhLb63SJHj8jMClP9Sj5qJI0Rz5nzvYp0fC31Cg9cNaKguHGpN40NZ6PhInbS6_ta4W96wrXphnHUeso2XwkgLYFz_Qp9BTwQ3duONSs90lznGylxLrjCrsMn7I5_VqIQVapVfI_yAYpfAq-5b3yJbAOouYmzL-6ZqBnq-HYkjedI3Ob8LSSvh2936XtvN2SSP37u8_CGD9qfYC"/>
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: PageMainBody -->
+<main class="flex-1 p-8 max-w-7xl w-full mx-auto" data-purpose="main-content-area"><div class="flex flex-col w-full relative">
+<!-- Top Navigation Tabs (LMS Sub-header) -->
+<div class="flex items-center gap-3 mb-6 overflow-x-auto pb-1">
+<button class="px-5 py-2.5 rounded-xl bg-surface-subtle text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors cursor-pointer shrink-0">
+      Layanan Talent Support
+    </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface-subtle text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors cursor-pointer shrink-0">
+      Job Connector
+    </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface-subtle text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors cursor-pointer shrink-0">
+      Talent Support Recording Practice
+    </button>
+<button class="px-5 py-2.5 rounded-xl bg-primary-container/15 text-primary font-title-sm text-title-sm transition-colors cursor-pointer shrink-0 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+      Job Application Tracing
+    </button>
+</div>
+<!-- Background Data View: Batch Header & Application Progress Metrics -->
+<div class="bg-surface-card rounded-2xl p-6 sm:p-8 shadow-sm mb-6 relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex flex-col gap-2">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary">Active Cohort Target</span>
+<h2 class="text-headline-lg font-headline-lg text-text-primary tracking-tight">Job Application Tracing Batch 2</h2>
+<div class="flex items-center gap-2 text-text-muted font-body-md text-body-md">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span><strong class="font-title-sm text-text-primary">Durasi JAT:</strong> 10 Februari 2025 – 10 Maret 2025</span>
+</div>
+</div>
+<!-- Circular Target Progress Indicator -->
+<div class="flex items-center gap-6 bg-surface-subtle/80 p-4 rounded-xl self-start lg:self-auto">
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-slate-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-brand-accent-teal" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="80, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-[10px] uppercase font-bold text-text-muted leading-none mb-0.5">Target</span>
+<span class="text-title-md font-headline-md text-text-primary leading-tight">8/10</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-text-primary">80% Tercapai</span>
+<span class="text-body-sm font-body-sm text-text-muted">Kurang 2 aplikasi lagi untuk verifikasi portfolio review.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Data View: JAT Table (Dimmed Base Layer) -->
+<div class="bg-surface-card rounded-2xl shadow-sm overflow-hidden flex flex-col opacity-40 select-none pointer-events-none">
+<!-- Filter bar -->
+<div class="p-6 flex items-center justify-between gap-4 bg-surface-card">
+<div class="flex items-center gap-3 bg-surface-subtle px-4 py-2.5 rounded-xl w-80">
+<span class="material-symbols-outlined text-text-muted text-[18px]">search</span>
+<span class="text-body-sm font-body-sm text-text-muted">Search company, role...</span>
+</div>
+<button class="bg-primary-container text-on-primary px-5 py-2.5 rounded-xl font-title-sm text-title-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+        Add Proof of Application
+      </button>
+</div>
+<!-- Mock Table Content -->
+<table class="w-full text-left">
+<thead class="bg-surface-subtle text-text-secondary font-title-sm text-title-sm">
+<tr>
+<th class="px-6 py-4">Company</th>
+<th class="px-6 py-4">Role</th>
+<th class="px-6 py-4">Date Applied</th>
+<th class="px-6 py-4">JAT Status</th>
+<th class="px-6 py-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-md font-body-md text-text-primary">
+<tr class="bg-surface-container-high/40">
+<td class="px-6 py-4 font-semibold">Pertamina</td>
+<td class="px-6 py-4">UIUX Designer</td>
+<td class="px-6 py-4 text-text-secondary">10 Februari 2025</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-accepted-bg text-status-accepted-text">Accepted</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-primary-container">visibility</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-semibold">Bank Mandiri</td>
+<td class="px-6 py-4">Product Designer</td>
+<td class="px-6 py-4 text-text-secondary">08 Februari 2025</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-waiting-bg text-status-waiting-text">Waiting Confirmation</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-text-muted">visibility</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-semibold">Gojek Indonesia</td>
+<td class="px-6 py-4">UX Researcher Intern</td>
+<td class="px-6 py-4 text-text-secondary">04 Februari 2025</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-declined-bg text-status-declined-text">Declined</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-text-muted">visibility</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- SLIDE-OVER DRAWER BACKDROP & DRAWER CONTAINER -->
+<div class="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm flex justify-end transition-opacity duration-300" id="drawerBackdrop">
+<!-- Drawer Panel: Standardized 560px for Executive Depth -->
+<div class="w-full max-w-xl h-full bg-surface-card shadow-2xl flex flex-col justify-between overflow-y-auto transform transition-transform" id="detailDrawer">
+<!-- Drawer Header -->
+<div class="p-6 bg-surface-card sticky top-0 z-20 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+</div>
+<div class="min-w-0">
+<span class="text-label-sm font-label-sm uppercase tracking-wide text-primary block leading-none mb-1">Application Detail</span>
+<h3 class="text-headline-md font-headline-md text-text-primary truncate">Pertamina – UIUX Designer</h3>
+</div>
+</div>
+<button aria-label="Close Drawer" class="w-9 h-9 rounded-full bg-surface-subtle hover:bg-surface-subtle/80 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors cursor-pointer" onclick="toggleModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Scrollable Area -->
+<div class="p-6 flex flex-col gap-6">
+<!-- PRD Status Variant Interactive Switcher -->
+<div class="bg-surface-subtle p-1.5 rounded-xl flex items-center gap-1 shadow-inner">
+<button class="flex-1 py-1.5 px-3 rounded-lg text-label-sm font-label-sm text-status-accepted-text bg-surface-card shadow-sm transition-all text-center" id="btnTabAccepted" onclick="switchStatus('accepted')">
+            Accepted
+          </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-label-sm font-label-sm text-text-muted hover:text-text-primary transition-all text-center" id="btnTabWaiting" onclick="switchStatus('waiting')">
+            Waiting Review
+          </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-label-sm font-label-sm text-text-muted hover:text-text-primary transition-all text-center" id="btnTabDeclined" onclick="switchStatus('declined')">
+            Declined
+          </button>
+</div>
+<!-- 1. ACCEPTED VARIANT BANNER -->
+<div class="flex flex-col gap-3 p-4 rounded-xl bg-status-accepted-bg text-status-accepted-text transition-all" id="statusBannerAccepted">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-accepted-text text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+              Accepted
+            </span>
+<span class="text-body-sm font-body-sm text-status-accepted-text font-semibold">Verified on 11 Feb 2025</span>
+</div>
+<p class="text-body-md font-body-md leading-relaxed text-status-accepted-text">
+<strong>Status: Accepted by Talent Support.</strong> Verified against active batch criteria. Your application has been logged toward your 10 job search milestone count.
+          </p>
+</div>
+<!-- 2. WAITING CONFIRMATION VARIANT BANNER (Hidden by default) -->
+<div class="hidden flex-col gap-3 p-4 rounded-xl bg-status-waiting-bg text-status-waiting-text transition-all" id="statusBannerWaiting">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-waiting-text text-on-primary">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+              Waiting Confirmation
+            </span>
+<span class="text-body-sm font-body-sm text-status-waiting-text font-semibold">Submitted 10 Feb 2025</span>
+</div>
+<p class="text-body-md font-body-md leading-relaxed text-status-waiting-text">
+<strong>Status: Waiting Confirmation.</strong> Proof submitted on 10 Feb 2025. Talent Support is reviewing your proof of application within 1x24 business hours.
+          </p>
+</div>
+<!-- 3. DECLINED VARIANT BANNER (Hidden by default) -->
+<div class="hidden flex-col gap-3 p-4 rounded-xl bg-status-declined-bg text-status-declined-text transition-all" id="statusBannerDeclined">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-declined-text text-on-primary">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+              Declined
+            </span>
+<span class="text-body-sm font-body-sm text-status-declined-text font-semibold">Reviewed 11 Feb 2025</span>
+</div>
+<p class="text-body-md font-body-md leading-relaxed text-status-declined-text">
+<strong>Status: Declined.</strong> Reason: The uploaded screenshot is cropped and company name is unreadable. Please re-upload full evidence or contact human Talent Support.
+          </p>
+</div>
+<!-- Key-Value Summary Matrix (2-Column Grid) -->
+<div class="flex flex-col gap-4">
+<h4 class="text-title-sm font-title-sm text-text-primary uppercase tracking-wider text-xs">Submitted Job Information</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Date Applied -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Date Applied</span>
+<div class="flex items-center gap-2 text-title-sm font-title-sm text-text-primary">
+<span class="material-symbols-outlined text-text-muted text-[16px]">calendar_month</span>
+<span>10 Februari 2025</span>
+</div>
+</div>
+<!-- Role Applied -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Role Applied</span>
+<span class="text-title-sm font-title-sm text-text-primary truncate">UIUX Designer</span>
+</div>
+<!-- Company Name -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Company Name</span>
+<span class="text-title-sm font-title-sm text-text-primary">Pertamina</span>
+</div>
+<!-- Company Location -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Company Location</span>
+<div class="flex items-center gap-1.5 text-title-sm font-title-sm text-text-primary">
+<span class="material-symbols-outlined text-text-muted text-[16px]">location_on</span>
+<span>Jakarta, Indonesia</span>
+</div>
+</div>
+<!-- Position Type -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Position</span>
+<span class="text-title-sm font-title-sm text-text-primary">Fulltime</span>
+</div>
+<!-- Years of Experience -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Years of Experience</span>
+<span class="text-title-sm font-title-sm text-text-primary">1 Year</span>
+</div>
+<!-- Job Level -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Job Level</span>
+<span class="text-title-sm font-title-sm text-text-primary">Junior</span>
+</div>
+<!-- Work System -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex flex-col gap-1">
+<span class="text-body-sm font-body-sm text-text-muted">Work System</span>
+<span class="text-title-sm font-title-sm text-text-primary">Remote / WFH</span>
+</div>
+</div>
+<!-- Clickable Job Vacancy Link -->
+<div class="bg-surface-subtle p-3.5 rounded-xl flex items-center justify-between gap-3">
+<div class="flex flex-col min-w-0">
+<span class="text-body-sm font-body-sm text-text-muted">Link Job Vacancy</span>
+<a class="text-primary hover:underline text-title-sm font-title-sm truncate flex items-center gap-1" href="#" target="_blank">
+                https://pertamina.com/careers/uiux
+              </a>
+</div>
+<a class="w-8 h-8 rounded-lg bg-surface-card flex items-center justify-center text-primary shadow-sm hover:scale-105 transition-transform" href="#" title="Visit job posting link">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Proof of Application Evidence Viewer -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h4 class="text-title-sm font-title-sm text-text-primary uppercase tracking-wider text-xs">Proof of Application Evidence</h4>
+<span class="text-label-sm font-label-sm text-text-muted">PNG • 1.4 MB</span>
+</div>
+<!-- Realistic Simulated Evidence Document Container -->
+<div class="rounded-xl overflow-hidden bg-surface-subtle shadow-sm flex flex-col">
+<!-- Simulated Browser / Client Bar -->
+<div class="bg-slate-200/80 px-4 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+</div>
+<span class="text-body-sm font-body-sm text-text-secondary text-[11px] font-mono">mail.pertamina.com/careers/receipt</span>
+<span class="material-symbols-outlined text-text-secondary text-[16px]">lock</span>
+</div>
+<!-- Email Simulation Surface -->
+<div class="p-6 bg-surface-card flex flex-col gap-4 text-left">
+<div class="flex items-start justify-between pb-4 bg-surface-subtle/40 p-3 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-title-sm">
+                    PT
+                  </div>
+<div class="flex flex-col">
+<span class="text-title-sm font-title-sm text-text-primary">Pertamina Talent Acquisition</span>
+<span class="text-body-sm font-body-sm text-text-muted">recruitment@pertamina.com</span>
+</div>
+</div>
+<span class="text-body-sm font-body-sm text-text-muted">10 Feb 2025, 14:22 WIB</span>
+</div>
+<div class="flex flex-col gap-2 pt-1">
+<h5 class="text-title-md font-title-md text-text-primary font-bold">Thank you for your application to UI/UX Designer role</h5>
+<p class="text-body-md font-body-md text-text-secondary">
+                  Dear Annette Black,
+                </p>
+<p class="text-body-md font-body-md text-text-secondary leading-relaxed">
+                  We have received your application for the <strong>UI/UX Designer (Junior)</strong> position at PT Pertamina (Persero). Our talent review board is currently evaluating your portfolio and qualifications.
+                </p>
+<div class="bg-surface-subtle p-3 rounded-lg text-body-sm font-body-sm text-text-primary font-mono flex items-center justify-between">
+<span>Application Reference ID:</span>
+<span class="font-bold text-primary">#PTM-UIUX-2025-8831</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Human Review Verification Tag -->
+<div class="flex items-center gap-2 p-3 rounded-xl bg-surface-subtle text-text-secondary text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Human review note: Valid application confirmation receipt verified against official Pertamina recruitment server.</span>
+</div>
+</div>
+</div>
+<!-- Drawer Action Sticky Footer -->
+<div class="p-6 bg-surface-card sticky bottom-0 z-20 shadow-lg flex items-center justify-between gap-4">
+<button class="px-4 py-2.5 rounded-xl bg-status-declined-bg text-status-declined-text hover:bg-status-declined-text hover:text-on-primary transition-all font-title-sm text-title-sm flex items-center gap-2 cursor-pointer" onclick="openDeleteDialog()">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+          Delete Submission
+        </button>
+<button class="px-6 py-2.5 rounded-xl bg-primary-container text-on-primary hover:bg-primary transition-colors font-title-sm text-title-sm cursor-pointer shadow-sm" onclick="toggleModal(false)">
+          Done
+        </button>
+</div>
+</div>
+</div>
+<!-- POP-UP CONFIRMATION DIALOG: DELETE PROOF OF APPLICATION -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/50 backdrop-blur-sm transition-all duration-200" id="deleteModal">
+<!-- Dialog Surface Box -->
+<div class="bg-surface-card rounded-2xl max-w-md w-full p-6 shadow-2xl relative flex flex-col gap-5 transform scale-100 transition-transform">
+<!-- Modal Close X -->
+<button aria-label="Close dialog" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-surface-subtle hover:bg-surface-subtle/80 flex items-center justify-center text-text-muted hover:text-text-primary cursor-pointer transition-colors" onclick="closeDeleteDialog()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<!-- Warning Icon & Title Row -->
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-status-declined-bg text-status-declined-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">error</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-headline-md font-headline-md text-text-primary">Delete Proof of Application</h3>
+<span class="text-body-sm font-body-sm text-text-muted">Permanent action confirmation</span>
+</div>
+</div>
+<!-- Modal Body Text -->
+<p class="text-body-md font-body-md text-text-secondary leading-relaxed">
+        Apakah kamu yakin ingin menghapus Proof of Application <strong>Pertamina – UIUX Designer</strong>? Tindakan ini tidak dapat dibatalkan dan akan mengurangi progres kuota batch kamu.
+      </p>
+<!-- Modal Buttons -->
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-5 py-2.5 rounded-xl bg-surface-subtle text-text-primary hover:bg-surface-container-high transition-colors font-title-sm text-title-sm cursor-pointer" onclick="closeDeleteDialog()">
+          Cancel
+        </button>
+<button class="px-6 py-2.5 rounded-xl bg-status-declined-text text-on-primary hover:opacity-90 shadow-sm transition-all font-title-sm text-title-sm flex items-center gap-1.5 cursor-pointer" onclick="confirmDeletion()">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+          Delete
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchStatus(status) {
+    const bannerAccepted = document.getElementById('statusBannerAccepted');
+    const bannerWaiting = document.getElementById('statusBannerWaiting');
+    const bannerDeclined = document.getElementById('statusBannerDeclined');
+
+    const btnAccepted = document.getElementById('btnTabAccepted');
+    const btnWaiting = document.getElementById('btnTabWaiting');
+    const btnDeclined = document.getElementById('btnTabDeclined');
+
+    // Reset banners
+    bannerAccepted.classList.add('hidden');
+    bannerWaiting.classList.add('hidden');
+    bannerDeclined.classList.add('hidden');
+
+    // Reset buttons
+    [btnAccepted, btnWaiting, btnDeclined].forEach(btn => {
+      btn.className = "flex-1 py-1.5 px-3 rounded-lg text-label-sm font-label-sm text-text-muted hover:text-text-primary transition-all text-center";
+    });
+
+    if (status === 'accepted') {
+      bannerAccepted.classList.remove('hidden');
+      btnAccepted.className = "flex-1 py-1.5 px-3 rounded-lg text-label-sm font-label-sm text-status-accepted-text bg-surface-card shadow-sm transition-all text-center font-bold";
+    } else if (status === 'waiting') {
+      bannerWaiting.classList.remove('hidden');
+      btnWaiting.className = "flex-1 py-1.5 px-3 rounded-lg text-label-sm font-label-sm text-status-waiting-text bg-surface-card shadow-sm transition-all text-center font-bold";
+    } else if (status === 'declined') {
+      bannerDeclined.classList.remove('hidden');
+      btnDeclined.className = "flex-1 py-1.5 px-3 rounded-lg text-label-sm font-label-sm text-status-declined-text bg-surface-card shadow-sm transition-all text-center font-bold";
+    }
+  }
+
+  function toggleModal(show) {
+    const backdrop = document.getElementById('drawerBackdrop');
+    if (!backdrop) return;
+    if (show) {
+      backdrop.classList.remove('hidden');
+    } else {
+      backdrop.classList.add('hidden');
+    }
+  }
+
+  function openDeleteDialog() {
+    const dialog = document.getElementById('deleteModal');
+    if (dialog) dialog.classList.remove('hidden');
+  }
+
+  function closeDeleteDialog() {
+    const dialog = document.getElementById('deleteModal');
+    if (dialog) dialog.classList.add('hidden');
+  }
+
+  function confirmDeletion() {
+    closeDeleteDialog();
+    toggleModal(false);
+  }
+</script></main>
+<!-- END: PageMainBody -->
+</div>
+<!-- END: MainContent -->
+</div>
+<!-- END: ApplicationLayout -->
+</body></html>

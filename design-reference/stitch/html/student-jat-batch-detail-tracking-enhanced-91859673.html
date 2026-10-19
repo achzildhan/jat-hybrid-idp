@@ -1,0 +1,1293 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dibimbing LMS - Job Application Tracking Batch 2</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Font: Plus Jakarta Sans & Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Custom Configuration adhering to Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#006878",
+            "primary-container": "#0bb1cb",
+            "primary-dark": "#0891a5",
+            "on-primary": "#ffffff",
+            "brand-accent-teal": "#00A5B5",
+            "surface": "#f9f9ff",
+            "surface-card": "#FFFFFF",
+            "surface-subtle": "#F1F5F9",
+            "surface-canvas": "#F8FAFC",
+            "border-subtle": "#E2E8F0",
+            "border-strong": "#CBD5E1",
+            "text-primary": "#1E293B",
+            "text-secondary": "#475569",
+            "text-muted": "#64748B",
+            "status-accepted-bg": "#ECFDF5",
+            "status-accepted-border": "#A7F3D0",
+            "status-accepted-text": "#065F46",
+            "status-waiting-bg": "#FEF3C7",
+            "status-waiting-border": "#FDE68A",
+            "status-waiting-text": "#92400E",
+            "status-declined-bg": "#FEE2E2",
+            "status-declined-border": "#FECDD3",
+            "status-declined-text": "#991B1B",
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.02)',
+            'card-hover': '0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04)',
+            'btn-glow': '0 4px 14px 0 rgba(11, 177, 203, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+    }
+    .material-symbols-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+<meta content="web_dashboard" name="shell-type">
+</head>
+<body class="bg-[#F8FAFC] font-sans text-slate-800 antialiased min-h-screen flex selection:bg-cyan-100 selection:text-cyan-800">
+<!-- BEGIN: ApplicationLayout -->
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: Persistent LMS Student Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-30" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="h-20 flex items-center px-6 gap-3 border-b border-slate-100" data-purpose="brand-logo">
+<div class="w-10 h-10 rounded-xl bg-[#00A5B5] flex items-center justify-center text-white shadow-md shadow-cyan-200">
+<svg class="w-6 h-6 stroke-current fill-none stroke-2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.5 0 4.79-.92 6.56-2.45L12 12V2z"></path>
+<circle class="fill-white stroke-none" cx="12" cy="12" r="4"></circle>
+</svg>
+</div>
+<div>
+<span class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight block">Dibimbing</span>
+<span class="text-[10px] font-semibold text-[#00A5B5] tracking-wider uppercase">Student Portal</span>
+</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="px-3 py-3 space-y-1" data-purpose="primary-navigation">
+<!-- Dashboard -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+          Dashboard
+        </a>
+<!-- Materi -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+          Materi
+        </a>
+<!-- Test -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">quiz</span>
+          Test
+        </a>
+<!-- Project -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">folder_check</span>
+          Project
+        </a>
+<!-- Tata Tertib -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">rule</span>
+          Tata Tertib
+        </a>
+<!-- Modul -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+          Modul
+        </a>
+<!-- Talent Support (ACTIVE ACCORDION GROUP) -->
+<div class="pt-2 pb-1">
+<div class="px-3.5 py-2 rounded-lg bg-cyan-50/70 border border-cyan-100/60 mb-1">
+<div class="flex items-center justify-between text-[#00A5B5] font-bold text-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">work</span>
+<span>Talent Support</span>
+</div>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+<!-- Sub-items under Talent Support -->
+<div class="ml-5 pl-3 border-l-2 border-cyan-200 space-y-1 py-1">
+<a class="block py-1.5 px-2 rounded text-xs font-medium text-slate-600 hover:text-[#00A5B5] hover:bg-slate-50 transition-colors" href="#">
+              Layanan Talent Support
+            </a>
+<a class="flex items-center justify-between py-1.5 px-2 rounded-md text-xs font-bold text-[#00A5B5] bg-cyan-100/40 relative" href="#">
+<span>Job Application Tracking</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#00A5B5]"></span>
+</a>
+<a class="block py-1.5 px-2 rounded text-xs font-medium text-slate-600 hover:text-[#00A5B5] hover:bg-slate-50 transition-colors" href="#">
+              Recording Practice
+            </a>
+<a class="block py-1.5 px-2 rounded text-xs font-medium text-slate-600 hover:text-[#00A5B5] hover:bg-slate-50 transition-colors" href="#">
+              Job Connector
+            </a>
+</div>
+</div>
+<!-- Connection -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">hub</span>
+          Connection
+        </a>
+<!-- Pre-Assessment -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">assignment_turned_in</span>
+          Pre-Assessment
+        </a>
+</nav>
+</div>
+<!-- Footer Theme Mode Toggle -->
+<div class="p-4 border-t border-slate-100" data-purpose="theme-toggle-container">
+<div class="flex items-center justify-between px-3 py-2 bg-slate-50 rounded-xl border border-slate-200/60">
+<div class="flex items-center gap-2 text-xs text-slate-600 font-semibold">
+<span class="material-symbols-outlined text-base text-amber-500">light_mode</span>
+<span>Light Mode</span>
+</div>
+<button aria-label="Toggle theme mode" class="w-10 h-5 bg-[#00A5B5] rounded-full p-0.5 flex items-center justify-end transition-colors focus:outline-none cursor-pointer" type="button">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</button>
+</div>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- BEGIN: TopBar Header -->
+<header class="h-20 bg-white border-b border-slate-200/80 px-8 flex items-center justify-between sticky top-0 z-20 shadow-sm/50" data-purpose="top-navigation-header">
+<!-- Left: Course context & back button -->
+<div class="flex items-center gap-4">
+<a class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors shadow-sm" href="#" title="Kembali">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</a>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="text-base font-extrabold text-slate-900 tracking-tight leading-tight">UI/UX Design Batch 17</h1>
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-cyan-100 text-[#008b99]">Bootcamp</span>
+</div>
+<span class="text-xs text-slate-500 font-medium">Talent Support • Career Preparation</span>
+</div>
+</div>
+<!-- Right: Search, Notifications & Profile -->
+<div class="flex items-center gap-5">
+<!-- Search input pill -->
+<div class="relative w-72" data-purpose="global-search">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-lg">search</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-2 focus:ring-[#00A5B5]/20 transition-all" placeholder="Cari materi, test, project..." type="text">
+</div>
+<!-- Notification Bell -->
+<button aria-label="Notifications" class="relative p-2.5 rounded-full hover:bg-slate-100 text-slate-600 hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-6 w-px bg-slate-200"></div>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-1 cursor-pointer hover:opacity-90 transition-opacity" data-purpose="user-profile">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-slate-800">Annette Black</p>
+<p class="text-[11px] text-slate-500">Student ID: #TS-17042</p>
+</div>
+<img alt="Annette Black avatar" class="w-10 h-10 rounded-full object-cover ring-2 ring-[#00A5B5]/20 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARnXqqkW1qYQazAMssTOEMXJ7gvwNUFXYtyN4_oXhLb63SJHj8jMClP9Sj5qJI0Rz5nzvYp0fC31Cg9cNaKguHGpN40NZ6PhInbS6_ta4W96wrXphnHUeso2XwkgLYFz_Qp9BTwQ3duONSs90lznGylxLrjCrsMn7I5_VqIQVapVfI_yAYpfAq-5b3yJbAOouYmzL-6ZqBnq-HYkjedI3Ob8LSSvh2936XtvN2SSP37u8_CGD9qfYC">
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: PageMainBody -->
+<main class="flex-1 p-8 max-w-7xl w-full mx-auto space-y-6" data-purpose="main-content-area">
+<!-- Breadcrumb Return Action -->
+<div>
+<a class="inline-flex items-center gap-2 text-[#006878] hover:text-[#004e5b] font-semibold text-xs tracking-wide transition-colors group px-2 py-1 rounded hover:bg-slate-100/70" href="#">
+<span class="material-symbols-outlined text-base transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span>Kembali ke Daftar Batch JAT</span>
+</a>
+</div>
+<!-- 1. HERO HEADER & COHORT SUMMARY HIGHLIGHT -->
+<section class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden">
+<!-- Background subtle decorative wave/glow -->
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-cyan-100/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10 pb-6 border-b border-slate-100">
+<div>
+<div class="flex flex-wrap items-center gap-2.5 mb-2">
+<h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Job Application Tracking — Batch 2</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Active Tracking
+              </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-800 border border-cyan-200/60">
+<span class="material-symbols-outlined text-sm text-[#00A5B5]">timelapse</span>
+                Phase 1 Running (1 Maret – 30 Maret 2025)
+              </span>
+</div>
+<p class="text-xs text-slate-500 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">info</span>
+              Rekapitulasi berkala progres pengajuan bukti lamaran kerja talent program Bootcamp UI/UX Dibimbing.
+            </p>
+</div>
+<div class="flex items-center gap-3 self-start lg:self-auto">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 transition-colors shadow-xs">
+<span class="material-symbols-outlined text-base text-slate-500">file_download</span>
+              Export Riwayat (CSV)
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-cyan-200 text-xs font-semibold text-[#00A5B5] bg-cyan-50/60 hover:bg-cyan-100 transition-colors">
+<span class="material-symbols-outlined text-base">support_agent</span>
+              Bantuan Mentor
+            </button>
+</div>
+</div>
+<!-- TOTAL PROGRESS METER & 3 QUICK METRIC STAT CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+<!-- Card 1: Total Progress Meter (with Donut/Ring Progress) -->
+<div class="bg-gradient-to-br from-cyan-50/60 to-white p-4 rounded-xl border border-cyan-100/80 flex items-center gap-4">
+<!-- Circular Gauge -->
+<div class="relative w-16 h-16 shrink-0 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+<!-- Background Circle -->
+<path class="text-slate-100 stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3.5"></path>
+<!-- Stroke Progress (47.5%) -->
+<path class="text-[#0bb1cb] stroke-current stroke-round transition-all duration-700 ease-out" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="47.5, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-xs font-extrabold text-slate-800">47.5%</span>
+</div>
+<div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Target Keseluruhan</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="text-xl font-extrabold text-slate-900">19</span>
+<span class="text-xs font-semibold text-slate-400">/ 40 Lamaran</span>
+</div>
+<span class="text-[11px] text-[#00A5B5] font-semibold flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-xs">trending_up</span> Sisa 21 Lamaran
+              </span>
+</div>
+</div>
+<!-- Card 2: Total Diajukan & Status Breakdown -->
+<div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Total Diajukan</span>
+<span class="material-symbols-outlined text-slate-400 text-base">send_and_archive</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-extrabold text-slate-900">19</span>
+<span class="text-xs font-medium text-slate-500">Lamaran</span>
+</div>
+<!-- Sub-breakdown badges -->
+<div class="flex items-center gap-1.5 mt-2.5 text-[10px] font-bold">
+<span class="px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200/60" title="15 Diterima">15 Acc</span>
+<span class="px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200/60" title="1 Menunggu Validasi">1 Wait</span>
+<span class="px-1.5 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200/60" title="3 Ditolak">3 Dec</span>
+</div>
+</div>
+<!-- Card 3: Phase 1 Quota Progress -->
+<div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Phase 1 Quota</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-100 text-[#008b99]">On Track</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-extrabold text-slate-900">10 <span class="text-xs font-semibold text-slate-400">/ 20</span></span>
+<span class="text-xs font-bold text-emerald-600">50% Tercapai</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mt-3">
+<div class="bg-gradient-to-r from-[#0bb1cb] to-[#00A5B5] h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Card 4: Review Velocity & Approval Rate -->
+<div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Review Velocity</span>
+<span class="material-symbols-outlined text-emerald-500 text-base">verified</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-extrabold text-slate-900">94.7%</span>
+<span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">High Quality</span>
+</div>
+<p class="text-[11px] text-slate-500 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-slate-400">schedule</span>
+              Validasi rata-rata <span class="font-bold text-slate-700">1x24 Jam</span>
+</p>
+</div>
+</div>
+</section>
+<!-- 2. PHASE & DATE RANGE PROGRESS SECTION (Phase 1 Active vs Phase 2 Upcoming) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Phase 1 Card (Active) -->
+<div class="bg-white rounded-2xl border-2 border-cyan-500/40 p-5 shadow-sm relative flex flex-col justify-between">
+<div>
+<!-- Header Phase 1 -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-cyan-500 text-white flex items-center justify-center font-extrabold text-sm shadow-sm shadow-cyan-200">
+                  P1
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-base font-extrabold text-slate-900">Phase 1</h3>
+<span class="px-2 py-0.5 text-[10px] font-extrabold uppercase rounded bg-emerald-100 text-emerald-800">Aktif</span>
+</div>
+<span class="text-xs text-slate-500 font-medium">1 Maret 2025 – 30 Maret 2025</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2.5 py-1 rounded-full text-xs font-extrabold bg-cyan-50 text-[#008b99] border border-cyan-200/80">
+                  Target: 20 Lamaran
+                </span>
+<p class="text-[11px] font-bold text-slate-700 mt-1">Terkumpul: 19 Lamaran</p>
+</div>
+</div>
+<!-- Main Bar Phase 1 -->
+<div class="mt-3.5 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+<div class="flex justify-between items-center text-xs font-bold text-slate-700 mb-1.5">
+<span>Total Progress Phase 1</span>
+<span class="text-[#00A5B5] font-extrabold">95% (19/20)</span>
+</div>
+<div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-[#0bb1cb] to-emerald-500 rounded-full transition-all duration-500" style="width: 95%;"></div>
+</div>
+</div>
+<!-- Breakdown Range in Phase 1 -->
+<div class="space-y-3">
+<!-- Date Range 1 -->
+<div class="p-3.5 rounded-xl border border-emerald-200/70 bg-emerald-50/30">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-emerald-600">event_available</span>
+<span class="text-xs font-bold text-slate-800">Date Range 1 <span class="text-slate-500 font-normal">(1 - 15 Maret 2025)</span></span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                    Target Achieved
+                  </span>
+</div>
+<div class="grid grid-cols-2 gap-3 text-xs">
+<div>
+<div class="flex justify-between items-center text-slate-600 mb-1 font-medium">
+<span>Junior Level</span>
+<span class="font-bold text-emerald-700">8/8 (100%)</span>
+</div>
+<div class="w-full bg-emerald-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center text-slate-600 mb-1 font-medium">
+<span>Senior Level</span>
+<span class="font-bold text-emerald-700">2/2 (100%)</span>
+</div>
+<div class="w-full bg-emerald-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Date Range 2 -->
+<div class="p-3.5 rounded-xl border border-cyan-200/80 bg-cyan-50/20">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-[#00A5B5]">timelapse</span>
+<span class="text-xs font-bold text-slate-800">Date Range 2 <span class="text-slate-500 font-normal">(16 - 30 Maret 2025)</span></span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-100 text-[#006878] text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#00A5B5] animate-ping"></span>
+                    Active Window
+                  </span>
+</div>
+<div class="grid grid-cols-2 gap-3 text-xs">
+<div>
+<div class="flex justify-between items-center text-slate-600 mb-1 font-medium">
+<span>Junior Level</span>
+<span class="font-bold text-[#00A5B5]">8/8 (100%)</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#0bb1cb] h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center text-slate-600 mb-1 font-medium">
+<span>Senior Level</span>
+<span class="font-bold text-amber-600">1/2 (50%)</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-2.5 pt-2 border-t border-cyan-100/60 flex items-center justify-between text-[11px]">
+<span class="text-slate-500 font-medium">Target Range: 10 Lamaran</span>
+<span class="text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">flag</span> 1 Lamaran lagi untuk capai target
+                  </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 2 Card (Upcoming) -->
+<div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm relative flex flex-col justify-between opacity-95">
+<div>
+<!-- Header Phase 2 -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center font-extrabold text-sm border border-slate-200">
+                  P2
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-base font-extrabold text-slate-700">Phase 2</h3>
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-slate-100 text-slate-600">Belum Dimulai</span>
+</div>
+<span class="text-xs text-slate-400 font-medium">1 Mei 2025 – 31 Mei 2025</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-200">
+                  Target: 20 Lamaran
+                </span>
+<p class="text-[11px] font-medium text-slate-400 mt-1">Terkumpul: 0 Lamaran</p>
+</div>
+</div>
+<!-- Main Bar Phase 2 (0%) -->
+<div class="mt-3.5 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+<div class="flex justify-between items-center text-xs font-medium text-slate-500 mb-1.5">
+<span>Total Progress Phase 2</span>
+<span class="text-slate-400 font-bold">0% (0/20)</span>
+</div>
+<div class="w-full bg-slate-200/70 h-2.5 rounded-full overflow-hidden">
+<div class="h-full bg-slate-300 rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+<!-- Breakdown Range in Phase 2 -->
+<div class="space-y-3">
+<!-- Date Range 1 -->
+<div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/50">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-slate-400">event</span>
+<span class="text-xs font-semibold text-slate-600">Date Range 1 <span class="text-slate-400 font-normal">(1 - 15 Mei 2025)</span></span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-200/70 text-slate-600 text-[11px] font-medium">
+<span class="material-symbols-outlined text-xs">lock</span>
+                    Upcoming
+                  </span>
+</div>
+<div class="grid grid-cols-2 gap-3 text-xs">
+<div>
+<div class="flex justify-between items-center text-slate-400 mb-1 font-medium">
+<span>Junior Level</span>
+<span>0/8</span>
+</div>
+<div class="w-full bg-slate-200/80 h-1.5 rounded-full"></div>
+</div>
+<div>
+<div class="flex justify-between items-center text-slate-400 mb-1 font-medium">
+<span>Senior Level</span>
+<span>0/2</span>
+</div>
+<div class="w-full bg-slate-200/80 h-1.5 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Date Range 2 -->
+<div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/50">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-slate-400">event</span>
+<span class="text-xs font-semibold text-slate-600">Date Range 2 <span class="text-slate-400 font-normal">(16 - 31 Mei 2025)</span></span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-200/70 text-slate-600 text-[11px] font-medium">
+<span class="material-symbols-outlined text-xs">lock</span>
+                    Upcoming
+                  </span>
+</div>
+<div class="grid grid-cols-2 gap-3 text-xs">
+<div>
+<div class="flex justify-between items-center text-slate-400 mb-1 font-medium">
+<span>Junior Level</span>
+<span>0/8</span>
+</div>
+<div class="w-full bg-slate-200/80 h-1.5 rounded-full"></div>
+</div>
+<div>
+<div class="flex justify-between items-center text-slate-400 mb-1 font-medium">
+<span>Senior Level</span>
+<span>0/2</span>
+</div>
+<div class="w-full bg-slate-200/80 h-1.5 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. ACTION BAR, SEARCH, QUICK FILTER PILLS & CTA -->
+<section class="space-y-4 pt-2">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+<!-- Search & Filter Trigger -->
+<div class="flex items-center gap-3 flex-1 max-w-lg">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder:text-slate-400 text-xs font-medium focus:outline-none focus:border-[#00A5B5] focus:ring-2 focus:ring-[#00A5B5]/20 shadow-xs transition-all" id="table-search-input" placeholder="Cari nama perusahaan, posisi kerja, lokasi..." type="text">
+</div>
+<!-- Filter Dropdown Trigger Button -->
+<div class="relative">
+<button class="px-3.5 py-2.5 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-xl text-xs font-semibold shadow-xs flex items-center gap-2 transition-all cursor-pointer" id="filter-dropdown-toggle" type="button">
+<span class="material-symbols-outlined text-base text-[#00A5B5]">tune</span>
+<span>Filter</span>
+<span class="w-2 h-2 rounded-full bg-[#00A5B5]"></span>
+</button>
+<!-- Status Filter Popover / Dropdown Menu -->
+<div class="hidden absolute left-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 p-5 z-40 transition-all origin-top-left" id="filter-popover">
+<div class="flex items-center justify-between mb-4">
+<span class="font-bold text-sm text-slate-900">Filter Lamaran</span>
+<button class="w-6 h-6 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors" id="filter-close-btn" type="button">
+<span class="material-symbols-outlined text-xs">close</span>
+</button>
+</div>
+<div class="space-y-3 mb-5">
+<p class="text-xs font-bold text-slate-700">Status Validasi</p>
+<label class="flex items-center justify-between text-xs text-slate-600 hover:text-slate-900 cursor-pointer select-none">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Accepted
+                    </span>
+<input class="w-4 h-4 rounded text-[#00A5B5] focus:ring-[#00A5B5]" name="status_filter" type="checkbox" value="Accepted">
+</label>
+<label class="flex items-center justify-between text-xs text-slate-600 hover:text-slate-900 cursor-pointer select-none">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Waiting Confirmation
+                    </span>
+<input class="w-4 h-4 rounded text-[#00A5B5] focus:ring-[#00A5B5]" name="status_filter" type="checkbox" value="Waiting Confirmation">
+</label>
+<label class="flex items-center justify-between text-xs text-slate-600 hover:text-slate-900 cursor-pointer select-none">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-rose-500"></span> Declined
+                    </span>
+<input class="w-4 h-4 rounded text-[#00A5B5] focus:ring-[#00A5B5]" name="status_filter" type="checkbox" value="Declined">
+</label>
+</div>
+<div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+<button class="flex-1 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-semibold text-xs rounded-lg transition-colors" id="clear-filter-btn" type="button">
+                    Reset
+                  </button>
+<button class="flex-1 py-2 px-3 bg-[#0bb1cb] hover:bg-[#008b99] text-white font-bold text-xs rounded-lg transition-colors shadow-xs" id="apply-filter-btn" type="button">
+                    Terapkan
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary CTA Button: + Add Proof of Application -->
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0bb1cb] to-[#00A5B5] hover:from-[#0891a5] hover:to-[#008b99] text-white rounded-xl font-bold text-xs shadow-btn-glow hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer" id="open-modal-btn" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>+ Add Proof of Application</span>
+</button>
+</div>
+<!-- Quick Filter Pills Bar -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+<span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mr-1">Status:</span>
+<button class="px-3 py-1.5 rounded-full font-bold bg-[#00A5B5] text-white shadow-xs transition-colors filter-pill active" data-pill-status="all">
+            Semua (19)
+          </button>
+<button class="px-3 py-1.5 rounded-full font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors filter-pill flex items-center gap-1.5" data-pill-status="Accepted">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Accepted (15)
+          </button>
+<button class="px-3 py-1.5 rounded-full font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors filter-pill flex items-center gap-1.5" data-pill-status="Waiting Confirmation">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+            Waiting Confirmation (1)
+          </button>
+<button class="px-3 py-1.5 rounded-full font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors filter-pill flex items-center gap-1.5" data-pill-status="Declined">
+<span class="w-2 h-2 rounded-full bg-rose-500"></span>
+            Declined (3)
+          </button>
+</div>
+</section>
+<!-- 4. IMPROVED DATA TABLE CONTAINER -->
+<section class="bg-white rounded-2xl border border-slate-200/80 shadow-card overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="applications-table">
+<!-- Table Header -->
+<thead class="bg-slate-50/80 border-b border-slate-200 text-slate-700">
+<tr>
+<th class="py-3.5 px-6 text-xs font-bold uppercase tracking-wider" scope="col">
+<div class="flex items-center gap-1.5 cursor-pointer select-none group">
+<span>Perusahaan</span>
+<span class="material-symbols-outlined text-xs text-slate-400 group-hover:text-slate-800">unfold_more</span>
+</div>
+</th>
+<th class="py-3.5 px-6 text-xs font-bold uppercase tracking-wider" scope="col">
+<div class="flex items-center gap-1.5 cursor-pointer select-none group">
+<span>Role &amp; Level</span>
+<span class="material-symbols-outlined text-xs text-slate-400 group-hover:text-slate-800">unfold_more</span>
+</div>
+</th>
+<th class="py-3.5 px-6 text-xs font-bold uppercase tracking-wider" scope="col">
+<div class="flex items-center gap-1.5 cursor-pointer select-none group">
+<span>Tanggal Lamar</span>
+<span class="material-symbols-outlined text-xs text-slate-400 group-hover:text-slate-800">unfold_more</span>
+</div>
+</th>
+<th class="py-3.5 px-6 text-xs font-bold uppercase tracking-wider" scope="col">
+<div class="flex items-center gap-1.5 cursor-pointer select-none group">
+<span>Phase &amp; Range</span>
+<span class="material-symbols-outlined text-xs text-slate-400 group-hover:text-slate-800">unfold_more</span>
+</div>
+</th>
+<th class="py-3.5 px-6 text-xs font-bold uppercase tracking-wider" scope="col">
+<div class="flex items-center gap-1.5 cursor-pointer select-none group">
+<span>Status Validasi</span>
+<span class="material-symbols-outlined text-xs text-slate-400 group-hover:text-slate-800">unfold_more</span>
+</div>
+</th>
+<th class="py-3.5 px-6 text-xs font-bold uppercase tracking-wider text-right" scope="col">
+                  Aksi
+                </th>
+</tr>
+</thead>
+<!-- Table Body Rows -->
+<tbody class="divide-y divide-slate-100 text-slate-800" id="table-body">
+<!-- Row 1: Pertamina (Waiting Confirmation) -->
+<tr class="hover:bg-slate-50/70 transition-colors application-row group" data-company="pertamina" data-role="uiux designer" data-status="Waiting Confirmation">
+<!-- Perusahaan -->
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 font-black text-sm flex items-center justify-center border border-red-200 shrink-0 shadow-xs">
+                      PTM
+                    </div>
+<div>
+<p class="text-xs font-bold text-slate-900 group-hover:text-[#00A5B5] transition-colors">PT Pertamina (Persero)</p>
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Jakarta Pusat • Hybrid
+                      </span>
+</div>
+</div>
+</td>
+<!-- Role & Level -->
+<td class="py-4 px-6">
+<p class="text-xs font-bold text-slate-800">UI/UX Designer</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                    Junior Level
+                  </span>
+</td>
+<!-- Tanggal Lamar -->
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-xs font-medium text-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_today</span>
+<span>10 Februari 2025</span>
+</div>
+<span class="text-[11px] text-slate-400 block mt-0.5">14:32 WIB</span>
+</td>
+<!-- Phase & Range -->
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    Phase 1 - Range 2
+                  </span>
+</td>
+<!-- Status Validasi -->
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 shadow-xs">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                    Waiting Confirmation
+                  </span>
+</td>
+<!-- Aksi -->
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="w-8 h-8 rounded-lg hover:bg-cyan-50 flex items-center justify-center text-[#00A5B5] hover:text-[#008b99] transition-colors" title="Lihat Bukti Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<!-- Delete allowed only on waiting confirmation -->
+<button class="w-8 h-8 rounded-lg hover:bg-rose-50 flex items-center justify-center text-rose-500 hover:text-rose-700 transition-colors" title="Hapus Pengajuan">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: BNI (Accepted) -->
+<tr class="hover:bg-slate-50/70 transition-colors application-row group" data-company="bni" data-role="uiux designer" data-status="Accepted">
+<!-- Perusahaan -->
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 font-black text-sm flex items-center justify-center border border-orange-200 shrink-0 shadow-xs">
+                      BNI
+                    </div>
+<div>
+<p class="text-xs font-bold text-slate-900 group-hover:text-[#00A5B5] transition-colors">Bank Negara Indonesia</p>
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Jakarta Selatan • Onsite
+                      </span>
+</div>
+</div>
+</td>
+<!-- Role & Level -->
+<td class="py-4 px-6">
+<p class="text-xs font-bold text-slate-800">Product Designer</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                    Senior Level
+                  </span>
+</td>
+<!-- Tanggal Lamar -->
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-xs font-medium text-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_today</span>
+<span>10 Februari 2025</span>
+</div>
+<span class="text-[11px] text-slate-400 block mt-0.5">10:15 WIB</span>
+</td>
+<!-- Phase & Range -->
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    Phase 1 - Range 1
+                  </span>
+</td>
+<!-- Status Validasi -->
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+                    Accepted
+                  </span>
+</td>
+<!-- Aksi -->
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="w-8 h-8 rounded-lg hover:bg-cyan-50 flex items-center justify-center text-[#00A5B5] hover:text-[#008b99] transition-colors" title="Lihat Bukti Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-slate-300 cursor-not-allowed flex items-center justify-center" disabled="" title="Sudah diverifikasi, tidak dapat dihapus">
+<span class="material-symbols-outlined text-lg">lock</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Mandiri (Declined) -->
+<tr class="hover:bg-slate-50/70 transition-colors application-row group" data-company="mandiri" data-role="uiux designer" data-status="Declined">
+<!-- Perusahaan -->
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 font-black text-sm flex items-center justify-center border border-blue-200 shrink-0 shadow-xs">
+                      BMRI
+                    </div>
+<div>
+<p class="text-xs font-bold text-slate-900 group-hover:text-[#00A5B5] transition-colors">Bank Mandiri</p>
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Jakarta • Full Remote
+                      </span>
+</div>
+</div>
+</td>
+<!-- Role & Level -->
+<td class="py-4 px-6">
+<p class="text-xs font-bold text-slate-800">UI/UX Designer</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                    Junior Level
+                  </span>
+</td>
+<!-- Tanggal Lamar -->
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-xs font-medium text-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_today</span>
+<span>10 Februari 2025</span>
+</div>
+<span class="text-[11px] text-slate-400 block mt-0.5">09:04 WIB</span>
+</td>
+<!-- Phase & Range -->
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    Phase 1 - Range 1
+                  </span>
+</td>
+<!-- Status Validasi -->
+<td class="py-4 px-6">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-800 border border-rose-200 shadow-xs">
+<span class="material-symbols-outlined text-sm text-rose-600">cancel</span>
+                      Declined
+                    </span>
+<button class="text-[11px] text-rose-600 font-semibold hover:underline flex items-center gap-0.5">
+                      Lihat Alasan <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</td>
+<!-- Aksi -->
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="w-8 h-8 rounded-lg hover:bg-cyan-50 flex items-center justify-center text-[#00A5B5] hover:text-[#008b99] transition-colors" title="Lihat Bukti Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800 transition-colors" title="Ajukan Ulang / Re-upload">
+<span class="material-symbols-outlined text-lg">replay</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Tokopedia (Accepted) -->
+<tr class="hover:bg-slate-50/70 transition-colors application-row group" data-company="tokopedia" data-role="uiux designer" data-status="Accepted">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-200 shrink-0 shadow-xs">
+                      TKP
+                    </div>
+<div>
+<p class="text-xs font-bold text-slate-900 group-hover:text-[#00A5B5] transition-colors">Tokopedia (GoTo Group)</p>
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Jakarta Selatan • Hybrid
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-xs font-bold text-slate-800">UI/UX Designer</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                    Junior Level
+                  </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-xs font-medium text-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_today</span>
+<span>10 Februari 2025</span>
+</div>
+<span class="text-[11px] text-slate-400 block mt-0.5">08:30 WIB</span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    Phase 1 - Range 1
+                  </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+                    Accepted
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="w-8 h-8 rounded-lg hover:bg-cyan-50 flex items-center justify-center text-[#00A5B5] transition-colors" title="Lihat Bukti Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Garuda Indonesia (Accepted) -->
+<tr class="hover:bg-slate-50/70 transition-colors application-row group" data-company="garuda indonesia" data-role="uiux designer" data-status="Accepted">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 font-black text-sm flex items-center justify-center border border-cyan-200 shrink-0 shadow-xs">
+                      GIA
+                    </div>
+<div>
+<p class="text-xs font-bold text-slate-900 group-hover:text-[#00A5B5] transition-colors">Garuda Indonesia</p>
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Tangerang • Onsite
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-xs font-bold text-slate-800">UI/UX Designer</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                    Junior Level
+                  </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-xs font-medium text-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_today</span>
+<span>10 Februari 2025</span>
+</div>
+<span class="text-[11px] text-slate-400 block mt-0.5">08:12 WIB</span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    Phase 1 - Range 1
+                  </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+                    Accepted
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="w-8 h-8 rounded-lg hover:bg-cyan-50 flex items-center justify-center text-[#00A5B5] transition-colors" title="Lihat Bukti Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Telkom Indonesia (Accepted) -->
+<tr class="hover:bg-slate-50/70 transition-colors application-row group" data-company="telkom indonesia" data-role="uiux designer" data-status="Accepted">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-red-50 text-red-700 font-black text-sm flex items-center justify-center border border-red-200 shrink-0 shadow-xs">
+                      TLK
+                    </div>
+<div>
+<p class="text-xs font-bold text-slate-900 group-hover:text-[#00A5B5] transition-colors">Telkom Indonesia (DDB)</p>
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Bandung • Remote
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-xs font-bold text-slate-800">UI/UX Designer</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                    Junior Level
+                  </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-xs font-medium text-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_today</span>
+<span>10 Februari 2025</span>
+</div>
+<span class="text-[11px] text-slate-400 block mt-0.5">07:55 WIB</span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    Phase 1 - Range 1
+                  </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+                    Accepted
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="w-8 h-8 rounded-lg hover:bg-cyan-50 flex items-center justify-center text-[#00A5B5] transition-colors" title="Lihat Bukti Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Nusantara Connect (Accepted) -->
+<tr class="hover:bg-slate-50/70 transition-colors application-row group" data-company="nusantara connect" data-role="uiux designer" data-status="Accepted">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 font-black text-sm flex items-center justify-center border border-purple-200 shrink-0 shadow-xs">
+                      NC
+                    </div>
+<div>
+<p class="text-xs font-bold text-slate-900 group-hover:text-[#00A5B5] transition-colors">Nusantara Connect</p>
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Yogyakarta • Hybrid
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-xs font-bold text-slate-800">UI/UX Designer</p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                    Junior Level
+                  </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5 text-xs font-medium text-slate-700">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_today</span>
+<span>10 Februari 2025</span>
+</div>
+<span class="text-[11px] text-slate-400 block mt-0.5">07:20 WIB</span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    Phase 1 - Range 1
+                  </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+                    Accepted
+                  </span>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="w-8 h-8 rounded-lg hover:bg-cyan-50 flex items-center justify-center text-[#00A5B5] transition-colors" title="Lihat Bukti Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Interactive Pagination -->
+<div class="py-4 px-6 bg-slate-50/60 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 text-xs text-slate-500">
+<span>Menampilkan <strong>1-7</strong> dari <strong>19</strong> lamaran kerja</span>
+<div class="h-3 w-px bg-slate-300"></div>
+<div class="flex items-center gap-1.5">
+<span>Tampilkan:</span>
+<select class="py-1 px-2 rounded-lg border border-slate-200 text-xs text-slate-700 font-semibold bg-white focus:outline-none focus:border-[#00A5B5]">
+<option value="10">10 Data</option>
+<option value="20">20 Data</option>
+<option value="50">50 Data</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-50 transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+<span class="text-xs font-medium ml-0.5">Sebelumnya</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center bg-[#00A5B5] text-white font-bold text-xs shadow-xs">
+              1
+            </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-600 hover:bg-slate-100 font-semibold text-xs transition-colors">
+              2
+            </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-600 hover:bg-slate-100 font-semibold text-xs transition-colors">
+              3
+            </button>
+<button class="h-8 px-2.5 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-slate-50 transition-colors">
+<span class="text-xs font-medium mr-0.5">Berikutnya</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Slide-Over Drawer: Add Proof of Application Modal -->
+<div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity duration-300" id="application-drawer-overlay">
+<div class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[500px] bg-white shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200" id="application-drawer-panel">
+<!-- Drawer Header -->
+<div class="px-6 py-5 flex items-center justify-between border-b border-slate-100 bg-slate-50/50">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00A5B5]">add_task</span>
+<h2 class="font-extrabold text-base text-slate-900">Add Proof of Application</h2>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">Unggah bukti lamaran kerja untuk divalidasi oleh Talent Support</p>
+</div>
+<button class="w-8 h-8 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 transition-colors" id="close-drawer-btn" type="button">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<!-- Drawer Scrollable Form Content -->
+<div class="p-6 space-y-4 overflow-y-auto flex-1 text-xs">
+<!-- Phase Allocation Notice -->
+<div class="p-3 bg-cyan-50/70 border border-cyan-200 rounded-xl flex items-start gap-2.5 text-cyan-900">
+<span class="material-symbols-outlined text-base text-[#00A5B5] shrink-0 mt-0.5">info</span>
+<div>
+<p class="font-bold">Alokasi Otomatis ke Phase 1 (Range 2)</p>
+<p class="text-[11px] text-cyan-800/80 mt-0.5">Lamaran yang diajukan hari ini otomatis masuk dalam jendela aktif 16 - 30 Maret 2025.</p>
+</div>
+</div>
+<!-- Nama Perusahaan -->
+<div>
+<label class="block font-bold text-slate-800 mb-1.5" for="drawer-company">Nama Perusahaan <span class="text-rose-500">*</span></label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-2 focus:ring-[#00A5B5]/20" id="drawer-company" placeholder="Contoh: PT Telkom Indonesia, GoTo, Traveloka" type="text">
+</div>
+<!-- Posisi / Role -->
+<div>
+<label class="block font-bold text-slate-800 mb-1.5" for="drawer-role">Posisi / Role yang Dilamar <span class="text-rose-500">*</span></label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-2 focus:ring-[#00A5B5]/20" id="drawer-role" placeholder="Contoh: Junior UI/UX Designer, Product Design Intern" type="text">
+</div>
+<div class="grid grid-cols-2 gap-3.5">
+<!-- Level Karir -->
+<div>
+<label class="block font-bold text-slate-800 mb-1.5" for="drawer-level">Level Karir <span class="text-rose-500">*</span></label>
+<select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-2 focus:ring-[#00A5B5]/20" id="drawer-level">
+<option value="junior">Junior Level</option>
+<option value="senior">Senior Level</option>
+</select>
+</div>
+<!-- Tanggal Lamar -->
+<div>
+<label class="block font-bold text-slate-800 mb-1.5" for="drawer-date">Tanggal Melamar <span class="text-rose-500">*</span></label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-2 focus:ring-[#00A5B5]/20" id="drawer-date" type="date" value="2025-03-18">
+</div>
+</div>
+<!-- Link Lowongan / Bukti -->
+<div>
+<label class="block font-bold text-slate-800 mb-1.5" for="drawer-link">Tautan Lowongan / Job Portal (Opsional)</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-2 focus:ring-[#00A5B5]/20" id="drawer-link" placeholder="https://www.linkedin.com/jobs/..." type="url">
+</div>
+<!-- Upload Area -->
+<div>
+<label class="block font-bold text-slate-800 mb-1.5">Unggah Bukti Screenshot / Email Konfirmasi <span class="text-rose-500">*</span></label>
+<div class="border-2 border-dashed border-slate-200 hover:border-[#00A5B5] rounded-2xl p-6 bg-slate-50/60 text-center cursor-pointer transition-colors flex flex-col items-center justify-center group">
+<div class="w-12 h-12 rounded-full bg-cyan-100/60 text-[#00A5B5] group-hover:scale-110 flex items-center justify-center transition-transform mb-2">
+<span class="material-symbols-outlined text-2xl">cloud_upload</span>
+</div>
+<p class="font-bold text-slate-800 text-xs">Klik untuk upload bukti lamaran</p>
+<p class="text-[11px] text-slate-400 mt-1">Format JPG, PNG, atau PDF (Maks. 5 MB)</p>
+<span class="mt-2.5 inline-block text-[10px] font-semibold text-[#00A5B5] bg-white px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs">
+                  Pilih File dari Komputer
+                </span>
+</div>
+</div>
+<!-- Catatan Tambahan -->
+<div>
+<label class="block font-bold text-slate-800 mb-1.5" for="drawer-notes">Catatan Tambahan untuk Talent Support</label>
+<textarea class="w-full px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-2 focus:ring-[#00A5B5]/20" id="drawer-notes" placeholder="Misal: Dikirim via Jobstreet, sudah masuk tahap psikotes..." rows="2"></textarea>
+</div>
+</div>
+<!-- Drawer Action Footer -->
+<div class="px-6 py-4 bg-slate-50 border-t border-slate-200/80 flex items-center justify-end gap-3">
+<button class="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs transition-colors" id="cancel-drawer-btn" type="button">
+              Batal
+            </button>
+<button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#0bb1cb] to-[#00A5B5] hover:from-[#0891a5] hover:to-[#008b99] text-white font-bold text-xs transition-all shadow-btn-glow active:scale-[0.98]" id="submit-proof-btn" type="button">
+              Kirim Bukti Lamaran
+            </button>
+</div>
+</div>
+</div>
+</main>
+<!-- END: PageMainBody -->
+</div>
+<!-- END: MainContent -->
+</div>
+<!-- END: ApplicationLayout -->
+<!-- Interactive Scripts for Filtering, Drawer, and Pills -->
+<script>
+  (function() {
+    // Elements
+    const filterBtn = document.getElementById('filter-dropdown-toggle');
+    const filterPopover = document.getElementById('filter-popover');
+    const filterCloseBtn = document.getElementById('filter-close-btn');
+    const clearFilterBtn = document.getElementById('clear-filter-btn');
+    const applyFilterBtn = document.getElementById('apply-filter-btn');
+    const searchInput = document.getElementById('table-search-input');
+    const rows = document.querySelectorAll('.application-row');
+    const pillButtons = document.querySelectorAll('.filter-pill');
+
+    // Drawer Elements
+    const openModalBtn = document.getElementById('open-modal-btn');
+    const drawerOverlay = document.getElementById('application-drawer-overlay');
+    const drawerPanel = document.getElementById('application-drawer-panel');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+    const cancelDrawerBtn = document.getElementById('cancel-drawer-btn');
+    const submitProofBtn = document.getElementById('submit-proof-btn');
+
+    let activePillStatus = 'all';
+
+    // Toggle Filter Popover
+    filterBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      filterPopover.classList.toggle('hidden');
+    });
+
+    filterCloseBtn?.addEventListener('click', () => {
+      filterPopover.classList.add('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (filterPopover && !filterPopover.contains(e.target) && !filterBtn.contains(e.target)) {
+        filterPopover.classList.add('hidden');
+      }
+    });
+
+    // Core Filter Logic
+    function filterTable() {
+      const query = searchInput.value.toLowerCase().trim();
+      const checkedBoxes = Array.from(document.querySelectorAll('input[name="status_filter"]:checked'))
+                               .map(cb => cb.value);
+
+      rows.forEach(row => {
+        const comp = (row.getAttribute('data-company') || '').toLowerCase();
+        const role = (row.getAttribute('data-role') || '').toLowerCase();
+        const status = row.getAttribute('data-status') || '';
+
+        const matchesQuery = comp.includes(query) || role.includes(query);
+        const matchesPill = activePillStatus === 'all' || status.toLowerCase() === activePillStatus.toLowerCase();
+        const matchesCheckboxes = checkedBoxes.length === 0 || checkedBoxes.includes(status);
+
+        if (matchesQuery && matchesPill && matchesCheckboxes) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Filter Pills interaction
+    pillButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        pillButtons.forEach(p => {
+          p.classList.remove('bg-[#00A5B5]', 'text-white', 'shadow-xs');
+          p.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+        });
+
+        btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+        btn.classList.add('bg-[#00A5B5]', 'text-white', 'shadow-xs');
+
+        activePillStatus = btn.getAttribute('data-pill-status') || 'all';
+        filterTable();
+      });
+    });
+
+    applyFilterBtn?.addEventListener('click', () => {
+      filterTable();
+      filterPopover.classList.add('hidden');
+    });
+
+    clearFilterBtn?.addEventListener('click', () => {
+      document.querySelectorAll('input[name="status_filter"]').forEach(cb => cb.checked = false);
+      filterTable();
+      filterPopover.classList.add('hidden');
+    });
+
+    searchInput?.addEventListener('input', filterTable);
+
+    // Drawer Slide-in Logic
+    function openDrawer() {
+      drawerOverlay.classList.remove('hidden');
+      setTimeout(() => {
+        drawerPanel.classList.remove('translate-x-full');
+      }, 20);
+    }
+
+    function closeDrawer() {
+      drawerPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        drawerOverlay.classList.add('hidden');
+      }, 300);
+    }
+
+    openModalBtn?.addEventListener('click', openDrawer);
+    closeDrawerBtn?.addEventListener('click', closeDrawer);
+    cancelDrawerBtn?.addEventListener('click', closeDrawer);
+
+    drawerOverlay?.addEventListener('click', (e) => {
+      if (e.target === drawerOverlay) {
+        closeDrawer();
+      }
+    });
+
+    submitProofBtn?.addEventListener('click', () => {
+      alert('Bukti lamaran berhasil dikirim dan siap diverifikasi oleh Talent Support!');
+      closeDrawer();
+    });
+  })();
+</script>
+</body></html>

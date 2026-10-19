@@ -1,0 +1,492 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"status-accepted-bg":"#ECFDF5","secondary-fixed-dim":"#9eceda","error-container":"#ffdad6","text-muted":"#64748B","outline":"#6d797d","tertiary-container":"#8aad4c","on-tertiary-fixed-variant":"#354e00","on-primary-fixed":"#001f25","on-primary":"#ffffff","surface-card":"#FFFFFF","primary":"#006878","surface":"#f9f9ff","surface-container-highest":"#d8e3fb","background":"#f9f9ff","status-waiting-border":"#F59E0B","surface-bright":"#f9f9ff","tertiary":"#496809","status-waiting-text":"#B45309","inverse-on-surface":"#ecf1ff","primary-fixed-dim":"#52d7f2","status-declined-border":"#EF4444","on-secondary-fixed-variant":"#1a4d57","primary-container":"#0bb1cb","on-primary-container":"#003e49","tertiary-fixed-dim":"#aed36c","border-subtle":"#E2E8F0","surface-canvas":"#F8FAFC","border-strong":"#CBD5E1","surface-container-high":"#dee8ff","secondary-fixed":"#baebf7","on-secondary-container":"#3a6974","on-primary-fixed-variant":"#004e5b","status-waiting-bg":"#FFFBEB","on-tertiary":"#ffffff","on-background":"#111c2d","on-error-container":"#93000a","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary-fixed":"#131f00","primary-fixed":"#a7eeff","secondary":"#356570","on-surface-variant":"#3d494c","inverse-primary":"#52d7f2","surface-variant":"#d8e3fb","surface-container":"#e7eeff","on-error":"#ffffff","status-declined-bg":"#FEF2F2","text-primary":"#1E293B","status-declined-text":"#B91C1C","brand-accent-sky":"#0EA5E9","status-accepted-text":"#047857","surface-tint":"#006878","outline-variant":"#bcc9cc","surface-container-low":"#f0f3ff","status-accepted-border":"#10B981","on-surface":"#111c2d","secondary-container":"#b7e8f4","text-secondary":"#475569","surface-subtle":"#F1F5F9","tertiary-fixed":"#c9f085","inverse-surface":"#263143","on-tertiary-container":"#293e00","error":"#ba1a1a","surface-dim":"#cfdaf2","on-secondary-fixed":"#001f25","brand-accent-teal":"#00A5B5"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"0.75rem","space-xs":"0.25rem","gutter":"1rem","margin-lg":"2rem","gutter-lg":"1.5rem","space-3xl":"2.5rem","margin":"1rem","space-2xl":"2rem","space-xl":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-md":"1.5rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"title-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col h-full overflow-hidden"><div class="h-16 px-space-xl flex items-center gap-space-sm shrink-0"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">school</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">dibimbing<span class="text-primary-container">.</span></span><span class="font-label-sm text-label-sm text-text-muted uppercase">Talent Admin</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="font-label-md text-label-md">Admission</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-label-md text-label-md">Bootcamp</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="payment-mentor" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Payment Mentor</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-bootcamp-students" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">All Bootcamp Student</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-label-md text-label-md">Talent Support</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-hiring-partners" href="#"><span class="material-symbols-outlined text-[20px]">handshake</span><span class="font-label-md text-label-md">All Hiring Partner</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="talent-recommendations" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Talent Recommend</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="student-job-preferences" href="#"><span class="material-symbols-outlined text-[20px]">manage_search</span><span class="font-label-md text-label-md">Student Job Preference</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="job-application-tracking" href="#"><span class="material-symbols-outlined text-[20px]">business_center</span><span class="font-label-md text-label-md">Job Application Tracking</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">domain</span><span class="font-label-md text-label-md">Job Portal</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div></nav></div><div class="p-space-md border-t border-border-subtle shrink-0 flex items-center justify-between"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><div class="flex items-center gap-space-xs"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-card/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md max-w-md w-full"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-text-muted text-[18px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-canvas rounded-lg text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container/20 border border-border-subtle" placeholder="Search applicants, batch, or company..." type="text"></div></div><div class="flex items-center gap-space-lg"><button class="relative p-space-xs rounded-full text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-brand-accent-teal"></span></button><div class="h-6 w-[1px] bg-border-subtle"></div><div class="flex items-center gap-space-md cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-text-primary leading-none">Admin Dibimbing</span><span class="font-label-sm text-label-sm text-text-muted leading-tight">Talent Support</span></div><span class="material-symbols-outlined text-text-muted text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-surface-canvas min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Breadcrumbs and Quick Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-1">
+<nav class="flex items-center gap-2 text-text-muted font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors" href="#">Job Application Tracking (JAT)</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">JAT Batch 1</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-text-primary font-semibold">Marvin McKinney</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Detail Student</h1>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:brightness-105 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-error text-on-error font-label-md text-label-md shadow-sm hover:brightness-105 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Hapus dari JAT Batch 1</span>
+</button>
+</div>
+</div>
+<!-- Student Profile Summary Card -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm mb-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-lg">
+<div class="relative w-16 h-16 rounded-full overflow-hidden bg-surface-subtle shrink-0">
+<img class="w-full h-full object-cover" data-alt="Professional corporate headshot portrait of young adult male student Marvin McKinney wearing a navy textured buttoned shirt, clean solid light studio backdrop, calm confident expression, warm rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-7c8jVZrzCLfWiqkDwCtzKIsQIFbue3W0r3tm3vHL0ggmhi2Jk7BwlRDdPa8jhvlXjeGp9XedTDr5w_o2urjiTDWTJARugv2M-4JD6kqsNoMfBFc7O68XD7mbri-QC_NLG0e__cbIqHA7P9IizR9Y30npdnrp1nqfXWERJuxY_3UsbIr_RXjWyI31JBxSBUWDhOB40ycAUjWhVIgT2h1f7iolbMUXHXKmJaeXwCedxb2fVfGbbLHX">
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md text-text-primary">Marvin McKinney</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-subtle text-text-secondary font-label-sm text-label-sm">Batch 1 Student</span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-6 text-text-muted font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-muted">mail</span>
+<span>MarvinMcKinney@mail.com</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-muted">call</span>
+<span>081123123123</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-muted">badge</span>
+<span>UI/UX Designer Track</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Micro Stats -->
+<div class="flex items-center gap-6 self-stretch md:self-auto justify-around bg-surface-subtle/60 p-3 rounded-lg">
+<div class="flex flex-col items-center px-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Target Phase 1</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">3/5</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col items-center px-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Approval Rate</span>
+<span class="font-headline-md text-headline-md text-status-accepted-text font-bold">60%</span>
+</div>
+</div>
+</div>
+<!-- Phases Target Grids -->
+<div class="flex flex-col gap-space-lg mb-space-2xl">
+<!-- Phase 1 Card -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-subtle/30 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-text-primary">Phase 1</span>
+<span class="font-body-md text-body-md text-text-muted">(1 Maret 2025 - 14 Maret 2025)</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">Active Cycle</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-subtle text-text-secondary font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-lg">Range Interval</th>
+<th class="py-3 px-4">Start Date</th>
+<th class="py-3 px-4">End Date</th>
+<th class="py-3 px-4">Job Level</th>
+<th class="py-3 px-4 text-center">Target</th>
+<th class="py-3 px-4 rounded-r-lg text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-text-primary font-body-sm text-body-sm">
+<!-- Date Range 1: Junior -->
+<tr class="hover:bg-surface-subtle/40 transition-colors">
+<td class="py-3 px-4 font-semibold text-text-primary align-top" rowspan="2">Date Range 1</td>
+<td class="py-3 px-4 text-text-secondary align-top" rowspan="2">1 Maret 2025</td>
+<td class="py-3 px-4 text-text-secondary align-top" rowspan="2">7 Maret 2025</td>
+<td class="py-2.5 px-4">Junior</td>
+<td class="py-2.5 px-4 text-center font-semibold text-text-primary">3/3</td>
+<td class="py-2.5 px-4 text-right">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-accepted-bg text-status-accepted-text">Tercapai</span>
+</td>
+</tr>
+<!-- Date Range 1: Senior -->
+<tr class="hover:bg-surface-subtle/40 transition-colors">
+<td class="py-2.5 px-4">Senior</td>
+<td class="py-2.5 px-4 text-center font-semibold text-text-primary">0/2</td>
+<td class="py-2.5 px-4 text-right">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-declined-bg text-status-declined-text">Tidak Tercapai</span>
+</td>
+</tr>
+<!-- Date Range 2: Junior -->
+<tr class="hover:bg-surface-subtle/40 transition-colors bg-surface-subtle/20">
+<td class="py-3 px-4 font-semibold text-text-primary align-top" rowspan="2">Date Range 2</td>
+<td class="py-3 px-4 text-text-secondary align-top" rowspan="2">8 Maret 2025</td>
+<td class="py-3 px-4 text-text-secondary align-top" rowspan="2">14 Maret 2025</td>
+<td class="py-2.5 px-4">Junior</td>
+<td class="py-2.5 px-4 text-center font-semibold text-text-primary">0/3</td>
+<td class="py-2.5 px-4 text-right">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-subtle text-text-secondary">Belum Dimulai</span>
+</td>
+</tr>
+<!-- Date Range 2: Senior -->
+<tr class="hover:bg-surface-subtle/40 transition-colors bg-surface-subtle/20">
+<td class="py-2.5 px-4">Senior</td>
+<td class="py-2.5 px-4 text-center font-semibold text-text-primary">0/2</td>
+<td class="py-2.5 px-4 text-right">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-subtle text-text-secondary">Belum Dimulai</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Phase 2 Card -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-subtle/30 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-text-primary">Phase 2</span>
+<span class="font-body-md text-body-md text-text-muted">(15 Maret 2025 - 28 Maret 2025)</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-subtle text-text-muted font-label-sm text-label-sm">Upcoming</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-subtle text-text-secondary font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-lg">Range Interval</th>
+<th class="py-3 px-4">Start Date</th>
+<th class="py-3 px-4">End Date</th>
+<th class="py-3 px-4">Job Level</th>
+<th class="py-3 px-4 text-center">Target</th>
+<th class="py-3 px-4 rounded-r-lg text-right">Status</th>
+</tr>
+</thead>
+<tbody class="text-text-primary font-body-sm text-body-sm">
+<tr class="hover:bg-surface-subtle/40 transition-colors">
+<td class="py-3 px-4 font-semibold text-text-primary align-top" rowspan="2">Date Range 1</td>
+<td class="py-3 px-4 text-text-secondary align-top" rowspan="2">15 Maret 2025</td>
+<td class="py-3 px-4 text-text-secondary align-top" rowspan="2">21 Maret 2025</td>
+<td class="py-2.5 px-4">Junior</td>
+<td class="py-2.5 px-4 text-center font-semibold text-text-primary">0/3</td>
+<td class="py-2.5 px-4 text-right">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-subtle text-text-secondary">Belum Dimulai</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-subtle/40 transition-colors">
+<td class="py-2.5 px-4">Senior</td>
+<td class="py-2.5 px-4 text-center font-semibold text-text-primary">0/2</td>
+<td class="py-2.5 px-4 text-right">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-subtle text-text-secondary">Belum Dimulai</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Applied Jobs Section -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<!-- Header with Search & Filter -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-text-primary">Applied Jobs</h2>
+<p class="font-body-sm text-body-sm text-text-muted">Daftar lowongan kerja yang telah diajukan siswa untuk diverifikasi tim mentor JAT.</p>
+</div>
+<!-- Action & Filters Bar -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="relative">
+<input class="h-10 pl-9 pr-3 bg-surface-subtle rounded-lg text-body-sm font-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container/20 w-56" placeholder="Cari nama company / role..." type="text">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-text-muted text-[18px]">search</span>
+</div>
+<button class="h-10 px-3.5 rounded-lg bg-surface-subtle text-text-secondary hover:text-text-primary hover:bg-surface-subtle/80 font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span>Filter</span>
+</button>
+<button class="h-10 px-3.5 rounded-lg bg-surface-subtle text-text-secondary hover:text-text-primary hover:bg-surface-subtle/80 font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export</span>
+</button>
+</div>
+</div>
+<!-- Applied Jobs Table -->
+<div class="overflow-x-auto -mx-space-lg px-space-lg">
+<table class="w-full text-left whitespace-nowrap min-w-[1100px]">
+<thead>
+<tr class="bg-surface-subtle text-text-secondary font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3 px-3.5 rounded-l-lg">Date Applied</th>
+<th class="py-3 px-3.5">Created At</th>
+<th class="py-3 px-3.5">Phase</th>
+<th class="py-3 px-3.5">Date Range</th>
+<th class="py-3 px-3.5">Role</th>
+<th class="py-3 px-3.5">Company</th>
+<th class="py-3 px-3.5">Location</th>
+<th class="py-3 px-3.5">Position</th>
+<th class="py-3 px-3.5">Job Level</th>
+<th class="py-3 px-3.5">Work System</th>
+<th class="py-3 px-3.5">Status JAT</th>
+<th class="py-3 px-3.5 rounded-r-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-body-sm font-body-sm text-text-primary">
+<!-- Row 1: Waiting Confirmation (Click to Open Drawer) -->
+<tr class="hover:bg-surface-subtle/50 transition-colors">
+<td class="py-3.5 px-3.5">22 Maret 2025, 15:00 WIB</td>
+<td class="py-3.5 px-3.5 text-text-secondary">22 Maret 2025, 15:00 WIB</td>
+<td class="py-3.5 px-3.5">Phase 1</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Date Range 1</td>
+<td class="py-3.5 px-3.5 font-semibold text-text-primary">UI/UX Designer</td>
+<td class="py-3.5 px-3.5 font-medium">Bank Negara Indonesia (BNI)</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Jakarta Pusat</td>
+<td class="py-3.5 px-3.5">Full-Time</td>
+<td class="py-3.5 px-3.5"><span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm">Junior</span></td>
+<td class="py-3.5 px-3.5">Hybrid</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-waiting-bg text-status-waiting-text">
+                Waiting Confirmation
+              </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:brightness-105 active:scale-95 transition-all" onclick="document.getElementById('confirmation-drawer').classList.remove('hidden')" type="button">
+<span>Konfirmasi</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Accepted -->
+<tr class="hover:bg-surface-subtle/50 transition-colors bg-surface-subtle/10">
+<td class="py-3.5 px-3.5">20 Maret 2025, 11:20 WIB</td>
+<td class="py-3.5 px-3.5 text-text-secondary">20 Maret 2025, 11:25 WIB</td>
+<td class="py-3.5 px-3.5">Phase 1</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Date Range 1</td>
+<td class="py-3.5 px-3.5 font-semibold text-text-primary">Product Designer</td>
+<td class="py-3.5 px-3.5 font-medium">Pertamina Digital Hub</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Jakarta Selatan</td>
+<td class="py-3.5 px-3.5">Full-Time</td>
+<td class="py-3.5 px-3.5"><span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm">Junior</span></td>
+<td class="py-3.5 px-3.5">Onsite</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-accepted-bg text-status-accepted-text">
+                Accepted
+              </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-subtle text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all" onclick="document.getElementById('confirmation-drawer').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detail</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Declined -->
+<tr class="hover:bg-surface-subtle/50 transition-colors">
+<td class="py-3.5 px-3.5">18 Maret 2025, 09:40 WIB</td>
+<td class="py-3.5 px-3.5 text-text-secondary">18 Maret 2025, 09:40 WIB</td>
+<td class="py-3.5 px-3.5">Phase 1</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Date Range 1</td>
+<td class="py-3.5 px-3.5 font-semibold text-text-primary">Interaction Specialist</td>
+<td class="py-3.5 px-3.5 font-medium">Tokopedia / GoTo</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Jakarta Selatan</td>
+<td class="py-3.5 px-3.5">Full-Time</td>
+<td class="py-3.5 px-3.5"><span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm">Senior</span></td>
+<td class="py-3.5 px-3.5">Hybrid</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-declined-bg text-status-declined-text">
+                Declined
+              </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-subtle text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all" onclick="document.getElementById('confirmation-drawer').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detail</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Accepted -->
+<tr class="hover:bg-surface-subtle/50 transition-colors bg-surface-subtle/10">
+<td class="py-3.5 px-3.5">16 Maret 2025, 14:15 WIB</td>
+<td class="py-3.5 px-3.5 text-text-secondary">16 Maret 2025, 14:15 WIB</td>
+<td class="py-3.5 px-3.5">Phase 1</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Date Range 1</td>
+<td class="py-3.5 px-3.5 font-semibold text-text-primary">Junior UI Designer</td>
+<td class="py-3.5 px-3.5 font-medium">Telkomsel INDICO</td>
+<td class="py-3.5 px-3.5 text-text-secondary">Bandung</td>
+<td class="py-3.5 px-3.5">Full-Time</td>
+<td class="py-3.5 px-3.5"><span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm">Junior</span></td>
+<td class="py-3.5 px-3.5">Remote</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-accepted-bg text-status-accepted-text">
+                Accepted
+              </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-subtle text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all" onclick="document.getElementById('confirmation-drawer').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detail</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Footer -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pt-space-sm">
+<div class="flex items-center gap-2 text-text-muted font-body-sm text-body-sm">
+<span>Menampilkan</span>
+<div class="relative inline-block">
+<select class="h-8 pl-2.5 pr-7 bg-surface-subtle text-text-primary rounded-lg text-body-sm appearance-none focus:outline-none">
+<option>10 Data</option>
+<option>25 Data</option>
+<option>50 Data</option>
+</select>
+<span class="material-symbols-outlined absolute right-1.5 top-2 pointer-events-none text-[16px] text-text-muted">expand_more</span>
+</div>
+<span>dari total 18 data lowongan</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-secondary flex items-center justify-center hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-semibold text-label-md text-label-md flex items-center justify-center" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-secondary font-medium text-label-md text-label-md flex items-center justify-center hover:bg-surface-container-highest transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-secondary flex items-center justify-center hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Slide-Over Review & Confirmation Drawer (JAT Proof Modal) -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="confirmation-drawer" role="dialog">
+<!-- Backdrop Blur & Dimming -->
+<div class="fixed inset-0 bg-text-primary/40 backdrop-blur-sm transition-opacity" onclick="document.getElementById('confirmation-drawer').classList.add('hidden')"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+<div class="w-screen max-w-lg bg-surface-card shadow-2xl flex flex-col justify-between">
+<!-- Drawer Header -->
+<div class="p-space-xl bg-surface-card flex items-center justify-between shadow-sm shrink-0">
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary" id="slide-over-title">Konfirmasi JAT</h3>
+<p class="font-body-sm text-body-sm text-text-muted">Periksa keabsahan bukti lamaran kerja murid</p>
+</div>
+<button class="p-2 text-text-muted hover:text-text-primary hover:bg-surface-subtle rounded-lg transition-colors" onclick="document.getElementById('confirmation-drawer').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Body (Scrollable) -->
+<div class="p-space-xl overflow-y-auto flex-1 flex flex-col gap-space-lg">
+<!-- Batch Context Banner -->
+<div class="p-space-md rounded-xl bg-surface-subtle grid grid-cols-3 gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Batch</span>
+<span class="font-label-md text-label-md text-text-primary font-bold">JAT Batch 1</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Phase</span>
+<span class="font-label-md text-label-md text-text-primary font-bold">Phase 1</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Date Range</span>
+<span class="font-label-md text-label-md text-text-primary font-bold">Date Range 1</span>
+</div>
+</div>
+<!-- Application Details Card -->
+<div class="p-space-lg rounded-xl bg-surface-subtle/50 flex flex-col gap-space-md">
+<div class="grid grid-cols-2 gap-y-4 gap-x-3">
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Nama Student</span>
+<span class="font-title-sm text-title-sm text-text-primary">Marvin McKinney</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Date Applied</span>
+<span class="font-body-md text-body-md text-text-primary font-medium">22 Maret 2024, 15:00 WIB</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Company</span>
+<span class="font-body-md text-body-md text-text-primary font-semibold">Bank Negara Indonesia (BNI)</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Location</span>
+<span class="font-body-md text-body-md text-text-primary">Jakarta</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Role</span>
+<span class="font-body-md text-body-md text-text-primary font-semibold">UIUX Design</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Job Level</span>
+<span class="font-body-md text-body-md text-text-primary">Junior</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Position</span>
+<span class="font-body-md text-body-md text-text-primary">Full-Time</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Work System</span>
+<span class="font-body-md text-body-md text-text-primary">Hybrid</span>
+</div>
+<div class="col-span-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase block">Years of Experience</span>
+<span class="font-body-md text-body-md text-text-primary font-medium">2 Years</span>
+</div>
+</div>
+<!-- Job Vacancy Link -->
+<div class="pt-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase block mb-1">Link Job Vacancy</span>
+<a class="inline-flex items-center gap-1.5 text-primary hover:underline font-label-md text-label-md break-all" href="#">
+<span>https://recruitment.bni.co.id/job-vacancy/uiux-designer-2025</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<!-- Attachment Document Card -->
+<div class="pt-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase block mb-2">Attachment Bukti Apply</span>
+<div class="p-space-md rounded-lg bg-surface-card flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded bg-primary-fixed-dim/20 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">image</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-text-primary truncate">Marvin McKinney - Attachment JAT.png</span>
+<span class="font-body-sm text-body-sm text-text-muted">1.4 MB • PNG Image</span>
+</div>
+</div>
+<a class="p-2 text-primary hover:bg-surface-subtle rounded-lg transition-colors shrink-0" href="#" title="Unduh lampiran">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Evaluation Action: Decision Toggle -->
+<div class="flex flex-col gap-space-sm pt-2">
+<label class="font-label-md text-label-md text-text-primary">Apakah request JAT ini valid?</label>
+<div class="grid grid-cols-2 gap-space-md">
+<button class="py-2.5 px-4 rounded-lg font-label-md text-label-md text-center transition-all bg-status-accepted-bg text-status-accepted-text font-bold shadow-sm" id="btn-choice-iya" onclick="selectDecision('iya')" type="button">
+                Iya
+              </button>
+<button class="py-2.5 px-4 rounded-lg font-label-md text-label-md text-center transition-all bg-surface-subtle text-text-muted font-normal hover:bg-status-declined-bg/60" id="btn-choice-tidak" onclick="selectDecision('tidak')" type="button">
+                Tidak
+              </button>
+</div>
+</div>
+<!-- Optional Rejection Reason Text Area -->
+<div class="hidden flex flex-col gap-1.5 transition-all" id="rejection-reason-container">
+<label class="font-label-md text-label-md text-text-primary">Berikan alasan mengapa request tidak valid <span class="text-error">*</span></label>
+<textarea class="w-full p-3 bg-surface-subtle rounded-lg text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-error/30" placeholder="Contoh: Bukti screenshot email tidak memuat tanggal lamaran terkirim, atau lowongan tidak sesuai bidang..." rows="3"></textarea>
+</div>
+</div>
+<!-- Drawer Sticky Footer -->
+<div class="p-space-lg bg-surface-card flex items-center justify-end gap-space-md shrink-0 shadow-lg">
+<button class="px-5 py-2.5 rounded-lg bg-surface-subtle text-text-secondary hover:text-text-primary font-label-md text-label-md transition-colors" onclick="document.getElementById('confirmation-drawer').classList.add('hidden')" type="button">
+            Batal
+          </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:brightness-105 active:scale-95 transition-all" onclick="document.getElementById('confirmation-drawer').classList.add('hidden')" type="button">
+            Konfirmasi JAT
+          </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function selectDecision(type) {
+      const btnIya = document.getElementById('btn-choice-iya');
+      const btnTidak = document.getElementById('btn-choice-tidak');
+      const reasonContainer = document.getElementById('rejection-reason-container');
+
+      if (type === 'iya') {
+        btnIya.className = 'py-2.5 px-4 rounded-lg font-label-md text-label-md text-center transition-all bg-status-accepted-bg text-status-accepted-text font-bold shadow-sm';
+        btnTidak.className = 'py-2.5 px-4 rounded-lg font-label-md text-label-md text-center transition-all bg-surface-subtle text-text-muted font-normal hover:bg-status-declined-bg/60';
+        reasonContainer.classList.add('hidden');
+      } else {
+        btnIya.className = 'py-2.5 px-4 rounded-lg font-label-md text-label-md text-center transition-all bg-surface-subtle text-text-muted font-normal hover:bg-status-accepted-bg/60';
+        btnTidak.className = 'py-2.5 px-4 rounded-lg font-label-md text-label-md text-center transition-all bg-status-declined-bg text-status-declined-text font-bold shadow-sm';
+        reasonContainer.classList.remove('hidden');
+      }
+    }
+  </script>
+</div></div></main></div></body></html>

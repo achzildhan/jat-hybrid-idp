@@ -1,5 +1,52 @@
-# Object file
-*.o
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Ada Library Information
+# Diagnostic / Test coverage
+coverage
+*.lcov
+
+# Dependency directories
+node_modules/
+
+# Production build output & tooling cache
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# Editor & OS directories
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db
+
+# Environment variables & local configs
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+*.env
+*.env.*
+
+# Temporary / Scratch files
+scratch/
+tmp/
+temp/
+
+# Object & Binary files
+*.o
 *.ali

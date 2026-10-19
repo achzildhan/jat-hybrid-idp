@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dibimbing LMS - Job Application Tracking Batch List</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Font: Inter / Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Custom Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              500: '#06b6d4',
+              teal: '#00A5B5',
+              'teal-dark': '#008b99',
+              'teal-light': '#E6F7F9'
+            },
+            sidebar: '#FFFFFF',
+            canvas: '#FAFBFC'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for specialized fine-tuned styling -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+<meta content="web_dashboard" name="shell-type"/></head>
+<body class="bg-[#FAFBFC] font-sans text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-800">
+<!-- BEGIN: ApplicationLayout -->
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-30" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="h-20 flex items-center px-6 gap-3" data-purpose="brand-logo">
+<div class="w-10 h-10 rounded-xl bg-[#00A5B5] flex items-center justify-center text-white shadow-sm shadow-cyan-200">
+<!-- Dibimbing stylized loop icon -->
+<svg class="w-6 h-6 stroke-current fill-none stroke-2" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.5 0 4.79-.92 6.56-2.45L12 12V2z"></path>
+<circle class="fill-white stroke-none" cx="12" cy="12" r="4"></circle>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 font-sans">Dibimbing</span>
+</div>
+<!-- Navigation Menu -->
+<nav class="px-3 py-2 space-y-1" data-purpose="primary-navigation">
+<!-- Item: Dashboard -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect>
+</svg>
+            Dashboard
+          </a>
+<!-- Item: Materi -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Materi
+          </a>
+<!-- Item: Test -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Test
+          </a>
+<!-- Item: Project -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Project
+          </a>
+<!-- Item: Tata Tertib -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Tata Tertib
+          </a>
+<!-- Item: Modul -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Modul
+          </a>
+<!-- Item: Talent Support (ACTIVE) -->
+<div class="relative">
+<!-- Active indicator vertical bar -->
+<span class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-[#00A5B5] rounded-r-md"></span>
+<a class="flex items-center gap-3.5 pl-6 pr-4 py-2.5 rounded-lg text-[#00A5B5] font-semibold text-sm transition-colors" data-purpose="active-menu-item" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Talent Support
+            </a>
+</div>
+<!-- Item: Rekaman Latihan -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Rekaman Latihan
+          </a>
+<!-- Item: Connection -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Connection
+          </a>
+<!-- Item: Pre-Assessment -->
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Pre-Assessment
+          </a>
+</nav>
+</div>
+<!-- Footer Mode Toggle -->
+<div class="p-6" data-purpose="theme-toggle-container">
+<div class="flex items-center gap-3 text-xs text-slate-500 font-medium">
+<span>Light</span>
+<!-- Pill toggle -->
+<button aria-label="Toggle theme mode" class="w-12 h-6 bg-[#00A5B5] rounded-full p-0.5 flex items-center justify-end transition-colors focus:outline-none cursor-pointer" type="button">
+<div class="w-5 h-5 bg-white rounded-full shadow-sm flex items-center justify-center">
+<!-- Small sun/sparkle icon inside knob -->
+<svg class="w-3.5 h-3.5 text-[#00A5B5]" fill="currentColor" viewbox="0 0 20 20">
+<path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 2.36a1 1 0 011.42 0l.7.7a1 1 0 01-1.42 1.42l-.7-.7a1 1 0 010-1.42zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-2.36 5.64a1 1 0 010 1.42l-.7.7a1 1 0 01-1.42-1.42l.7-.7a1 1 0 011.42 0zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zm-5.64-2.36a1 1 0 01-1.42 0l-.7-.7a1 1 0 011.42-1.42l.7.7a1 1 0 010 1.42zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm2.36-5.64a1 1 0 010-1.42l.7-.7a1 1 0 111.42 1.42l-.7.7a1 1 0 01-1.42 0zM10 6a4 4 0 100 8 4 4 0 000-8z"></path>
+</svg>
+</div>
+</button>
+<span>Dark</span>
+</div>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- BEGIN: TopBar -->
+<header class="h-20 bg-white border-b border-slate-200/80 px-8 flex items-center justify-between sticky top-0 z-20" data-purpose="top-navigation-header">
+<!-- Left: Course context & back button -->
+<div class="flex items-center gap-4">
+<button class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition-colors" title="Back">
+<svg class="w-4 h-4 stroke-current stroke-2" fill="none" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div>
+<h1 class="text-base font-bold text-slate-900 tracking-tight leading-tight">UI/UX Design Batch 17</h1>
+<span class="text-xs text-slate-500 font-medium">Bootcamp</span>
+</div>
+</div>
+<!-- Center & Right: Search, Notifications & Profile -->
+<div class="flex items-center gap-6">
+<!-- Search input pill -->
+<div class="relative w-80" data-purpose="global-search">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4 stroke-current stroke-2" fill="none" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full pl-10 pr-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#00A5B5] focus:bg-white focus:ring-1 focus:ring-[#00A5B5] transition-all" placeholder="Cari materi, test, project..." type="text"/>
+</div>
+<!-- Notification Bell -->
+<button aria-label="Notifications" class="relative p-2 text-slate-600 hover:text-slate-900 transition-colors">
+<svg class="w-5 h-5 stroke-current stroke-2" fill="none" viewbox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-2" data-purpose="user-profile">
+<span class="text-sm font-semibold text-slate-800">Annette Black</span>
+<img alt="Annette Black avatar" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARnXqqkW1qYQazAMssTOEMXJ7gvwNUFXYtyN4_oXhLb63SJHj8jMClP9Sj5qJI0Rz5nzvYp0fC31Cg9cNaKguHGpN40NZ6PhInbS6_ta4W96wrXphnHUeso2XwkgLYFz_Qp9BTwQ3duONSs90lznGylxLrjCrsMn7I5_VqIQVapVfI_yAYpfAq-5b3yJbAOouYmzL-6ZqBnq-HYkjedI3Ob8LSSvh2936XtvN2SSP37u8_CGD9qfYC"/>
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: PageMainBody -->
+<main class="flex-1 p-8 max-w-7xl w-full mx-auto" data-purpose="main-content-area"><div class="flex flex-col w-full relative">
+<!-- Top Navigation Context Breadcrumbs inside Content -->
+<div class="flex items-center justify-between pb-6">
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 text-brand-accent-teal hover:text-primary transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+        Kembali ke Daftar Batch JAT
+      </a>
+<span class="text-outline-variant font-body-sm text-body-sm">/</span>
+<span class="text-text-muted font-body-sm text-body-sm">Batch 17 Acceleration</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container hover:bg-surface-tint text-on-primary transition-all shadow-sm font-title-sm text-title-sm" id="toggle-drawer-btn">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+        Add Proof of Application
+      </button>
+</div>
+</div>
+<!-- Background View: Student Job Application Tracker Details & Data Table -->
+<div class="space-y-6 select-none opacity-80 pointer-events-none transition-all duration-300" id="main-content-backdrop">
+<!-- Header Summary Card -->
+<div class="bg-surface-card rounded-xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-subtle text-text-secondary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-status-accepted-border animate-pulse"></span>
+          Active Batch Tracking Window
+        </div>
+<h2 class="text-text-primary font-display-lg text-display-lg tracking-tight">Job Application Tracker</h2>
+<div class="flex items-center gap-4 text-text-muted font-body-md text-body-md pt-1">
+<span class="inline-flex items-center gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-lg text-brand-accent-teal">calendar_today</span>
+<strong class="font-title-sm text-title-sm text-text-primary">Durasi JAT:</strong> 01 Maret 2025 - 31 Maret 2025
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-lg text-brand-accent-teal">flag</span>
+            Target: 40 Lamaran
+          </span>
+</div>
+</div>
+<!-- Quick Metrics Counters -->
+<div class="grid grid-cols-3 gap-3">
+<div class="p-3.5 rounded-xl bg-surface-subtle flex flex-col items-center justify-center min-w-[100px] text-center">
+<span class="font-headline-lg text-headline-lg text-status-accepted-text">24</span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Accepted</span>
+</div>
+<div class="p-3.5 rounded-xl bg-status-waiting-bg flex flex-col items-center justify-center min-w-[100px] text-center">
+<span class="font-headline-lg text-headline-lg text-status-waiting-text">5</span>
+<span class="font-label-sm text-label-sm text-status-waiting-text uppercase tracking-wider">Reviewing</span>
+</div>
+<div class="p-3.5 rounded-xl bg-status-declined-bg flex flex-col items-center justify-center min-w-[100px] text-center">
+<span class="font-headline-lg text-headline-lg text-status-declined-text">3</span>
+<span class="font-label-sm text-label-sm text-status-declined-text uppercase tracking-wider">Declined</span>
+</div>
+</div>
+</div>
+<!-- Table Header Toolbar -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 flex-1 max-w-md bg-surface-subtle px-3.5 py-2 rounded-lg">
+<span class="material-symbols-outlined text-text-muted text-lg">search</span>
+<span class="text-text-muted font-body-sm text-body-sm">Search company, role, or position...</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1.5 bg-surface-subtle text-text-secondary rounded-lg font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+        </span>
+<span class="px-3 py-1.5 bg-surface-subtle text-text-secondary rounded-lg font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">download</span> Export
+        </span>
+</div>
+</div>
+<!-- Data Table Sample Backdrop -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-subtle text-text-primary font-title-sm text-title-sm border-b border-border-subtle">
+<tr>
+<th class="py-3.5 px-5">Company</th>
+<th class="py-3.5 px-4">Role Applied</th>
+<th class="py-3.5 px-4">Work System</th>
+<th class="py-3.5 px-4">Date Applied</th>
+<th class="py-3.5 px-4">Status</th>
+<th class="py-3.5 px-4 text-right">Proof File</th>
+</tr>
+</thead>
+<tbody class="text-text-secondary divide-y divide-border-subtle font-body-md text-body-md">
+<tr class="hover:bg-surface-canvas">
+<td class="py-4 px-5 font-title-sm text-title-sm text-text-primary">Pertamina</td>
+<td class="py-4 px-4">UI/UX Designer</td>
+<td class="py-4 px-4"><span class="px-2.5 py-1 rounded bg-surface-subtle font-body-sm text-body-sm">Hybrid</span></td>
+<td class="py-4 px-4 text-text-muted font-body-sm text-body-sm">18 Mar 2025</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-label-sm font-label-sm bg-status-accepted-bg text-status-accepted-text">Accepted</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="text-brand-accent-teal hover:underline font-label-sm text-label-sm inline-flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">attachment</span> Bukti_Pertamina.png
+              </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-canvas">
+<td class="py-4 px-5 font-title-sm text-title-sm text-text-primary">Bank Mandiri</td>
+<td class="py-4 px-4">Product Designer Intern</td>
+<td class="py-4 px-4"><span class="px-2.5 py-1 rounded bg-surface-subtle font-body-sm text-body-sm">Onsite</span></td>
+<td class="py-4 px-4 text-text-muted font-body-sm text-body-sm">15 Mar 2025</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-label-sm font-label-sm bg-status-waiting-bg text-status-waiting-text">Waiting Confirmation</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="text-brand-accent-teal hover:underline font-label-sm text-label-sm inline-flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">attachment</span> mandiri_apply.jpg
+              </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-canvas">
+<td class="py-4 px-5 font-title-sm text-title-sm text-text-primary">Tokopedia</td>
+<td class="py-4 px-4">UX Researcher Jr.</td>
+<td class="py-4 px-4"><span class="px-2.5 py-1 rounded bg-surface-subtle font-body-sm text-body-sm">Remote</span></td>
+<td class="py-4 px-4 text-text-muted font-body-sm text-body-sm">12 Mar 2025</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-label-sm font-label-sm bg-status-declined-bg text-status-declined-text">Declined</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="text-brand-accent-teal hover:underline font-label-sm text-label-sm inline-flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">attachment</span> tokopedia_email.png
+              </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-canvas">
+<td class="py-4 px-5 font-title-sm text-title-sm text-text-primary">BNI Corp</td>
+<td class="py-4 px-4">Associate Interaction Designer</td>
+<td class="py-4 px-4"><span class="px-2.5 py-1 rounded bg-surface-subtle font-body-sm text-body-sm">Hybrid</span></td>
+<td class="py-4 px-4 text-text-muted font-body-sm text-body-sm">10 Mar 2025</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-label-sm font-label-sm bg-status-accepted-bg text-status-accepted-text">Accepted</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="text-brand-accent-teal hover:underline font-label-sm text-label-sm inline-flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">attachment</span> bni_portal_sub.png
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- SLIDE-OVER DRAWER MODAL OVERLAY -->
+<div class="fixed inset-0 bg-[#0F172A]/40 backdrop-blur-sm z-50 flex justify-end transition-opacity duration-300" id="drawer-overlay">
+<!-- Slide-over Drawer Panel -->
+<div class="w-full max-w-2xl bg-surface-card h-full shadow-2xl flex flex-col justify-between overflow-hidden transform transition-transform duration-300 ease-out translate-x-0" id="drawer-panel">
+<!-- Drawer Header -->
+<div class="px-6 py-5 bg-surface-card border-b border-border-subtle flex items-center justify-between shrink-0">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-text-primary font-headline-lg text-headline-lg tracking-tight">Add Proof of Application</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-surface-tint font-label-sm text-label-sm">JAT Batch 17</span>
+</div>
+<p class="text-text-muted font-body-sm text-body-sm mt-0.5">Submit your verified application artifact for talent mentor review.</p>
+</div>
+<div class="flex items-center gap-2">
+<!-- Simulation State Toggle Switch -->
+<div class="flex items-center gap-2 bg-surface-subtle px-3 py-1.5 rounded-full" title="Toggle to simulate form validation error response">
+<span class="text-text-secondary font-label-sm text-label-sm select-none">Simulate Error</span>
+<button aria-pressed="false" class="w-8 h-4 rounded-full bg-outline-variant p-0.5 flex items-center transition-colors focus:outline-none" id="toggle-error-state-btn" type="button">
+<span class="w-3 h-3 bg-surface-card rounded-full shadow-sm transform transition-transform translate-x-0" id="toggle-error-knob"></span>
+</button>
+</div>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-subtle text-text-muted hover:text-text-primary flex items-center justify-center transition-colors" id="close-drawer-btn" type="button">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</div>
+<!-- Drawer Scrollable Body -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Talent Verification Notice Callout -->
+<div class="rounded-xl p-4 bg-brand-50 text-text-primary flex items-start gap-3.5 shadow-sm">
+<span class="material-symbols-outlined text-brand-accent-teal shrink-0 mt-0.5 text-xl">info</span>
+<div class="space-y-1">
+<h4 class="font-title-sm text-title-sm text-text-primary">Important Requirement Notice</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              Accepted file formats: <strong class="text-text-primary">JPG, JPEG, PNG (max 5MB)</strong>. All student submissions require human Talent Support validation before your phase completion counter increases.
+            </p>
+</div>
+</div>
+<!-- Form Validation Error Banner (Simulated interactive trigger) -->
+<div class="hidden rounded-xl p-4 bg-status-declined-bg text-status-declined-text space-y-2 transition-all" id="error-alert-banner">
+<div class="flex items-center gap-2 font-title-sm text-title-sm">
+<span class="material-symbols-outlined text-base">error</span>
+<span>Submission could not be processed. Please check these errors:</span>
+</div>
+<ul class="font-body-sm text-body-sm list-disc list-inside space-y-1 pl-1 text-status-declined-text/90">
+<li>Date Applied cannot be in the future or outside active batch range (01 - 31 March 2025).</li>
+<li>Unsupported file type or mandatory proof screenshot missing.</li>
+<li>All mandatory fields marked with an asterisk (<span class="text-error font-bold">*</span>) must be completed.</li>
+</ul>
+</div>
+<!-- Form Elements: Structured 2-Column Responsive Grid -->
+<form class="space-y-5" id="proof-application-form">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Date Applied -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="date-applied">
+                Date Applied <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all" id="date-applied" max="2025-03-31" min="2025-03-01" required="" type="date" value="2025-03-10"/>
+</div>
+<p class="text-text-muted font-body-sm text-body-sm">
+                Must fall within active batch window (<span class="font-medium text-text-secondary">1-31 March 2025</span>). Future dates not allowed.
+              </p>
+</div>
+<!-- Role Applied -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="role-applied">
+                Role Applied <span class="text-error font-bold">*</span>
+</label>
+<input class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all" id="role-applied" placeholder="e.g. UI/UX Designer" required="" type="text" value="UI/UX Designer"/>
+<p class="text-text-muted font-body-sm text-body-sm">Specify the exact job title listed in the vacancy.</p>
+</div>
+<!-- Company Name -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="company-name">
+                Company Name <span class="text-error font-bold">*</span>
+</label>
+<input class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all" id="company-name" placeholder="e.g. Pertamina" required="" type="text" value="Pertamina"/>
+</div>
+<!-- Company Location -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="company-location">
+                Company Location <span class="text-error font-bold">*</span>
+</label>
+<input class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all" id="company-location" placeholder="e.g. Jakarta, Indonesia" required="" type="text" value="Jakarta Pusat"/>
+</div>
+<!-- Position Dropdown -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="position">
+                Position <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all appearance-none cursor-pointer" id="position" required="">
+<option disabled="" value="">Choose Position</option>
+<option selected="" value="fulltime">Fulltime</option>
+<option value="internship">Internship</option>
+<option value="contract">Contract</option>
+<option value="part-time">Part-time</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<!-- Years of Experience -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="experience">
+                Years of Experience <span class="text-error font-bold">*</span>
+</label>
+<input class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all" id="experience" placeholder="E.g. 1, 2, 0-1, 1-3" required="" type="text" value="0-1"/>
+</div>
+<!-- Job Level Dropdown -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="job-level">
+                Job Level <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all appearance-none cursor-pointer" id="job-level" required="">
+<option disabled="" value="">Choose Job Level</option>
+<option selected="" value="junior">Junior / Entry Level</option>
+<option value="associate">Associate / Mid</option>
+<option value="senior">Senior</option>
+<option value="lead">Lead / Managerial</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<!-- Work System Dropdown -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="work-system">
+                Work System <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 bg-surface-subtle text-text-primary font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all appearance-none cursor-pointer" id="work-system" required="">
+<option disabled="" value="">Choose Work System</option>
+<option value="remote">Remote / WFH</option>
+<option value="onsite">Onsite</option>
+<option selected="" value="hybrid">Hybrid</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<!-- Link Job Vacancy -->
+<div class="sm:col-span-2 space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary" for="vacancy-link">
+                Link Job Vacancy <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted text-base">link</span>
+<input class="w-full h-11 pl-10 pr-3.5 bg-surface-subtle text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent-teal/30 focus:bg-surface-card transition-all" id="vacancy-link" placeholder="https://linkedin.com/jobs/view/..." required="" type="url" value="https://www.linkedin.com/jobs/view/412891024"/>
+</div>
+</div>
+<!-- Upload Proof of Application Drag & Drop Zone -->
+<div class="sm:col-span-2 space-y-1.5">
+<label class="block font-label-md text-label-md text-text-primary">
+                Upload Proof of Application <span class="text-error font-bold">*</span>
+</label>
+<div class="relative cursor-pointer group rounded-xl p-6 bg-brand-50 hover:bg-brand-100/60 transition-all flex flex-col items-center justify-center text-center space-y-2 border-2 border-dashed border-brand-accent-teal/60 hover:border-brand-accent-teal" id="dropzone">
+<input accept="image/png, image/jpeg, image/jpg" class="absolute inset-0 opacity-0 cursor-pointer" id="file-input" type="file"/>
+<div class="w-12 h-12 rounded-full bg-brand-accent-teal/10 flex items-center justify-center text-brand-accent-teal group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">cloud_upload</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-title-sm text-title-sm text-brand-accent-teal group-hover:underline">
+                    Click to browse image or drag and drop
+                  </p>
+<p class="font-body-sm text-body-sm text-text-muted">
+                    Supports JPG, JPEG, PNG only (Max file size: 5MB)
+                  </p>
+</div>
+<!-- Active Upload File Preview Pill -->
+<div class="flex items-center gap-2 mt-2 px-3 py-1.5 rounded-lg bg-surface-card shadow-sm text-text-primary font-body-sm text-body-sm" id="file-pill">
+<span class="material-symbols-outlined text-base text-status-accepted-text">image</span>
+<span class="font-medium">application_submission_pertamina_mar10.png</span>
+<span class="text-text-muted text-xs">(1.4 MB)</span>
+<button class="text-text-muted hover:text-status-declined-text ml-1" title="Remove attachment" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="px-6 py-4 bg-surface-card border-t border-border-subtle flex items-center justify-between gap-3 shrink-0">
+<button class="px-5 py-2.5 rounded-lg bg-surface-subtle hover:bg-slate-200 text-text-primary font-title-sm text-title-sm transition-colors" id="cancel-btn" type="button">
+          Cancel
+        </button>
+<div class="flex items-center gap-3">
+<span class="text-text-muted font-body-sm text-body-sm hidden sm:inline">All inputs auto-saved locally</span>
+<button class="px-6 py-2.5 rounded-lg bg-primary-container hover:bg-surface-tint text-on-primary font-title-sm text-title-sm flex items-center gap-2 shadow-sm transition-all" id="submit-proof-btn" type="button">
+<span class="material-symbols-outlined text-lg">save</span>
+            Submit Proof
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initDrawerInteractions() {
+    const overlay = document.getElementById('drawer-overlay');
+    const panel = document.getElementById('drawer-panel');
+    const closeBtn = document.getElementById('close-drawer-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const toggleBtn = document.getElementById('toggle-drawer-btn');
+    const backdrop = document.getElementById('main-content-backdrop');
+    const toggleErrorBtn = document.getElementById('toggle-error-state-btn');
+    const errorKnob = document.getElementById('toggle-error-knob');
+    const errorBanner = document.getElementById('error-alert-banner');
+    const submitBtn = document.getElementById('submit-proof-btn');
+    const fileInput = document.getElementById('file-input');
+    const filePill = document.getElementById('file-pill');
+
+    let isDrawerOpen = true;
+    let isErrorState = false;
+
+    function closeDrawer() {
+      panel.classList.add('translate-x-full');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      backdrop.classList.remove('opacity-80', 'pointer-events-none');
+      isDrawerOpen = false;
+    }
+
+    function openDrawer() {
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      panel.classList.remove('translate-x-full');
+      backdrop.classList.add('opacity-80', 'pointer-events-none');
+      isDrawerOpen = true;
+    }
+
+    closeBtn?.addEventListener('click', closeDrawer);
+    cancelBtn?.addEventListener('click', closeDrawer);
+    toggleBtn?.addEventListener('click', openDrawer);
+
+    // Click outside to dismiss modal
+    overlay?.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeDrawer();
+      }
+    });
+
+    // Toggle simulated error state
+    toggleErrorBtn?.addEventListener('click', () => {
+      isErrorState = !isErrorState;
+      if (isErrorState) {
+        toggleErrorBtn.classList.remove('bg-outline-variant');
+        toggleErrorBtn.classList.add('bg-error');
+        errorKnob.classList.add('translate-x-4');
+        errorBanner.classList.remove('hidden');
+      } else {
+        toggleErrorBtn.classList.remove('bg-error');
+        toggleErrorBtn.classList.add('bg-outline-variant');
+        errorKnob.classList.remove('translate-x-4');
+        errorBanner.classList.add('hidden');
+      }
+    });
+
+    // Submit Proof interaction
+    submitBtn?.addEventListener('click', () => {
+      if (isErrorState) {
+        errorBanner.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">refresh</span> Submitting...';
+        setTimeout(() => {
+          submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span> Submitted!';
+          submitBtn.classList.replace('bg-primary-container', 'bg-status-accepted-border');
+          setTimeout(() => {
+            closeDrawer();
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg">save</span> Submit Proof';
+            submitBtn.classList.replace('bg-status-accepted-border', 'bg-primary-container');
+          }, 800);
+        }, 600);
+      }
+    });
+
+    // File change micro-interaction
+    fileInput?.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files[0]) {
+        filePill.classList.remove('hidden');
+      }
+    });
+  })();
+</script></main>
+<!-- END: PageMainBody -->
+</div>
+<!-- END: MainContent -->
+</div>
+<!-- END: ApplicationLayout -->
+</body></html>

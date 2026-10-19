@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"status-accepted-bg":"#ECFDF5","secondary-fixed-dim":"#9eceda","error-container":"#ffdad6","text-muted":"#64748B","outline":"#6d797d","tertiary-container":"#8aad4c","on-tertiary-fixed-variant":"#354e00","on-primary-fixed":"#001f25","on-primary":"#ffffff","surface-card":"#FFFFFF","primary":"#006878","surface":"#f9f9ff","surface-container-highest":"#d8e3fb","background":"#f9f9ff","status-waiting-border":"#F59E0B","surface-bright":"#f9f9ff","tertiary":"#496809","status-waiting-text":"#B45309","inverse-on-surface":"#ecf1ff","primary-fixed-dim":"#52d7f2","status-declined-border":"#EF4444","on-secondary-fixed-variant":"#1a4d57","primary-container":"#0bb1cb","on-primary-container":"#003e49","tertiary-fixed-dim":"#aed36c","border-subtle":"#E2E8F0","surface-canvas":"#F8FAFC","border-strong":"#CBD5E1","surface-container-high":"#dee8ff","secondary-fixed":"#baebf7","on-secondary-container":"#3a6974","on-primary-fixed-variant":"#004e5b","status-waiting-bg":"#FFFBEB","on-tertiary":"#ffffff","on-background":"#111c2d","on-error-container":"#93000a","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary-fixed":"#131f00","primary-fixed":"#a7eeff","secondary":"#356570","on-surface-variant":"#3d494c","inverse-primary":"#52d7f2","surface-variant":"#d8e3fb","surface-container":"#e7eeff","on-error":"#ffffff","status-declined-bg":"#FEF2F2","text-primary":"#1E293B","status-declined-text":"#B91C1C","brand-accent-sky":"#0EA5E9","status-accepted-text":"#047857","surface-tint":"#006878","outline-variant":"#bcc9cc","surface-container-low":"#f0f3ff","status-accepted-border":"#10B981","on-surface":"#111c2d","secondary-container":"#b7e8f4","text-secondary":"#475569","surface-subtle":"#F1F5F9","tertiary-fixed":"#c9f085","inverse-surface":"#263143","on-tertiary-container":"#293e00","error":"#ba1a1a","surface-dim":"#cfdaf2","on-secondary-fixed":"#001f25","brand-accent-teal":"#00A5B5"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"0.75rem","space-xs":"0.25rem","gutter":"1rem","margin-lg":"2rem","gutter-lg":"1.5rem","space-3xl":"2.5rem","margin":"1rem","space-2xl":"2rem","space-xl":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-md":"1.5rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"title-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col h-full overflow-hidden"><div class="h-16 px-space-xl flex items-center gap-space-sm shrink-0"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">school</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">dibimbing<span class="text-primary-container">.</span></span><span class="font-label-sm text-label-sm text-text-muted uppercase">Talent Admin</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="font-label-md text-label-md">Admission</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-label-md text-label-md">Bootcamp</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="payment-mentor" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Payment Mentor</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-bootcamp-students" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">All Bootcamp Student</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-label-md text-label-md">Talent Support</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-hiring-partners" href="#"><span class="material-symbols-outlined text-[20px]">handshake</span><span class="font-label-md text-label-md">All Hiring Partner</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="talent-recommendations" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Talent Recommend</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="student-job-preferences" href="#"><span class="material-symbols-outlined text-[20px]">manage_search</span><span class="font-label-md text-label-md">Student Job Preference</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="job-application-tracking" href="#"><span class="material-symbols-outlined text-[20px]">business_center</span><span class="font-label-md text-label-md">Job Application Tracking</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">domain</span><span class="font-label-md text-label-md">Job Portal</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div></nav></div><div class="p-space-md border-t border-border-subtle shrink-0 flex items-center justify-between"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><div class="flex items-center gap-space-xs"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-card/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md max-w-md w-full"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-text-muted text-[18px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-canvas rounded-lg text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container/20 border border-border-subtle" placeholder="Search applicants, batch, or company..." type="text"/></div></div><div class="flex items-center gap-space-lg"><button class="relative p-space-xs rounded-full text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-brand-accent-teal"></span></button><div class="h-6 w-[1px] bg-border-subtle"></div><div class="flex items-center gap-space-md cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-text-primary leading-none">Admin Dibimbing</span><span class="font-label-sm text-label-sm text-text-muted leading-tight">Talent Support</span></div><span class="material-symbols-outlined text-text-muted text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-surface-canvas min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Navigation & Breadcrumbs -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-1">
+<nav class="flex items-center gap-space-xs text-body-sm font-body-sm text-text-muted">
+<a class="text-primary-container font-medium hover:underline flex items-center gap-1" href="#">
+<span>Job Application Tracking (JAT)</span>
+</a>
+<span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span>
+<span class="text-text-primary font-semibold">JAT Batch 1</span>
+</nav>
+<div class="flex items-center gap-space-md mt-1">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">JAT Batch 1</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-status-accepted-bg text-status-accepted-text font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-status-accepted-border animate-pulse"></span>
+          Active Batch
+        </span>
+</div>
+</div>
+<!-- Actions Right -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="relative group">
+<button class="flex items-center gap-space-xs px-3.5 py-2 rounded-lg bg-surface-card hover:bg-surface-subtle text-text-secondary shadow-sm transition-all text-label-md font-label-md" id="recalcBtn" title="Available for Super Admin" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary-container">sync</span>
+<span>Recalculate Progress</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-bold bg-secondary-container text-on-secondary-container tracking-wider">Super Admin</span>
+</button>
+</div>
+<button class="flex items-center gap-space-xs px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm" id="openEditModal" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+<span>Edit</span>
+</button>
+<button class="flex items-center gap-space-xs px-4 py-2 rounded-lg bg-status-declined-bg text-status-declined-text font-label-md text-label-md hover:bg-error-container hover:text-on-error-container transition-colors shadow-sm" id="openDeleteBatchModal" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Hapus Batch</span>
+</button>
+</div>
+</div>
+<!-- Phases & Rules Container (Two clean stacked schedule cards) -->
+<div class="flex flex-col gap-space-lg mb-space-2xl">
+<!-- Phase 1 Card -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<div class="px-space-xl py-space-md bg-surface-card flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-text-primary">Phase 1</h2>
+<p class="font-body-sm text-body-sm text-text-muted">1 Maret 2025 - 14 Maret 2025</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-surface-subtle text-text-secondary font-label-sm text-label-sm">Total 14 Hari</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-body-sm font-body-sm">
+<thead class="bg-surface-subtle text-text-secondary font-title-sm text-title-sm">
+<tr>
+<th class="py-3 px-space-xl" scope="col">DATE PERIOD</th>
+<th class="py-3 px-space-md" scope="col">START DATE</th>
+<th class="py-3 px-space-md" scope="col">END DATE</th>
+<th class="py-3 px-space-md" scope="col">JOB LEVEL</th>
+<th class="py-3 px-space-xl text-right" scope="col">TARGET REQUIREMENT</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-text-primary">
+<!-- Date Range 1 -->
+<tr class="hover:bg-surface-canvas transition-colors">
+<td class="py-4 px-space-xl align-top font-semibold text-text-primary bg-surface-card" rowspan="2">
+                Date Range 1
+              </td>
+<td class="py-4 px-space-md align-top text-text-secondary bg-surface-card" rowspan="2">
+                1 Maret 2025
+              </td>
+<td class="py-4 px-space-md align-top text-text-secondary bg-surface-card" rowspan="2">
+                7 Maret 2025
+              </td>
+<td class="py-3 px-space-md text-text-primary font-medium">Junior</td>
+<td class="py-3 px-space-xl text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">task_alt</span>
+                  3 Job Applied
+                </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-canvas transition-colors">
+<td class="py-3 px-space-md text-text-primary font-medium">Senior</td>
+<td class="py-3 px-space-xl text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">task_alt</span>
+                  2 Job Applied
+                </span>
+</td>
+</tr>
+<!-- Date Range 2 -->
+<tr class="hover:bg-surface-canvas transition-colors bg-surface-subtle/30">
+<td class="py-4 px-space-xl align-top font-semibold text-text-primary" rowspan="2">
+                Date Range 2
+              </td>
+<td class="py-4 px-space-md align-top text-text-secondary" rowspan="2">
+                8 Maret 2025
+              </td>
+<td class="py-4 px-space-md align-top text-text-secondary" rowspan="2">
+                14 Maret 2025
+              </td>
+<td class="py-3 px-space-md text-text-primary font-medium">Junior</td>
+<td class="py-3 px-space-xl text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">task_alt</span>
+                  3 Job Applied
+                </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-canvas transition-colors bg-surface-subtle/30">
+<td class="py-3 px-space-md text-text-primary font-medium">Senior</td>
+<td class="py-3 px-space-xl text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">task_alt</span>
+                  2 Job Applied
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Phase 2 Card -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<div class="px-space-xl py-space-md bg-surface-card flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-brand-accent-teal/15 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-text-primary">Phase 2</h2>
+<p class="font-body-sm text-body-sm text-text-muted">15 Maret 2025 - 21 Maret 2025</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-surface-subtle text-text-secondary font-label-sm text-label-sm">Total 7 Hari</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-body-sm font-body-sm">
+<thead class="bg-surface-subtle text-text-secondary font-title-sm text-title-sm">
+<tr>
+<th class="py-3 px-space-xl" scope="col">DATE PERIOD</th>
+<th class="py-3 px-space-md" scope="col">START DATE</th>
+<th class="py-3 px-space-md" scope="col">END DATE</th>
+<th class="py-3 px-space-md" scope="col">JOB LEVEL</th>
+<th class="py-3 px-space-xl text-right" scope="col">TARGET REQUIREMENT</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-text-primary">
+<tr class="hover:bg-surface-canvas transition-colors">
+<td class="py-4 px-space-xl align-top font-semibold text-text-primary bg-surface-card" rowspan="2">
+                Date Range 1
+              </td>
+<td class="py-4 px-space-md align-top text-text-secondary bg-surface-card" rowspan="2">
+                15 Maret 2025
+              </td>
+<td class="py-4 px-space-md align-top text-text-secondary bg-surface-card" rowspan="2">
+                21 Maret 2025
+              </td>
+<td class="py-3 px-space-md text-text-primary font-medium">Junior</td>
+<td class="py-3 px-space-xl text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">task_alt</span>
+                  3 Job Applied
+                </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-canvas transition-colors">
+<td class="py-3 px-space-md text-text-primary font-medium">Senior</td>
+<td class="py-3 px-space-xl text-right">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">task_alt</span>
+                  2 Job Applied
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Student Participants Section -->
+<div class="bg-surface-card rounded-xl shadow-sm p-space-xl flex flex-col gap-space-lg">
+<!-- Top Bar: Title & Search Filter Controls -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary tracking-tight">Student Participant on This Batch</h3>
+<p class="font-body-sm text-body-sm text-text-muted">Total 124 students assigned to track applications across phases</p>
+</div>
+<div class="flex items-center gap-space-md flex-wrap">
+<!-- Search Input -->
+<div class="relative w-64 md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-3 rounded-lg bg-surface-canvas font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:bg-surface-card shadow-inner" id="searchInput" placeholder="Cari nama student..." type="text"/>
+</div>
+<!-- Filter Button -->
+<div class="relative">
+<button class="h-10 px-3.5 rounded-lg bg-primary-container/10 text-primary-container ring-1 ring-primary-container flex items-center gap-2 font-label-md text-label-md shadow-sm transition-colors" id="filterBtn" type="button"><span class="material-symbols-outlined text-[18px] text-primary-container">tune</span><span>Filter</span><span class="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-primary-container text-on-primary leading-none">3</span><span class="material-symbols-outlined text-[18px] text-primary-container ml-0.5">expand_less</span></button><div class="absolute right-0 top-12 z-40 w-80 md:w-[360px] bg-surface-card rounded-2xl shadow-xl border border-border-subtle p-5 flex flex-col gap-4 animate-in fade-in duration-150"><div class="flex items-center justify-between pb-3 border-b border-border-subtle"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-primary-container/15 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[18px]">tune</span></div><h4 class="font-title-sm text-title-sm text-text-primary">Filter Peserta Batch</h4></div><button class="w-7 h-7 rounded-lg hover:bg-surface-subtle text-text-muted hover:text-text-primary flex items-center justify-center transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex flex-col gap-1.5"><label class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Status Target Progress</label><div class="flex flex-col gap-1.5"><label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-subtle/50 cursor-pointer transition-colors"><div class="flex items-center gap-2.5"><input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/><span class="font-body-sm text-body-sm text-text-primary">On Track</span></div><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-accepted-bg text-status-accepted-text font-label-sm text-[10px]"><span class="w-1.5 h-1.5 rounded-full bg-status-accepted-border"></span>Normal</span></label><label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-subtle/50 cursor-pointer transition-colors"><div class="flex items-center gap-2.5"><input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/><span class="font-body-sm text-body-sm text-text-primary">Needs Reminder</span></div><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-waiting-bg text-status-waiting-text font-label-sm text-[10px]"><span class="w-1.5 h-1.5 rounded-full bg-status-waiting-border"></span>Lagging</span></label><label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-subtle/50 cursor-pointer transition-colors"><div class="flex items-center gap-2.5"><input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/><span class="font-body-sm text-body-sm text-text-primary">Completed P1 / P2</span></div><span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-[10px]">Target Met</span></label></div></div><div class="flex flex-col gap-1.5"><label class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Base Program / Track</label><select class="w-full h-9 px-3 rounded-lg bg-surface-canvas font-body-sm text-body-sm text-text-primary focus:outline-none focus:bg-surface-card border border-border-subtle"><option value="all">Semua Track</option><option selected="" value="uiux">UI/UX Design</option><option value="pm">Product Management</option><option value="dm">Digital Marketing</option><option value="ds">Data Science</option></select></div><div class="flex flex-col gap-1.5"><label class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Batch Asal Bootcamp</label><select class="w-full h-9 px-3 rounded-lg bg-surface-canvas font-body-sm text-body-sm text-text-primary focus:outline-none focus:bg-surface-card border border-border-subtle"><option value="all">Semua Batch</option><option selected="" value="uiux22">UIUX Design Batch 22</option><option value="pm15">PM Batch 15</option><option value="uiux21">UIUX Design Batch 21</option></select></div><div class="flex flex-col gap-1.5"><label class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Rentang Pencapaian Target</label><div class="grid grid-cols-4 gap-1.5"><button class="py-1.5 px-1 rounded-lg text-center font-label-sm text-[11px] bg-surface-subtle text-text-secondary hover:bg-surface-canvas transition-colors" type="button">Semua</button><button class="py-1.5 px-1 rounded-lg text-center font-label-sm text-[11px] bg-surface-subtle text-text-secondary hover:bg-surface-canvas transition-colors" type="button">&lt; 50%</button><button class="py-1.5 px-1 rounded-lg text-center font-label-sm text-[11px] bg-primary-container/15 text-primary-container font-semibold ring-1 ring-primary-container transition-colors" type="button">50% - 79%</button><button class="py-1.5 px-1 rounded-lg text-center font-label-sm text-[11px] bg-surface-subtle text-text-secondary hover:bg-surface-canvas transition-colors" type="button">≥ 80%</button></div></div><div class="pt-3 border-t border-border-subtle flex items-center justify-between"><button class="font-label-sm text-label-sm text-text-muted hover:text-text-primary transition-colors hover:underline" type="button">Reset Filter</button><button class="px-4 py-2 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">check</span><span>Terapkan Filter</span></button></div></div>
+</div>
+<!-- Add Student CTA -->
+<button class="h-10 px-5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all flex items-center gap-2 shadow-sm" id="openAddModal" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Tambah Student</span>
+</button>
+</div>
+</div>
+<!-- Participants Table -->
+<div class="overflow-x-auto rounded-lg shadow-sm">
+<table class="w-full text-left text-body-md font-body-md">
+<thead class="bg-surface-subtle text-text-secondary font-title-sm text-title-sm">
+<tr>
+<th class="py-3 px-space-lg" scope="col">STUDENT</th>
+<th class="py-3 px-space-lg" scope="col">BASE PROGRAM</th>
+<th class="py-3 px-space-lg" scope="col">BATCH</th>
+<th class="py-3 px-space-lg" scope="col">TARGET PROGRESS</th>
+<th class="py-3 px-space-lg text-center" scope="col">STATUS</th>
+<th class="py-3 px-space-lg text-right" scope="col">ACTION</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-text-primary bg-surface-card" id="studentTableBody">
+<!-- Row 1: Marvin McKinney -->
+<tr class="hover:bg-surface-canvas transition-colors">
+<td class="py-4 px-space-lg">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait photo of Marvin McKinney, a young Indonesian professional student in modern navy polo shirt against a bright minimal architectural background, smiling confidently with clean rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPy5iS-7GuBFs39IiwmZEzQpKRMgCQsMTBzEhelfynEAGWOgWpkS69Ia_iz302C1vN1_8nasBETimE6CAxIWEjoj1qDYkqAuGIzSq2XQZDZYOG1Z08KNzoHFC2SO87TF0Xv2Cp_rgTOWWpG6imuq18Atchqsk9n9lYNewhzUAiHwesT4hS48n50koO41HIdVfyTWxv0cWXkg2qNJw8lA0inaoTU9crrjKl4T33bDfKpcH-RqVew76I"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary truncate">Marvin McKinney</span>
+<span class="font-body-sm text-body-sm text-text-muted truncate">marvin.mckinney@gmail.com</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-lg">
+<span class="font-body-md text-body-md text-text-primary">UI/UX Design</span>
+</td>
+<td class="py-4 px-space-lg">
+<span class="px-2.5 py-1 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm">
+                UIUX Design Batch 22
+              </span>
+</td>
+<td class="py-4 px-space-lg">
+<div class="flex flex-col gap-1.5 w-44">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-text-muted">Phase 1: <strong class="text-text-primary">8/10</strong></span>
+<span class="text-primary-container font-semibold">80%</span>
+</div>
+<div class="w-full bg-surface-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 80%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mt-0.5">
+<span class="text-text-muted">Phase 2: <strong class="text-text-primary">0/10</strong></span>
+<span class="text-text-muted">0%</span>
+</div>
+<div class="w-full bg-surface-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-border-strong h-full rounded-full" style="width: 0%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-lg text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-status-accepted-bg text-status-accepted-text font-label-sm text-label-sm">
+                On Track
+              </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-primary-container/20 text-primary hover:text-on-primary-container flex items-center justify-center transition-colors" title="Lihat Progress JAT" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-status-declined-bg text-text-muted hover:text-status-declined-text flex items-center justify-center transition-colors" onclick="openRemoveStudent('Marvin McKinney')" title="Keluarkan dari Batch" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Ethan Caldwell -->
+<tr class="hover:bg-surface-canvas transition-colors bg-surface-canvas/20">
+<td class="py-4 px-space-lg">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm" data-alt="Close up avatar profile of Ethan Caldwell, an ambitious male graduate wearing eyeglasses with soft natural morning light in a clean modern co-working space, friendly professional expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH55DOmVeHgE3lRZ7Uw-P81paJd1xLG4_KBUEDVBPB-yYTPLcoHXMJ6yJrRr-RxE37zfWCmlQFdYzDilw38Tsk39e-ZbcDwzb3AM11U1pT_EHaMvcVrPnCVRrFsrKKzXy3ccygpMycVJZQaoh088jmkc-1-dsvCnLUP87xcAwC8acjvQTAKg-PIbhy43DHJcUSvTjqZXMCN39SRkyJA7IBSoCtoQknGZMA3nSBAFenpdjaGBoDFxiq"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary truncate">Ethan Caldwell</span>
+<span class="font-body-sm text-body-sm text-text-muted truncate">ethan.caldwell@outlook.com</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-lg">
+<span class="font-body-md text-body-md text-text-primary">UI/UX Design</span>
+</td>
+<td class="py-4 px-space-lg">
+<span class="px-2.5 py-1 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm">
+                UIUX Design Batch 22
+              </span>
+</td>
+<td class="py-4 px-space-lg">
+<div class="flex flex-col gap-1.5 w-44">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-text-muted">Phase 1: <strong class="text-text-primary">5/10</strong></span>
+<span class="text-status-waiting-text font-semibold">50%</span>
+</div>
+<div class="w-full bg-surface-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-status-waiting-border h-full rounded-full" style="width: 50%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mt-0.5">
+<span class="text-text-muted">Phase 2: <strong class="text-text-primary">0/10</strong></span>
+<span class="text-text-muted">0%</span>
+</div>
+<div class="w-full bg-surface-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-border-strong h-full rounded-full" style="width: 0%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-lg text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-status-waiting-bg text-status-waiting-text font-label-sm text-label-sm">
+                Needs Reminder
+              </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-primary-container/20 text-primary hover:text-on-primary-container flex items-center justify-center transition-colors" title="Lihat Progress JAT" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-status-declined-bg text-text-muted hover:text-status-declined-text flex items-center justify-center transition-colors" onclick="openRemoveStudent('Ethan Caldwell')" title="Keluarkan dari Batch" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Annette Black -->
+<tr class="hover:bg-surface-canvas transition-colors">
+<td class="py-4 px-space-lg">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm" data-alt="Headshot portrait of Annette Black, a young Asian female product manager student with tied-back dark hair, smart casual blazer, warm and confident smile in daylight studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwelOaPFMFWgEQAUDIjlv9vbNtBAsycXQjAtJOX1WenOnB8OQkm5hCe3JFaCOP32qX39ifPus5YXN3wO9ceOGzijzruVugBJYPQXLHz39IimwSJnw3PZjKKp4IgeWM1S-CALQYcQq-Tlb3D1CIIFGoiHyWBJEylQyCk9YTv21WtTcySLHjYJ0Flup1QU8ZNhsKfO10y7l51R4enfPBgroIvIFccSk_LkOcqfGjTV8v7IQjv90Ukgrw"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary truncate">Annette Black</span>
+<span class="font-body-sm text-body-sm text-text-muted truncate">annette.black@techmail.id</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-lg">
+<span class="font-body-md text-body-md text-text-primary">Product Management</span>
+</td>
+<td class="py-4 px-space-lg">
+<span class="px-2.5 py-1 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm">
+                PM Batch 15
+              </span>
+</td>
+<td class="py-4 px-space-lg">
+<div class="flex flex-col gap-1.5 w-44">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-text-muted">Phase 1: <strong class="text-text-primary">10/10</strong></span>
+<span class="text-status-accepted-text font-semibold">100%</span>
+</div>
+<div class="w-full bg-surface-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-status-accepted-border h-full rounded-full" style="width: 100%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mt-0.5">
+<span class="text-text-muted">Phase 2: <strong class="text-text-primary">4/10</strong></span>
+<span class="text-primary-container font-semibold">40%</span>
+</div>
+<div class="w-full bg-surface-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-lg text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-status-accepted-bg text-status-accepted-text font-label-sm text-label-sm">
+                Completed P1
+              </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-primary-container/20 text-primary hover:text-on-primary-container flex items-center justify-center transition-colors" title="Lihat Progress JAT" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-status-declined-bg text-text-muted hover:text-status-declined-text flex items-center justify-center transition-colors" onclick="openRemoveStudent('Annette Black')" title="Keluarkan dari Batch" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Meta -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-sm text-body-sm font-body-sm text-text-muted">
+<div>
+        Menampilkan <span class="font-semibold text-text-primary">1-3</span> dari <span class="font-semibold text-text-primary">124</span> Mahasiswa
+      </div>
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-muted flex items-center justify-center hover:bg-surface-canvas hover:text-text-primary transition-colors disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center shadow-sm" type="button">
+          1
+        </button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-secondary font-label-md text-label-md flex items-center justify-center hover:bg-surface-canvas hover:text-text-primary transition-colors" type="button">
+          2
+        </button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-secondary font-label-md text-label-md flex items-center justify-center hover:bg-surface-canvas hover:text-text-primary transition-colors" type="button">
+          3
+        </button>
+<span class="px-1 text-text-muted">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-secondary font-label-md text-label-md flex items-center justify-center hover:bg-surface-canvas hover:text-text-primary transition-colors" type="button">
+          42
+        </button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-text-secondary flex items-center justify-center hover:bg-surface-canvas hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL 1: Tambah Student Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4" id="addStudentModal">
+<div class="bg-surface-card rounded-2xl w-full max-w-lg shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="px-space-xl py-space-lg flex items-center justify-between bg-surface-subtle/50">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container/15 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">person_add</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-text-primary">Tambah Student ke JAT Batch 1</h3>
+<p class="font-body-sm text-body-sm text-text-muted">Pilih mahasiswa dari database bootcamp</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-canvas text-text-muted hover:text-text-primary flex items-center justify-center transition-colors" id="closeAddModal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-xl flex flex-col gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1.5">Program Bootcamp</label>
+<select class="w-full h-11 px-3.5 rounded-lg bg-surface-canvas font-body-md text-body-md text-text-primary focus:outline-none focus:bg-surface-card shadow-inner">
+<option>UI/UX Design Bootcamp</option>
+<option>Product Management Bootcamp</option>
+<option>Digital Marketing Bootcamp</option>
+<option>Data Science Bootcamp</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1.5">Batch Asal</label>
+<select class="w-full h-11 px-3.5 rounded-lg bg-surface-canvas font-body-md text-body-md text-text-primary focus:outline-none focus:bg-surface-card shadow-inner">
+<option>Batch 22 (Completed)</option>
+<option>Batch 21 (Completed)</option>
+<option>Batch 20 (Completed)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1.5">Pilih Mahasiswa</label>
+<div class="relative">
+<input class="w-full h-11 pl-10 pr-3.5 rounded-lg bg-surface-canvas font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:bg-surface-card shadow-inner" placeholder="Ketik nama atau email mahasiswa..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+</div>
+<div class="mt-2 p-2 bg-surface-canvas rounded-lg flex flex-col gap-1 max-h-36 overflow-y-auto">
+<label class="flex items-center gap-2 p-2 hover:bg-surface-card rounded cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-primary">Devon Lane (devon.lane@gmail.com)</span>
+</label>
+<label class="flex items-center gap-2 p-2 hover:bg-surface-card rounded cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-primary">Bessie Cooper (bessie.c@gmail.com)</span>
+</label>
+<label class="flex items-center gap-2 p-2 hover:bg-surface-card rounded cursor-pointer transition-colors">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-primary">Courtney Henry (courtney.h@gmail.com)</span>
+</label>
+</div>
+</div>
+<div class="p-3 bg-secondary-container/20 rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-[20px] shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-secondary-container">Mahasiswa yang didaftarkan akan otomatis mendapatkan tracker Phase 1 dan Phase 2 pada dashboard karir mereka.</p>
+</div>
+</div>
+<div class="px-space-xl py-space-md bg-surface-subtle/50 flex items-center justify-end gap-space-sm">
+<button class="px-4 py-2 rounded-lg bg-surface-card text-text-secondary hover:bg-surface-canvas font-label-md text-label-md transition-colors shadow-sm" id="cancelAddModal" type="button">
+          Batal
+        </button>
+<button class="px-5 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors shadow-sm" id="saveAddModal" type="button">
+          Tambahkan Mahasiswa
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL 2: Hapus Batch Confirmation Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4" id="deleteBatchModal">
+<div class="bg-surface-card rounded-2xl w-full max-w-md shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="p-space-xl flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-full bg-status-declined-bg text-status-declined-text flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[32px]">warning</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-1">Hapus JAT Batch 1?</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-space-lg">
+          Tindakan ini tidak dapat dibatalkan. Menghapus batch ini akan mencabut seluruh assignment progres lamaran bagi <strong class="text-text-primary">124 student</strong> yang terdaftar.
+        </p>
+<div class="flex items-center gap-space-sm w-full">
+<button class="w-1/2 py-2.5 rounded-lg bg-surface-subtle hover:bg-surface-canvas text-text-secondary font-label-md text-label-md transition-colors" id="cancelDeleteModal" type="button">
+            Batalkan
+          </button>
+<button class="w-1/2 py-2.5 rounded-lg bg-status-declined-bg text-status-declined-text hover:bg-error-container hover:text-on-error-container font-label-md text-label-md transition-colors shadow-sm" id="confirmDeleteModal" type="button">
+            Ya, Hapus Batch
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Toast Indicator (Hidden by default) -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl items-center gap-3 animate-in fade-in slide-in-from-bottom-4" id="notificationToast">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toastMessage">Aksi berhasil diproses!</span>
+</div>
+</div>
+<script>
+  (function() {
+    // Modal Selectors
+    const addModal = document.getElementById('addStudentModal');
+    const openAddBtn = document.getElementById('openAddModal');
+    const closeAddBtn = document.getElementById('closeAddModal');
+    const cancelAddBtn = document.getElementById('cancelAddModal');
+    const saveAddBtn = document.getElementById('saveAddModal');
+
+    const deleteModal = document.getElementById('deleteBatchModal');
+    const openDeleteBtn = document.getElementById('openDeleteBatchModal');
+    const cancelDeleteBtn = document.getElementById('cancelDeleteModal');
+    const confirmDeleteBtn = document.getElementById('confirmDeleteModal');
+
+    const recalcBtn = document.getElementById('recalcBtn');
+    const toast = document.getElementById('notificationToast');
+    const toastMsg = document.getElementById('toastMessage');
+
+    function showToast(msg) {
+      toastMsg.textContent = msg;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3500);
+    }
+
+    // Add Modal Handlers
+    openAddBtn?.addEventListener('click', () => {
+      addModal.classList.remove('hidden');
+      addModal.classList.add('flex');
+    });
+
+    const hideAddModal = () => {
+      addModal.classList.add('hidden');
+      addModal.classList.remove('flex');
+    };
+
+    closeAddBtn?.addEventListener('click', hideAddModal);
+    cancelAddBtn?.addEventListener('click', hideAddModal);
+    saveAddBtn?.addEventListener('click', () => {
+      hideAddModal();
+      showToast('2 Mahasiswa berhasil ditambahkan ke JAT Batch 1');
+    });
+
+    // Delete Modal Handlers
+    openDeleteBtn?.addEventListener('click', () => {
+      deleteModal.classList.remove('hidden');
+      deleteModal.classList.add('flex');
+    });
+
+    const hideDeleteModal = () => {
+      deleteModal.classList.add('hidden');
+      deleteModal.classList.remove('flex');
+    };
+
+    cancelDeleteBtn?.addEventListener('click', hideDeleteModal);
+    confirmDeleteBtn?.addEventListener('click', () => {
+      hideDeleteModal();
+      showToast('Permintaan hapus JAT Batch 1 telah diajukan');
+    });
+
+    // Recalculate Handlers
+    recalcBtn?.addEventListener('click', () => {
+      recalcBtn.classList.add('opacity-75', 'pointer-events-none');
+      const icon = recalcBtn.querySelector('.material-symbols-outlined');
+      if (icon) icon.classList.add('animate-spin');
+      
+      setTimeout(() => {
+        recalcBtn.classList.remove('opacity-75', 'pointer-events-none');
+        if (icon) icon.classList.remove('animate-spin');
+        showToast('Kalkulasi ulang progres seluruh siswa selesai disinkronkan!');
+      }, 1200);
+    });
+
+    // Single student removal mockup
+    window.openRemoveStudent = function(studentName) {
+      if (confirm(`Apakah Anda yakin ingin mengeluarkan ${studentName} dari batch ini?`)) {
+        showToast(`${studentName} telah dikeluarkan dari batch`);
+      }
+    };
+
+    // Client-side quick filter table rows
+    const searchInput = document.getElementById('searchInput');
+    const tableBody = document.getElementById('studentTableBody');
+    searchInput?.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const rows = tableBody.querySelectorAll('tr');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+  })();
+</script></div></main></div></body></html>

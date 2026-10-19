@@ -1,0 +1,538 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"status-accepted-bg":"#ECFDF5","secondary-fixed-dim":"#9eceda","error-container":"#ffdad6","text-muted":"#64748B","outline":"#6d797d","tertiary-container":"#8aad4c","on-tertiary-fixed-variant":"#354e00","on-primary-fixed":"#001f25","on-primary":"#ffffff","surface-card":"#FFFFFF","primary":"#006878","surface":"#f9f9ff","surface-container-highest":"#d8e3fb","background":"#f9f9ff","status-waiting-border":"#F59E0B","surface-bright":"#f9f9ff","tertiary":"#496809","status-waiting-text":"#B45309","inverse-on-surface":"#ecf1ff","primary-fixed-dim":"#52d7f2","status-declined-border":"#EF4444","on-secondary-fixed-variant":"#1a4d57","primary-container":"#0bb1cb","on-primary-container":"#003e49","tertiary-fixed-dim":"#aed36c","border-subtle":"#E2E8F0","surface-canvas":"#F8FAFC","border-strong":"#CBD5E1","surface-container-high":"#dee8ff","secondary-fixed":"#baebf7","on-secondary-container":"#3a6974","on-primary-fixed-variant":"#004e5b","status-waiting-bg":"#FFFBEB","on-tertiary":"#ffffff","on-background":"#111c2d","on-error-container":"#93000a","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary-fixed":"#131f00","primary-fixed":"#a7eeff","secondary":"#356570","on-surface-variant":"#3d494c","inverse-primary":"#52d7f2","surface-variant":"#d8e3fb","surface-container":"#e7eeff","on-error":"#ffffff","status-declined-bg":"#FEF2F2","text-primary":"#1E293B","status-declined-text":"#B91C1C","brand-accent-sky":"#0EA5E9","status-accepted-text":"#047857","surface-tint":"#006878","outline-variant":"#bcc9cc","surface-container-low":"#f0f3ff","status-accepted-border":"#10B981","on-surface":"#111c2d","secondary-container":"#b7e8f4","text-secondary":"#475569","surface-subtle":"#F1F5F9","tertiary-fixed":"#c9f085","inverse-surface":"#263143","on-tertiary-container":"#293e00","error":"#ba1a1a","surface-dim":"#cfdaf2","on-secondary-fixed":"#001f25","brand-accent-teal":"#00A5B5"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"0.75rem","space-xs":"0.25rem","gutter":"1rem","margin-lg":"2rem","gutter-lg":"1.5rem","space-3xl":"2.5rem","margin":"1rem","space-2xl":"2rem","space-xl":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-md":"1.5rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"title-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col h-full overflow-hidden"><div class="h-16 px-space-xl flex items-center gap-space-sm shrink-0"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">school</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">dibimbing<span class="text-primary-container">.</span></span><span class="font-label-sm text-label-sm text-text-muted uppercase">Talent Admin</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="font-label-md text-label-md">Admission</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-label-md text-label-md">Bootcamp</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="payment-mentor" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Payment Mentor</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-bootcamp-students" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">All Bootcamp Student</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-label-md text-label-md">Talent Support</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="all-hiring-partners" href="#"><span class="material-symbols-outlined text-[20px]">handshake</span><span class="font-label-md text-label-md">All Hiring Partner</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="talent-recommendations" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Talent Recommend</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="student-job-preferences" href="#"><span class="material-symbols-outlined text-[20px]">manage_search</span><span class="font-label-md text-label-md">Student Job Preference</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="job-application-tracking" href="#"><span class="material-symbols-outlined text-[20px]">business_center</span><span class="font-label-md text-label-md">Job Application Tracking</span></a><div class="flex flex-col"><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors text-left" type="button"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">domain</span><span class="font-label-md text-label-md">Job Portal</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div></nav></div><div class="p-space-md border-t border-border-subtle shrink-0 flex items-center justify-between"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><div class="flex items-center gap-space-xs"><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><button class="p-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-card/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md max-w-md w-full"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-text-muted text-[18px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-canvas rounded-lg text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container/20 border border-border-subtle" placeholder="Search applicants, batch, or company..." type="text"></div></div><div class="flex items-center gap-space-lg"><button class="relative p-space-xs rounded-full text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-brand-accent-teal"></span></button><div class="h-6 w-[1px] bg-border-subtle"></div><div class="flex items-center gap-space-md cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-text-primary leading-none">Admin Dibimbing</span><span class="font-label-sm text-label-sm text-text-muted leading-tight">Talent Support</span></div><span class="material-symbols-outlined text-text-muted text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-surface-canvas min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs mb-space-md">
+<a class="font-label-md text-label-md text-primary-container hover:text-primary transition-colors flex items-center gap-1" data-path="job-application-tracking" href="#">
+<span>Job Application Tracking (JAT)</span>
+</a>
+<span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span>
+<span class="font-label-md text-label-md text-text-muted">Create Batch JAT</span>
+</nav>
+<!-- Page Title Header & Helper Metadata -->
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-space-md mb-space-xl">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Create Batch JAT</h1>
+<p class="font-body-md text-body-md text-text-muted mt-0.5">Konfigurasikan target aplikasi pekerjaan dan jadwal per fase evaluasi peserta bootcamp.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start sm:self-auto">
+<div class="px-space-md py-1.5 rounded-full bg-surface-card shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-accepted-border animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Status: Draft Setup</span>
+</div>
+</div>
+</div>
+<!-- Operational Impact Notice -->
+<div class="mb-space-xl p-space-md rounded-xl bg-status-waiting-bg shadow-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-status-waiting-border/10 flex items-center justify-center shrink-0 text-status-waiting-text mt-0.5">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-title-sm text-title-sm text-status-waiting-text">Perhatian Konfigurasi Target &amp; Periode</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Mengubah rentang tanggal atau target lamaran pada batch yang berjalan akan langsung memperbarui kalkulasi persentase kelulusan portofolio dan dashboard monitoring talent. Pastikan target realistis sebelum mengaktifkan batch.
+      </p>
+</div>
+<button class="text-text-muted hover:text-text-primary p-1" onclick="this.closest('.flex').remove()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Main Configuration Form -->
+<form class="flex flex-col gap-space-xl" id="batch-form" onsubmit="event.preventDefault(); openConfirmModal();">
+<!-- Top Metadata Section: 2 Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl bg-surface-card p-space-xl rounded-xl shadow-sm">
+<!-- Program Name -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-title-sm text-title-sm text-text-primary flex items-center justify-between" for="program-name">
+<span>Program Name <span class="text-status-declined-border">*</span></span>
+<span class="font-body-sm text-body-sm text-text-muted font-normal">Wajib diisi</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 px-space-md bg-surface-canvas rounded-lg font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:bg-surface-card transition-all" id="program-name" placeholder="e.g. UI/UX Design Intensive" required="" type="text" value="UI/UX Design Intensive">
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Nama program kurikulum utama yang terafiliasi dengan JAT ini.</p>
+</div>
+<!-- Bootcamp Batch Multi-select -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-title-sm text-title-sm text-text-primary flex items-center justify-between" for="batch-select-input">
+<span>Pilih Batch Bootcamp (Bisa pilih &gt; 1) <span class="text-status-declined-border">*</span></span>
+<span class="font-label-sm text-label-sm text-primary-container">Multi-Select</span>
+</label>
+<!-- Interactive Multi-Select Simulation -->
+<div class="min-h-11 p-1.5 bg-surface-canvas rounded-lg flex flex-wrap items-center gap-1.5 focus-within:bg-surface-card transition-all">
+<!-- Tag 1 -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-container font-label-md text-label-md">
+<span>UI/UX Batch 17</span>
+<button class="hover:text-status-declined-text flex items-center justify-center" onclick="this.parentElement.remove()" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<!-- Tag 2 -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-container font-label-md text-label-md">
+<span>UI/UX Batch 18</span>
+<button class="hover:text-status-declined-text flex items-center justify-center" onclick="this.parentElement.remove()" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<input class="flex-1 min-w-[140px] h-8 bg-transparent px-2 font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none" id="batch-select-input" placeholder="Ketik batch tambahan..." type="text">
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Pilih satu atau beberapa batch yang berjalan bersamaan di fase ini.</p>
+</div>
+</div>
+<!-- Phase 1 & Phase 2 Containers Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-space-xl items-start">
+<!-- ================= PHASE 1 CONTAINER ================= -->
+<div class="bg-surface-card rounded-xl shadow-sm p-space-xl flex flex-col gap-space-xl">
+<div class="flex items-center justify-between pb-space-sm bg-surface-subtle -mx-space-xl -mt-space-xl p-space-xl rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-md text-headline-md text-text-primary font-bold">Phase 1</h2>
+</div>
+<span class="px-space-md py-1 rounded-full bg-status-accepted-bg font-label-sm text-label-sm text-status-accepted-text font-semibold">
+            Primary Stage
+          </span>
+</div>
+<div class="flex flex-col gap-space-xl" id="phase1-ranges">
+<!-- Phase 1 : Date Range 1 -->
+<div class="p-space-lg rounded-xl bg-surface-canvas flex flex-col gap-space-md relative">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-text-primary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">event_note</span>
+                Date Range 1
+              </span>
+<span class="font-label-sm text-label-sm text-text-muted">Mandatory Period</span>
+</div>
+<!-- Date Pickers Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-text-secondary">Start Date</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_today</span>
+<input class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none focus:ring-2 focus:ring-primary-container/20 transition-all" type="date" value="2025-03-01">
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-text-secondary">End Date</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_month</span>
+<input class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none focus:ring-2 focus:ring-primary-container/20 transition-all" type="date" value="2025-03-15">
+</div>
+</div>
+</div>
+<!-- Target Job Level Row 1 -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<label class="font-label-md text-label-md text-text-secondary">Target Job Level</label>
+<div class="flex flex-col gap-2" id="phase1-targets-range1">
+<div class="flex items-center gap-2">
+<div class="w-1/2 relative">
+<select class="w-full h-10 px-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none appearance-none cursor-pointer">
+<option selected="">Junior Level</option>
+<option>Mid Level</option>
+<option>Senior Level</option>
+<option>Internship</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-text-muted text-[18px] pointer-events-none">unfold_more</span>
+</div>
+<div class="w-1/2 flex items-center bg-surface-card rounded-lg overflow-hidden h-10">
+<input class="w-16 h-full px-3 text-center font-title-sm text-title-sm text-text-primary focus:outline-none bg-transparent" min="1" placeholder="e.g. 5" type="number" value="5">
+<span class="flex-1 px-2.5 py-1.5 bg-surface-subtle text-text-secondary font-label-md text-label-md text-center shrink-0">
+                      Job Applied
+                    </span>
+</div>
+<button class="w-10 h-10 shrink-0 rounded-lg flex items-center justify-center text-status-declined-border hover:bg-status-declined-bg transition-colors" onclick="if(document.querySelectorAll('#phase1-targets-range1 &gt; div').length &gt; 1) this.closest('.flex').remove();" title="Delete Level" type="button">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Add Target Job Level Link -->
+<button class="self-start mt-1 inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary transition-colors py-1 px-1.5 rounded" onclick="addTargetRow('phase1-targets-range1')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Target Job Level</span>
+</button>
+</div>
+</div>
+<!-- Phase 1 : Date Range 2 -->
+<div class="p-space-lg rounded-xl bg-surface-canvas flex flex-col gap-space-md relative" id="range-block-p1-r2">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-text-primary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">event_note</span>
+                Date Range 2
+              </span>
+<button class="w-8 h-8 rounded-md flex items-center justify-center text-status-declined-border hover:bg-status-declined-bg transition-colors" onclick="document.getElementById('range-block-p1-r2').remove()" title="Hapus Date Range 2" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Date Pickers Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-text-secondary">Start Date</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_today</span>
+<input class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none transition-all" type="date" value="2025-03-16">
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-text-secondary">End Date</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_month</span>
+<input class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none transition-all" type="date" value="2025-03-31">
+</div>
+</div>
+</div>
+<!-- Target Job Level Rows -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<label class="font-label-md text-label-md text-text-secondary">Target Job Level</label>
+<div class="flex flex-col gap-2" id="phase1-targets-range2">
+<div class="flex items-center gap-2">
+<div class="w-1/2 relative">
+<select class="w-full h-10 px-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none appearance-none cursor-pointer">
+<option>Junior Level</option>
+<option selected="">Mid Level</option>
+<option>Senior Level</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-text-muted text-[18px] pointer-events-none">unfold_more</span>
+</div>
+<div class="w-1/2 flex items-center bg-surface-card rounded-lg overflow-hidden h-10">
+<input class="w-16 h-full px-3 text-center font-title-sm text-title-sm text-text-primary focus:outline-none bg-transparent" min="1" placeholder="e.g. 8" type="number" value="8">
+<span class="flex-1 px-2.5 py-1.5 bg-surface-subtle text-text-secondary font-label-md text-label-md text-center shrink-0">
+                      Job Applied
+                    </span>
+</div>
+<button class="w-10 h-10 shrink-0 rounded-lg flex items-center justify-center text-status-declined-border hover:bg-status-declined-bg transition-colors" onclick="if(document.querySelectorAll('#phase1-targets-range2 &gt; div').length &gt; 1) this.closest('.flex').remove();" title="Delete Level" type="button">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Add Target Job Level Link -->
+<button class="self-start mt-1 inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary transition-colors py-1 px-1.5 rounded" onclick="addTargetRow('phase1-targets-range2')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Target Job Level</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Date Range Full Width Outline Button -->
+<button class="w-full py-2.5 px-space-md rounded-lg font-title-sm text-title-sm text-primary-container bg-surface-canvas hover:bg-surface-subtle transition-all flex items-center justify-center gap-2" onclick="addDateRange('phase1-ranges')" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add Date Range</span>
+</button>
+</div>
+<!-- ================= PHASE 2 CONTAINER (OPTIONAL) ================= -->
+<div class="bg-surface-card rounded-xl shadow-sm p-space-xl flex flex-col gap-space-xl">
+<div class="flex items-center justify-between pb-space-sm bg-surface-subtle -mx-space-xl -mt-space-xl p-space-xl rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<h2 class="font-headline-md text-headline-md text-text-primary font-bold">Phase 2 (Opsional)</h2>
+</div>
+<span class="px-space-md py-1 rounded-full bg-surface-canvas font-label-sm text-label-sm text-text-secondary">
+            Lanjutan Akselerasi
+          </span>
+</div>
+<div class="flex flex-col gap-space-xl" id="phase2-ranges">
+<!-- Phase 2 : Date Range 1 -->
+<div class="p-space-lg rounded-xl bg-surface-canvas flex flex-col gap-space-md relative">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-text-primary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">event_note</span>
+                Date Range 1
+              </span>
+<span class="font-label-sm text-label-sm text-text-muted">Opsional</span>
+</div>
+<!-- Date Pickers Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-text-secondary">Start Date</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_today</span>
+<input class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none transition-all" type="date" value="2025-04-01">
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-text-secondary">End Date</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_month</span>
+<input class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none transition-all" type="date" value="2025-04-20">
+</div>
+</div>
+</div>
+<!-- Target Job Level Rows -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<label class="font-label-md text-label-md text-text-secondary">Target Job Level</label>
+<div class="flex flex-col gap-2" id="phase2-targets-range1">
+<div class="flex items-center gap-2">
+<div class="w-1/2 relative">
+<select class="w-full h-10 px-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none appearance-none cursor-pointer">
+<option selected="">Job Level</option>
+<option>Junior Level</option>
+<option>Mid Level</option>
+<option>Senior Level</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-text-muted text-[18px] pointer-events-none">unfold_more</span>
+</div>
+<div class="w-1/2 flex items-center bg-surface-card rounded-lg overflow-hidden h-10">
+<input class="w-16 h-full px-3 text-center font-title-sm text-title-sm text-text-primary focus:outline-none bg-transparent" min="1" placeholder="e.g. 1, 2, 5" type="number">
+<span class="flex-1 px-2.5 py-1.5 bg-surface-subtle text-text-secondary font-label-md text-label-md text-center shrink-0">
+                      Job Applied
+                    </span>
+</div>
+<button class="w-10 h-10 shrink-0 rounded-lg flex items-center justify-center text-status-declined-border hover:bg-status-declined-bg transition-colors" onclick="if(document.querySelectorAll('#phase2-targets-range1 &gt; div').length &gt; 1) this.closest('.flex').remove();" title="Delete Level" type="button">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Add Target Job Level Link -->
+<button class="self-start mt-1 inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary transition-colors py-1 px-1.5 rounded" onclick="addTargetRow('phase2-targets-range1')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Target Job Level</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Date Range Full Width Button -->
+<button class="w-full py-2.5 px-space-md rounded-lg font-title-sm text-title-sm text-primary-container bg-surface-canvas hover:bg-surface-subtle transition-all flex items-center justify-center gap-2" onclick="addDateRange('phase2-ranges')" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add Date Range</span>
+</button>
+</div>
+</div>
+<!-- Quick Analytics / Target Projection Preview Widget -->
+<div class="bg-surface-card rounded-xl shadow-sm p-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[28px]">speed</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-text-primary">Ringkasan Beban Lamaran</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Total target komitmen per student untuk Phase 1: <strong>13 Lamaran Kerja</strong></p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch sm:self-auto justify-end">
+<span class="px-3 py-1 bg-status-accepted-bg text-status-accepted-text font-label-sm text-label-sm rounded-full">
+          Target Seimbang
+        </span>
+</div>
+</div>
+<!-- Form Footer Actions (Bottom Right aligned) -->
+<div class="flex items-center justify-end gap-space-md pt-space-lg pb-space-3xl">
+<button class="h-11 px-6 rounded-lg font-title-sm text-title-sm text-text-secondary bg-surface-card hover:bg-surface-subtle transition-colors shadow-sm" onclick="window.history.back()" type="button">
+        Batal
+      </button>
+<button class="h-11 px-8 rounded-lg font-title-sm text-title-sm text-on-primary bg-primary-container hover:bg-primary transition-all shadow-md hover:shadow-lg flex items-center gap-2" type="submit">
+<span>Next</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Interactive Impact Confirmation Dialog / Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-background/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200" id="confirm-modal">
+<div class="bg-surface-card rounded-xl shadow-2xl max-w-lg w-full p-space-xl flex flex-col gap-space-lg transform scale-95 transition-transform duration-200" id="modal-content">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-status-waiting-bg text-status-waiting-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">published_with_changes</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold">Simpan &amp; Terapkan Jadwal Batch?</h3>
+<p class="font-body-md text-body-md text-text-secondary mt-1">
+            Anda akan mendaftarkan konfigurasi JAT baru untuk program <strong>UI/UX Design Intensive</strong> dengan 2 batch aktif terafiliasi.
+          </p>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-canvas flex flex-col gap-2">
+<div class="flex justify-between items-center font-body-sm text-body-sm">
+<span class="text-text-muted">Total Periode:</span>
+<span class="font-semibold text-text-primary">2 Rentang Waktu (Phase 1)</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm">
+<span class="text-text-muted">Target Kelulusan:</span>
+<span class="font-semibold text-primary">13 Lamaran Kerja</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm">
+<span class="text-text-muted">Fase 2 Status:</span>
+<span class="font-semibold text-text-secondary">Draf Aktif (Opsional)</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-md pt-2">
+<button class="h-10 px-5 rounded-lg font-title-sm text-title-sm text-text-secondary hover:bg-surface-subtle transition-colors" onclick="closeConfirmModal()" type="button">
+          Periksa Kembali
+        </button>
+<button class="h-10 px-6 rounded-lg font-title-sm text-title-sm text-on-primary bg-primary-container hover:bg-primary transition-all shadow-md" onclick="confirmAndSave()" type="button">
+          Simpan Batch JAT
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function openConfirmModal() {
+    const modal = document.getElementById('confirm-modal');
+    const content = document.getElementById('modal-content');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.classList.remove('opacity-0');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+    }, 10);
+  }
+
+  function closeConfirmModal() {
+    const modal = document.getElementById('confirm-modal');
+    const content = document.getElementById('modal-content');
+    modal.classList.add('opacity-0');
+    content.classList.remove('scale-100');
+    content.classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 200);
+  }
+
+  function confirmAndSave() {
+    closeConfirmModal();
+    // Feedback toast or redirect simulation
+    const alertBox = document.createElement('div');
+    alertBox.className = 'fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-6 py-3 rounded-lg shadow-xl flex items-center gap-2 transform translate-y-2 opacity-0 transition-all duration-300';
+    alertBox.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span class="font-title-sm text-title-sm">Batch JAT berhasil disimpan dan dipublikasikan!</span>';
+    document.body.appendChild(alertBox);
+    setTimeout(() => {
+      alertBox.classList.remove('translate-y-2', 'opacity-0');
+    }, 50);
+    setTimeout(() => {
+      alertBox.classList.add('opacity-0');
+      setTimeout(() => alertBox.remove(), 300);
+    }, 3000);
+  }
+
+  function addTargetRow(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    const row = document.createElement('div');
+    row.className = 'flex items-center gap-2 animate-fadeIn';
+    row.innerHTML = `
+      <div class="w-1/2 relative">
+        <select class="w-full h-10 px-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none appearance-none cursor-pointer">
+          <option>Junior Level</option>
+          <option>Mid Level</option>
+          <option selected>Senior Level</option>
+          <option>Internship</option>
+        </select>
+        <span class="material-symbols-outlined absolute right-2.5 top-2.5 text-text-muted text-[18px] pointer-events-none">unfold_more</span>
+      </div>
+      <div class="w-1/2 flex items-center bg-surface-card rounded-lg overflow-hidden h-10">
+        <input 
+          type="number" 
+          min="1" 
+          placeholder="e.g. 3" 
+          value="3"
+          class="w-16 h-full px-3 text-center font-title-sm text-title-sm text-text-primary focus:outline-none bg-transparent"
+        />
+        <span class="flex-1 px-2.5 py-1.5 bg-surface-subtle text-text-secondary font-label-md text-label-md text-center shrink-0">
+          Job Applied
+        </span>
+      </div>
+      <button 
+        type="button" 
+        title="Delete Level" 
+        class="w-10 h-10 shrink-0 rounded-lg flex items-center justify-center text-status-declined-border hover:bg-status-declined-bg transition-colors"
+        onclick="this.closest('.flex').remove()"
+      >
+        <span class="material-symbols-outlined text-[20px]">delete_outline</span>
+      </button>
+    `;
+    container.appendChild(row);
+  }
+
+  function addDateRange(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const count = container.children.length + 1;
+    const targetGroupId = `${containerId}-targets-r${count}`;
+
+    const rangeBlock = document.createElement('div');
+    rangeBlock.className = 'p-space-lg rounded-xl bg-surface-canvas flex flex-col gap-space-md relative';
+    rangeBlock.innerHTML = `
+      <div class="flex items-center justify-between">
+        <span class="font-title-sm text-title-sm text-text-primary font-semibold flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px] text-primary-container">event_note</span>
+          Date Range ${count}
+        </span>
+        <button 
+          type="button" 
+          class="w-8 h-8 rounded-md flex items-center justify-center text-status-declined-border hover:bg-status-declined-bg transition-colors"
+          title="Hapus Date Range"
+          onclick="this.closest('.p-space-lg').remove()"
+        >
+          <span class="material-symbols-outlined text-[18px]">delete</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-md text-label-md text-text-secondary">Start Date</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_today</span>
+            <input 
+              type="date" 
+              class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none transition-all"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-md text-label-md text-text-secondary">End Date</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">calendar_month</span>
+            <input 
+              type="date" 
+              class="w-full h-10 pl-10 pr-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none transition-all"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-space-xs mt-space-xs">
+        <label class="font-label-md text-label-md text-text-secondary">Target Job Level</label>
+        <div class="flex flex-col gap-2" id="${targetGroupId}">
+          <div class="flex items-center gap-2">
+            <div class="w-1/2 relative">
+              <select class="w-full h-10 px-3 bg-surface-card rounded-lg font-body-md text-body-md text-text-primary focus:outline-none appearance-none cursor-pointer">
+                <option>Junior Level</option>
+                <option>Mid Level</option>
+                <option>Senior Level</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-2.5 top-2.5 text-text-muted text-[18px] pointer-events-none">unfold_more</span>
+            </div>
+            <div class="w-1/2 flex items-center bg-surface-card rounded-lg overflow-hidden h-10">
+              <input 
+                type="number" 
+                min="1" 
+                placeholder="e.g. 5" 
+                value="5"
+                class="w-16 h-full px-3 text-center font-title-sm text-title-sm text-text-primary focus:outline-none bg-transparent"
+              />
+              <span class="flex-1 px-2.5 py-1.5 bg-surface-subtle text-text-secondary font-label-md text-label-md text-center shrink-0">
+                Job Applied
+              </span>
+            </div>
+            <button 
+              type="button" 
+              title="Delete Level" 
+              class="w-10 h-10 shrink-0 rounded-lg flex items-center justify-center text-status-declined-border hover:bg-status-declined-bg transition-colors"
+              onclick="if(document.querySelectorAll('#${targetGroupId} > div').length > 1) this.closest('.flex').remove();"
+            >
+              <span class="material-symbols-outlined text-[20px]">delete_outline</span>
+            </button>
+          </div>
+        </div>
+
+        <button 
+          type="button" 
+          onclick="addTargetRow('${targetGroupId}')" 
+          class="self-start mt-1 inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary transition-colors py-1 px-1.5 rounded"
+        >
+          <span class="material-symbols-outlined text-[16px]">add</span>
+          <span>Add Target Job Level</span>
+        </button>
+      </div>
+    `;
+    container.appendChild(rangeBlock);
+  }
+</script></div></main></div></body></html>

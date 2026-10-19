@@ -1,0 +1,208 @@
+[
+  {
+    "Id": "918596734f4148218b40ed1af860711d",
+    "Title": "Student - JAT Batch Detail & Tracking (Enhanced)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\student-jat-batch-detail-tracking-enhanced-91859673.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\student-jat-batch-detail-tracking-enhanced-91859673.png"
+  },
+  {
+    "Id": "b490bfff7a0946d1af08c7c70b663597",
+    "Title": "Admin - JAT HITL Evidence Review & Inspector",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-hitl-evidence-review-inspector-b490bfff.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-hitl-evidence-review-inspector-b490bfff.png"
+  },
+  {
+    "Id": "a8dababfbebc443fb506c3f6c32e4033",
+    "Title": "Admin - JAT Batch Detail (Modal Tambah Student ke Batch)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-batch-detail-modal-tambah-student-ke-batch-a8dababf.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-batch-detail-modal-tambah-student-ke-batch-a8dababf.png"
+  },
+  {
+    "Id": "2bbe1483ef6c4cd6bc2ff37419f3f615",
+    "Title": "Admin - Create Batch JAT (Pop-up Pilih Tanggal)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-create-batch-jat-pop-up-pilih-tanggal-2bbe1483.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-create-batch-jat-pop-up-pilih-tanggal-2bbe1483.png"
+  },
+  {
+    "Id": "d33b62211dda44a6854f4ce67c93d736",
+    "Title": "Admin - JAT Batch Detail (Pop-up Filter Student Participant)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-batch-detail-pop-up-filter-student-participant-d33b6221.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-batch-detail-pop-up-filter-student-participant-d33b6221.png"
+  },
+  {
+    "Id": "d802ee8ce2e2415fa87a2e3646b656e9",
+    "Title": "Admin - JAT Batch Detail (Empty State - Belum Ada Siswa)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-batch-detail-empty-state-belum-ada-siswa-d802ee8c.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-batch-detail-empty-state-belum-ada-siswa-d802ee8c.png"
+  },
+  {
+    "Id": "302304fd4a5b4fde9267a202d583c4bb",
+    "Title": "Admin - Student Detail (Hapus dari Batch Confirmation Modal)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-student-detail-hapus-dari-batch-confirmation-modal-302304fd.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-student-detail-hapus-dari-batch-confirmation-modal-302304fd.png"
+  },
+  {
+    "Id": "d6c30899e0fd4d739282359e056be825",
+    "Title": "JAT Technical Handoff & Specification",
+    "Type": "Doc",
+    "File": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\docs\\jat-technical-handoff-specification-d6c30899.md"
+  },
+  {
+    "Id": "4e57b4029a0a430cb5f54f6f77c2e84a",
+    "Title": "Admin - Create & Edit Batch JAT",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-create-edit-batch-jat-4e57b402.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-create-edit-batch-jat-4e57b402.png"
+  },
+  {
+    "Id": "a79e1f32e2c3499092616552697e2d9a",
+    "Title": "DESIGN.md - Job Application Tracking (JAT)",
+    "Type": "Doc",
+    "File": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\docs\\design-md-job-application-tracking-jat-a79e1f32.md"
+  },
+  {
+    "Id": "c9da5cf3b4ae45d1a606325f68619642",
+    "Title": "Admin - JAT Batch Management",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-batch-management-c9da5cf3.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-batch-management-c9da5cf3.png"
+  },
+  {
+    "Id": "42fb29a423aa479da9f7ab9548d49917",
+    "Title": "docs/SCREEN-INVENTORY.md",
+    "Type": "Doc",
+    "File": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\docs\\docs-screen-inventory-md-42fb29a4.md"
+  },
+  {
+    "Id": "384daeedae4842fba4fb6790c0e8e043",
+    "Title": "Student - JAT Add Proof of Application Drawer (Enhanced)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\student-jat-add-proof-of-application-drawer-enhanced-384daeed.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\student-jat-add-proof-of-application-drawer-enhanced-384daeed.png"
+  },
+  {
+    "Id": "7cbdaf40e2574963aeef74136ac05f21",
+    "Title": "Admin - JAT Batch Detail (Modal Tambah Student - Empty Search State)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-batch-detail-modal-tambah-student-empty-search-state-7cbdaf40.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-batch-detail-modal-tambah-student-empty-search-state-7cbdaf40.png"
+  },
+  {
+    "Id": "6f2eb1bb2f5e44248e5c823b9b55a665",
+    "Title": "Admin - Student Progress & Applied Jobs Inspection",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-student-progress-applied-jobs-inspection-6f2eb1bb.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-student-progress-applied-jobs-inspection-6f2eb1bb.png"
+  },
+  {
+    "Id": "acd1310968e246268e1d56fea1c76283",
+    "Title": "Student - JAT Delete Proof Confirmation Modal (Enhanced)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\student-jat-delete-proof-confirmation-modal-enhanced-acd13109.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\student-jat-delete-proof-confirmation-modal-enhanced-acd13109.png"
+  },
+  {
+    "Id": "cf1165af81c341fdb878b4c798a3ea15",
+    "Title": "Admin - Create Batch JAT (Confirmation Modal Dialog)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-create-batch-jat-confirmation-modal-dialog-cf1165af.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-create-batch-jat-confirmation-modal-dialog-cf1165af.png"
+  },
+  {
+    "Id": "93d2b663d8664507b2767eea7360d0b0",
+    "Title": "Admin - JAT Batch Detail & Participants",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-batch-detail-participants-93d2b663.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-batch-detail-participants-93d2b663.png"
+  },
+  {
+    "Id": "9df4e6195ef94e9d908f78483a9b9cd9",
+    "Title": "Admin - JAT Request Queue & Full Table (Enhanced)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-request-queue-full-table-enhanced-9df4e619.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-request-queue-full-table-enhanced-9df4e619.png"
+  },
+  {
+    "Id": "77e360af2adb4f1385af29ac679ffe4e",
+    "Title": "Admin - Student Detail (Filter Applied Jobs Popover)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-student-detail-filter-applied-jobs-popover-77e360af.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-student-detail-filter-applied-jobs-popover-77e360af.png"
+  },
+  {
+    "Id": "65631e2e362741c8ba23dec4f30ef906",
+    "Title": "docs/DESIGN-TO-REQUIREMENTS.md",
+    "Type": "Doc",
+    "File": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\docs\\docs-design-to-requirements-md-65631e2e.md"
+  },
+  {
+    "Id": "3d6a420507c24a7094bc7be0c2150474",
+    "Title": "Admin - JAT Request Queue Table (Bulk Action Inactive State)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-request-queue-table-bulk-action-inactive-state-3d6a4205.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-request-queue-table-bulk-action-inactive-state-3d6a4205.png"
+  },
+  {
+    "Id": "bd86c33d703d43e7898ca8ffcd0ad8b5",
+    "Title": "Admin - JAT Batch Detail (Filter Empty State - Siswa Tidak Ditemukan)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-batch-detail-filter-empty-state-siswa-tidak-ditemukan-bd86c33d.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-batch-detail-filter-empty-state-siswa-tidak-ditemukan-bd86c33d.png"
+  },
+  {
+    "Id": "b9c1ad844c6a45918cfbac6216ee351c",
+    "Title": "Admin - Create Batch JAT (Pop-up Pilih Batch Bootcamp)",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-create-batch-jat-pop-up-pilih-batch-bootcamp-b9c1ad84.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-create-batch-jat-pop-up-pilih-batch-bootcamp-b9c1ad84.png"
+  },
+  {
+    "Id": "a77fcde96d034478948b467133c09b3a",
+    "Title": "Student - JAT Batch List",
+    "Type": "Screen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\student-jat-batch-list-a77fcde9.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\student-jat-batch-list-a77fcde9.png"
+  },
+  {
+    "Id": "18b39f4786834e298d2faa8bf49e1607",
+    "Title": "Student - JAT Batch Detail & Tracking (Base)",
+    "Type": "HiddenScreen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\student-jat-batch-detail-tracking-base-18b39f47.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\student-jat-batch-detail-tracking-base-18b39f47.png"
+  },
+  {
+    "Id": "5e9e7e6185de48f99a66706087d6995c",
+    "Title": "Student - JAT Add Proof of Application Drawer (Base)",
+    "Type": "HiddenScreen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\student-jat-add-proof-of-application-drawer-base-5e9e7e61.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\student-jat-add-proof-of-application-drawer-base-5e9e7e61.png"
+  },
+  {
+    "Id": "2d36097898c1414292eb4cf45aad180c",
+    "Title": "Student - JAT Application Detail & Status Variants",
+    "Type": "HiddenScreen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\student-jat-application-detail-status-variants-2d360978.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\student-jat-application-detail-status-variants-2d360978.png"
+  },
+  {
+    "Id": "435dac5e175d420b9ca3f000366b6178",
+    "Title": "Admin - JAT HITL Evidence Review & Inspector (Base)",
+    "Type": "HiddenScreen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-hitl-evidence-review-inspector-base-435dac5e.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-hitl-evidence-review-inspector-base-435dac5e.png"
+  },
+  {
+    "Id": "7eba37d6185940ef84ffeb301794fc3a",
+    "Title": "Admin - JAT Request Queue & Filters (Base)",
+    "Type": "HiddenScreen",
+    "HtmlFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\html\\admin-jat-request-queue-filters-base-7eba37d6.html",
+    "ImgFile": "c:\\Users\\ACER\\Downloads\\PKL Journey\\jat-hybrid-idp\\design-reference\\stitch\\screens\\admin-jat-request-queue-filters-base-7eba37d6.png"
+  }
+]

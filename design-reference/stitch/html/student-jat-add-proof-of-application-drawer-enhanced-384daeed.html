@@ -1,0 +1,799 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dibimbing LMS - Add Proof of Application - JAT Batch 2</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Custom Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#E6F7F9',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              500: '#00A5B5',
+              600: '#0bb1cb',
+              teal: '#00A5B5',
+              'teal-dark': '#008b99',
+              'teal-light': '#E6F7F9'
+            },
+            primary: '#006878',
+            'primary-container': '#0bb1cb',
+            'surface-tint': '#006878',
+            'surface-card': '#FFFFFF',
+            'surface-subtle': '#F8FAFC',
+            'text-primary': '#1E293B',
+            'text-secondary': '#475569',
+            'text-muted': '#64748B',
+            'border-subtle': '#E2E8F0',
+            'status-accepted-bg': '#ECFDF5',
+            'status-accepted-text': '#047857',
+            'status-accepted-border': '#10B981',
+            'status-waiting-bg': '#FFFBEB',
+            'status-waiting-text': '#B45309',
+            'status-waiting-border': '#F59E0B',
+            'status-declined-bg': '#FEF2F2',
+            'status-declined-text': '#B91C1C',
+            'status-declined-border': '#EF4444'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<meta content="web_dashboard" name="shell-type">
+</head>
+<body class="bg-[#FAFBFC] font-sans text-slate-800 antialiased min-h-screen selection:bg-cyan-100 selection:text-cyan-800 overflow-x-hidden">
+<div class="flex min-h-screen w-full relative">
+<!-- BEGIN: Left Sidebar Navigation -->
+<aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-30" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="h-20 flex items-center px-6 gap-3" data-purpose="brand-logo">
+<div class="w-10 h-10 rounded-xl bg-[#00A5B5] flex items-center justify-center text-white shadow-sm shadow-cyan-200">
+<svg class="w-6 h-6 stroke-current fill-none stroke-2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.5 0 4.79-.92 6.56-2.45L12 12V2z"></path>
+<circle class="fill-white stroke-none" cx="12" cy="12" r="4"></circle>
+</svg>
+</div>
+<div>
+<span class="text-xl font-bold tracking-tight text-slate-900 block leading-none">Dibimbing</span>
+<span class="text-[10px] tracking-wider uppercase font-bold text-[#00A5B5] mt-1 block">Student Portal</span>
+</div>
+</div>
+<!-- Navigation Menu Items -->
+<nav class="px-3 py-2 space-y-1 text-sm font-medium" data-purpose="primary-navigation">
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+          Dashboard
+        </a>
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+          Materi
+        </a>
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">quiz</span>
+          Test
+        </a>
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">assignment</span>
+          Project
+        </a>
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">gavel</span>
+          Tata Tertib
+        </a>
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">folder_open</span>
+          Modul
+        </a>
+<!-- Talent Support Active Menu Group -->
+<div class="relative pt-1">
+<div class="flex items-center justify-between px-4 py-2 rounded-lg text-[#00A5B5] bg-[#E6F7F9]/60 font-semibold cursor-pointer">
+<div class="flex items-center gap-3.5">
+<span class="material-symbols-outlined text-xl text-[#00A5B5]">business_center</span>
+<span>Talent Support</span>
+</div>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</div>
+<!-- Submenu -->
+<div class="mt-1 ml-5 pl-4 border-l-2 border-[#00A5B5]/20 space-y-1 text-xs font-medium">
+<a class="block py-1.5 px-2 rounded text-slate-500 hover:text-slate-900 transition-colors" href="#">Layanan Talent Support</a>
+<a class="block py-1.5 px-2 rounded font-bold text-[#00A5B5] bg-[#E6F7F9] flex items-center justify-between" href="#">
+<span>Job Application Tracking</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#00A5B5]"></span>
+</a>
+<a class="block py-1.5 px-2 rounded text-slate-500 hover:text-slate-900 transition-colors" href="#">Recording Practice</a>
+<a class="block py-1.5 px-2 rounded text-slate-500 hover:text-slate-900 transition-colors" href="#">Job Connector</a>
+</div>
+</div>
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">hub</span>
+          Connection
+        </a>
+<a class="flex items-center gap-3.5 px-4 py-2.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">fact_check</span>
+          Pre-Assessment
+        </a>
+</nav>
+</div>
+<!-- Theme Mode Toggle -->
+<div class="p-6 border-t border-slate-100">
+<div class="flex items-center justify-between text-xs text-slate-600 font-medium">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-500 text-sm">light_mode</span> Light Mode
+        </span>
+<button aria-label="Toggle theme mode" class="w-11 h-6 bg-[#00A5B5] rounded-full p-0.5 flex items-center justify-end transition-colors" type="button">
+<div class="w-5 h-5 bg-white rounded-full shadow-sm"></div>
+</button>
+</div>
+</div>
+</aside>
+<!-- END: Left Sidebar Navigation -->
+<!-- BEGIN: Main Content Container -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- Top Navigation Header -->
+<header class="h-20 bg-white border-b border-slate-200/80 px-8 flex items-center justify-between sticky top-0 z-20">
+<div class="flex items-center gap-4">
+<button class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors" title="Back">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="text-base font-bold text-slate-900">UI/UX Design Batch 17</h1>
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-cyan-50 text-[#00A5B5] border border-cyan-200/60">Bootcamp</span>
+</div>
+<p class="text-xs text-slate-400">Talent Support • Career Preparation</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative w-80">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full pl-9 pr-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#00A5B5]" placeholder="Cari materi, test, project..." type="text">
+</div>
+<button aria-label="Notifications" class="relative p-2 text-slate-600 hover:text-slate-900">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+</button>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right leading-tight">
+<p class="text-sm font-bold text-slate-800">Annette Black</p>
+<p class="text-[11px] text-slate-400">Student ID: #TS-17042</p>
+</div>
+<img alt="Annette Black avatar" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARnXqqkW1qYQazAMssTOEMXJ7gvwNUFXYtyN4_oXhLb63SJHj8jMClP9Sj5qJI0Rz5nzvYp0fC31Cg9cNaKguHGpN40NZ6PhInbS6_ta4W96wrXphnHUeso2XwkgLYFz_Qp9BTwQ3duONSs90lznGylxLrjCrsMn7I5_VqIQVapVfI_yAYpfAq-5b3yJbAOouYmzL-6ZqBnq-HYkjedI3Ob8LSSvh2936XtvN2SSP37u8_CGD9qfYC">
+</div>
+</div>
+</header>
+<!-- BEGIN: Underlying Student JAT Batch Detail Dashboard (Blurs when drawer active) -->
+<main class="flex-1 p-8 max-w-7xl w-full mx-auto space-y-6">
+<!-- Breadcrumb Link -->
+<div>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-[#00A5B5] hover:text-[#008b99] transition-colors" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+          Kembali ke Daftar Batch JAT
+        </a>
+</div>
+<!-- Page Title & Header Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Job Application Tracking — Batch 2</h2>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Active Tracking
+            </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-xs text-slate-500">
+<span class="inline-flex items-center gap-1 text-[#00A5B5] font-medium bg-cyan-50 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-sm">schedule</span>
+              Phase 1 Running (1 Maret – 30 Maret 2025)
+            </span>
+<span>•</span>
+<span>Rekapitulasi berkala progres pengajuan bukti lamaran kerja talent program Bootcamp UI/UX Dibimbing.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold transition-colors">
+<span class="material-symbols-outlined text-base">download</span>
+            Export Riwayat (CSV)
+          </button>
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-cyan-200 bg-cyan-50 text-[#00A5B5] hover:bg-cyan-100 text-xs font-semibold transition-colors">
+<span class="material-symbols-outlined text-base">support_agent</span>
+            Bantuan Mentor
+          </button>
+</div>
+</div>
+<!-- Top 4 Summary Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Target Keseluruhan Ring -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+<div class="relative w-16 h-16 flex items-center justify-center shrink-0">
+<svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-[#0bb1cb]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="47.5, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-xs font-bold text-slate-800">47.5%</span>
+</div>
+<div>
+<p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Target Keseluruhan</p>
+<p class="text-lg font-bold text-slate-900 mt-0.5">19 <span class="text-xs text-slate-400 font-normal">/ 40 Lamaran</span></p>
+<p class="text-[11px] text-[#00A5B5] font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs">trending_up</span> Sisa 21 Lamaran
+            </p>
+</div>
+</div>
+<!-- Total Diajukan Breakdown -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Diajukan</p>
+<span class="material-symbols-outlined text-slate-400 text-lg">stacked_bar_chart</span>
+</div>
+<div>
+<p class="text-xl font-bold text-slate-900">19 <span class="text-xs text-slate-400 font-normal">Lamaran</span></p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700">15 Acc</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-700">1 Wait</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-50 text-rose-700">3 Dec</span>
+</div>
+</div>
+</div>
+<!-- Phase 1 Quota -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Phase 1 Quota</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-50 text-[#00A5B5]">On Track</span>
+</div>
+<div>
+<p class="text-xl font-bold text-slate-900">10 <span class="text-xs text-slate-400 font-normal">/ 20</span> <span class="text-xs text-emerald-600 font-bold ml-1">50% Tercapai</span></p>
+<div class="w-full bg-slate-100 rounded-full h-1.5 mt-2 overflow-hidden">
+<div class="bg-[#0bb1cb] h-1.5 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+<!-- Review Velocity -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Review Velocity</p>
+<span class="material-symbols-outlined text-emerald-500 text-lg">verified</span>
+</div>
+<div>
+<p class="text-xl font-bold text-slate-900">94.7% <span class="text-xs text-emerald-600 font-bold ml-1">High Quality</span></p>
+<p class="text-[11px] text-slate-400 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">timer</span> Validasi rata-rata <strong class="text-slate-700 font-semibold">1x24 Jam</strong>
+</p>
+</div>
+</div>
+</div>
+<!-- Phase 1 vs Phase 2 Comparison Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+<!-- Phase 1 Card (Active) -->
+<div class="bg-white rounded-xl border-2 border-[#0bb1cb]/40 shadow-sm p-5 space-y-4 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-[#0bb1cb] text-white flex items-center justify-center font-bold text-xs">P1</span>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-900 text-sm">Phase 1</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700">AKTIF</span>
+</div>
+<p class="text-xs text-slate-400">1 Maret 2025 – 30 Maret 2025</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-[#00A5B5] bg-cyan-50 px-2.5 py-1 rounded-full">Target: 20 Lamaran</span>
+<p class="text-[11px] text-slate-400 mt-0.5">Terkumpul: <strong>19 Lamaran</strong></p>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between text-xs font-semibold mb-1">
+<span class="text-slate-600">Total Progress Phase 1</span>
+<span class="text-[#0bb1cb]">95% (19/20)</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+<div class="bg-[#0bb1cb] h-2 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<!-- Date Ranges in Phase 1 -->
+<div class="space-y-2.5 pt-1">
+<div class="p-3 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between text-xs">
+<div>
+<span class="font-bold text-slate-700 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-[#00A5B5]">event</span> Date Range 1 <span class="text-slate-400 font-normal">(1 - 15 Maret 2025)</span>
+</span>
+<p class="text-slate-500 text-[11px] mt-1">Junior Level: <strong class="text-slate-800">8/8 (100%)</strong> • Senior Level: <strong class="text-slate-800">2/2 (100%)</strong></p>
+</div>
+<span class="text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span> Target Achieved
+              </span>
+</div>
+<div class="p-3 bg-cyan-50/50 border border-cyan-200/80 rounded-lg flex items-center justify-between text-xs">
+<div>
+<span class="font-bold text-[#006878] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-[#0bb1cb]">pending_actions</span> Date Range 2 <span class="text-slate-500 font-normal">(16 - 30 Maret 2025)</span>
+</span>
+<p class="text-slate-600 text-[11px] mt-1">Junior Level: <strong class="text-slate-800">8/8 (100%)</strong> • Senior Level: <strong class="text-amber-700">1/2 (50%)</strong></p>
+</div>
+<span class="text-amber-800 bg-amber-50 border border-amber-200/60 px-2.5 py-1 rounded text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">flag</span> 1 Lamaran lagi
+              </span>
+</div>
+</div>
+</div>
+<!-- Phase 2 Card (Upcoming) -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">P2</span>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-700 text-sm">Phase 2</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-500">BELUM DIMULAI</span>
+</div>
+<p class="text-xs text-slate-400">1 Mei 2025 – 31 Mei 2025</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-full">Target: 20 Lamaran</span>
+<p class="text-[11px] text-slate-400 mt-0.5">Terkumpul: 0 Lamaran</p>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between text-xs font-semibold mb-1">
+<span class="text-slate-500">Total Progress Phase 2</span>
+<span class="text-slate-400">0% (0/20)</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+<div class="bg-slate-300 h-2 rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="p-3 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-between text-xs">
+<span class="font-medium text-slate-500 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span> Date Range 1 (1 - 15 Mei 2025)
+              </span>
+<span class="text-slate-400 bg-slate-100 px-2 py-0.5 rounded text-[11px]">Upcoming</span>
+</div>
+<div class="p-3 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-between text-xs">
+<span class="font-medium text-slate-500 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span> Date Range 2 (16 - 31 Mei 2025)
+              </span>
+<span class="text-slate-400 bg-slate-100 px-2 py-0.5 rounded text-[11px]">Upcoming</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Applied Jobs Table Section & Toolbar -->
+<div class="space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3 flex-1 max-w-lg">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full pl-9 pr-4 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#00A5B5]" placeholder="Cari nama perusahaan, posisi kerja, lokasi..." type="text">
+</div>
+<button class="px-3.5 py-2 border border-slate-200 rounded-lg bg-white text-slate-700 text-xs font-semibold flex items-center gap-1.5 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+            </button>
+</div>
+<!-- Add Proof Button -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#0bb1cb] hover:bg-[#008b99] text-white font-bold text-xs shadow-sm transition-all" id="open-drawer-trigger">
+<span class="material-symbols-outlined text-base">add</span>
+            Add Proof of Application
+          </button>
+</div>
+<!-- Status Filter Pills -->
+<div class="flex items-center gap-2 text-xs font-medium">
+<span class="text-slate-400 text-[11px] uppercase tracking-wider font-bold mr-1">Status:</span>
+<button class="px-3 py-1 rounded-full bg-[#00A5B5] text-white font-bold text-xs">Semua (19)</button>
+<button class="px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Accepted (15)
+          </button>
+<button class="px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Waiting Confirmation (1)
+          </button>
+<button class="px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-rose-500"></span> Declined (3)
+          </button>
+</div>
+<!-- Table Card -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<table class="w-full text-left text-xs">
+<thead class="bg-slate-50/80 text-slate-500 font-bold uppercase tracking-wider border-b border-slate-200">
+<tr>
+<th class="py-3 px-5">Perusahaan</th>
+<th class="py-3 px-4">Role &amp; Level</th>
+<th class="py-3 px-4">Tanggal Lamar</th>
+<th class="py-3 px-4">Phase &amp; Range</th>
+<th class="py-3 px-4">Status Validasi</th>
+<th class="py-3 px-4 text-center">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-slate-700 font-medium">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 font-bold flex items-center justify-center text-[10px]">PTM</div>
+<div>
+<p class="font-bold text-slate-900">PT Pertamina (Persero)</p>
+<p class="text-[11px] text-slate-400">Jakarta Pusat • Hybrid</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<p class="font-semibold text-slate-800">UI/UX Designer</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-50 text-[#00A5B5]">Junior Level</span>
+</td>
+<td class="py-3.5 px-4 text-slate-500">
+<p class="font-semibold text-slate-700">10 Februari 2025</p>
+<p class="text-[10px] text-slate-400">14:32 WIB</p>
+</td>
+<td class="py-3.5 px-4 text-slate-600">Phase 1 - Range 2</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Waiting Confirmation
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-2 text-slate-400">
+<button class="hover:text-cyan-600" title="Detail"><span class="material-symbols-outlined text-base">visibility</span></button>
+<button class="hover:text-rose-600" title="Hapus"><span class="material-symbols-outlined text-base">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 font-bold flex items-center justify-center text-[10px]">BNI</div>
+<div>
+<p class="font-bold text-slate-900">Bank Negara Indonesia</p>
+<p class="text-[11px] text-slate-400">Jakarta Selatan • Onsite</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<p class="font-semibold text-slate-800">Product Designer</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-50 text-indigo-700">Senior Level</span>
+</td>
+<td class="py-3.5 px-4 text-slate-500">
+<p class="font-semibold text-slate-700">10 Februari 2025</p>
+<p class="text-[10px] text-slate-400">10:15 WIB</p>
+</td>
+<td class="py-3.5 px-4 text-slate-600">Phase 1 - Range 1</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Accepted
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-2 text-slate-400">
+<button class="hover:text-cyan-600"><span class="material-symbols-outlined text-base">visibility</span></button>
+<span class="material-symbols-outlined text-base text-slate-300">lock</span>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[10px]">BMRI</div>
+<div>
+<p class="font-bold text-slate-900">Bank Mandiri</p>
+<p class="text-[11px] text-slate-400">Jakarta • Full Remote</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<p class="font-semibold text-slate-800">UI/UX Designer</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-50 text-[#00A5B5]">Junior Level</span>
+</td>
+<td class="py-3.5 px-4 text-slate-500">
+<p class="font-semibold text-slate-700">10 Februari 2025</p>
+<p class="text-[10px] text-slate-400">09:04 WIB</p>
+</td>
+<td class="py-3.5 px-4 text-slate-600">Phase 1 - Range 1</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Declined
+                    </span>
+<a class="text-[10px] text-rose-600 hover:underline mt-0.5 ml-1 inline-flex items-center gap-0.5" href="#">Lihat Alasan →</a>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-2 text-slate-400">
+<button class="hover:text-cyan-600"><span class="material-symbols-outlined text-base">visibility</span></button>
+<button class="hover:text-cyan-600" title="Re-submit"><span class="material-symbols-outlined text-base">refresh</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- END: Underlying Student JAT Batch Detail Dashboard -->
+</div>
+<!-- END: Main Content Container -->
+<!-- BEGIN: REALISTIC FOCUSED BACKDROP OVERLAY (Requirement 2: Backdrop Blur) -->
+<div aria-hidden="true" class="fixed inset-0 bg-slate-900/50 backdrop-blur-md z-40 transition-opacity duration-300" id="drawer-backdrop"></div>
+<!-- BEGIN: ADD PROOF OF APPLICATION DRAWER (Requirement 3: Prominently highlighted solid white drawer) -->
+<aside aria-label="Add Proof of Application Drawer" class="fixed top-0 right-0 w-[580px] max-w-full bg-white shadow-2xl h-screen z-50 flex flex-col justify-between overflow-hidden border-l border-slate-200" id="drawer-modal">
+<!-- Drawer Header -->
+<div class="px-6 py-5 bg-white border-b border-slate-200 flex items-center justify-between shrink-0">
+<div>
+<div class="flex items-center gap-2.5">
+<h2 class="text-lg font-bold text-slate-900 tracking-tight">Add Proof of Application</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-[#E6F7F9] text-[#00A5B5] font-bold text-[11px] border border-[#00A5B5]/20">
+            JAT Batch 2 • Talent Support
+          </span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">Unggah bukti lamaran resmi untuk diverifikasi oleh tim Talent Support.</p>
+</div>
+<button aria-label="Close drawer" class="w-8 h-8 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-700 flex items-center justify-center transition-colors" id="close-drawer-btn" type="button">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Drawer Scrollable Body Content -->
+<div class="flex-1 overflow-y-auto p-6 space-y-5">
+<!-- Informational Alert Notice Callout Banner -->
+<div class="rounded-xl p-4 bg-[#E6F7F9]/80 border border-[#00A5B5]/30 text-slate-800 flex items-start gap-3 shadow-sm">
+<div class="w-7 h-7 rounded-full bg-[#00A5B5]/15 flex items-center justify-center shrink-0 mt-0.5 text-[#00A5B5]">
+<span class="material-symbols-outlined text-lg">info</span>
+</div>
+<div class="space-y-1 text-xs">
+<h4 class="font-bold text-slate-900 text-xs tracking-tight">Catatan Penting Persyaratan Unggah</h4>
+<p class="text-slate-600 leading-relaxed">
+            Format yang diterima: <strong class="text-slate-900 font-semibold">JPG, JPEG, PNG (maksimal 5MB)</strong>. Seluruh bukti lamaran akan melalui proses verifikasi Human-in-the-Loop (HITL) oleh tim Talent Support sebelum kuota fase bertambah.
+          </p>
+</div>
+</div>
+<!-- Application Proof Form -->
+<form class="space-y-4" id="proof-application-form" onsubmit="event.preventDefault();">
+<!-- Row 1: Date Applied & Role Applied -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Date Applied -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="date-applied">
+              Date Applied <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">calendar_today</span>
+<input class="w-full h-10 pl-9 pr-3 bg-slate-50 border border-slate-200 text-slate-800 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all" id="date-applied" max="2025-03-30" min="2025-03-01" required="" type="date" value="2025-02-10">
+</div>
+<p class="text-[10px] text-slate-400 leading-tight">
+              Tanggal harus berada dalam rentang aktif batch (1 - 30 Maret 2025). Tanggal masa depan tidak diperkenankan.
+            </p>
+</div>
+<!-- Role Applied -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="role-applied">
+              Role Applied <span class="text-rose-500 font-bold">*</span>
+</label>
+<input class="w-full h-10 px-3.5 bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all" id="role-applied" placeholder="e.g. UI/UX Designer" required="" type="text" value="UI/UX Designer">
+<p class="text-[10px] text-slate-400 leading-tight">Tuliskan nama role sesuai dengan lowongan.</p>
+</div>
+</div>
+<!-- Row 2: Company Name & Company Location -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Company Name -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="company-name">
+              Company Name <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">corporate_fare</span>
+<input class="w-full h-10 pl-9 pr-3 bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all" id="company-name" placeholder="e.g. Pertamina (Persero)" required="" type="text" value="Pertamina (Persero)">
+</div>
+</div>
+<!-- Company Location -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="company-location">
+              Company Location <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">location_on</span>
+<input class="w-full h-10 pl-9 pr-3 bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all" id="company-location" placeholder="e.g. Jakarta Pusat" required="" type="text" value="Jakarta Pusat">
+</div>
+</div>
+</div>
+<!-- Row 3: Position & Years of Experience -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Position Dropdown -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="position-select">
+              Position <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-slate-50 border border-slate-200 text-slate-800 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all appearance-none cursor-pointer" id="position-select" required="">
+<option disabled="" value="">Choose Position</option>
+<option selected="" value="fulltime">Full-time</option>
+<option value="internship">Internship</option>
+<option value="contract">Contract</option>
+<option value="freelance">Freelance</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<!-- Years of Experience -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="experience-input">
+              Years of Experience <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">work_history</span>
+<input class="w-full h-10 pl-9 pr-3 bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all" id="experience-input" placeholder="E.g. 0-1 Tahun, 1-2 Tahun" required="" type="text" value="0-1 Tahun">
+</div>
+</div>
+</div>
+<!-- Row 4: Job Level & Work System -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Job Level -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="job-level-select">
+              Job Level <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-slate-50 border border-slate-200 text-slate-800 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all appearance-none cursor-pointer" id="job-level-select" required="">
+<option disabled="" value="">Choose Job Level</option>
+<option selected="" value="junior">Junior Level</option>
+<option value="mid">Mid Level</option>
+<option value="senior">Senior Level</option>
+<option value="lead">Lead / Managerial</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<!-- Work System -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="work-system-select">
+              Work System <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-slate-50 border border-slate-200 text-slate-800 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all appearance-none cursor-pointer" id="work-system-select" required="">
+<option disabled="" value="">Choose Work System</option>
+<option value="remote">Remote / WFH</option>
+<option selected="" value="hybrid">Hybrid</option>
+<option value="onsite">Onsite</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Row 5: Link Job Vacancy -->
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="vacancy-link">
+            Link Job Vacancy <span class="text-rose-500 font-bold">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-base">link</span>
+<input class="w-full h-10 pl-9 pr-3 bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 font-medium text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0bb1cb] focus:border-[#0bb1cb] focus:bg-white transition-all" id="vacancy-link" placeholder="https://recruitment.pertamina.com/job/uiux-designer" required="" type="url" value="https://recruitment.pertamina.com/job/uiux-designer">
+</div>
+</div>
+<!-- Row 6: Upload Proof of Application Drag & Drop Zone -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block text-xs font-bold text-slate-700">
+              Upload Proof of Application <span class="text-rose-500 font-bold">*</span>
+</label>
+<span class="text-[10px] text-slate-400">JPG, JPEG, PNG (Maks. 5MB)</span>
+</div>
+<!-- Drag and Drop interactive container -->
+<div class="relative group rounded-xl p-5 bg-[#E6F7F9]/30 hover:bg-[#E6F7F9]/60 border-2 border-dashed border-[#0bb1cb]/60 hover:border-[#0bb1cb] transition-all flex flex-col items-center justify-center text-center cursor-pointer space-y-2">
+<input accept="image/png, image/jpeg, image/jpg" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" id="proof-file-input" type="file">
+<div class="w-11 h-11 rounded-full bg-cyan-100/70 text-[#00A5B5] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">cloud_upload</span>
+</div>
+<div class="space-y-0.5">
+<p class="text-xs font-bold text-[#006878] group-hover:underline">
+                Tarik dan lepas file bukti lamaran di sini, atau klik untuk memilih file
+              </p>
+<p class="text-[11px] text-slate-500">
+                Mendukung JPG, JPEG, PNG (Maks. 5MB)
+              </p>
+</div>
+<!-- Active Uploaded File Pill Preview -->
+<div class="flex items-center gap-2 mt-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-xs text-xs text-slate-700">
+<span class="material-symbols-outlined text-base text-emerald-600">check_circle</span>
+<span class="font-bold text-slate-800">bukti_lamaran_pertamina.png</span>
+<span class="text-slate-400 text-[11px]">· 1.8 MB</span>
+<button class="text-slate-400 hover:text-rose-500 ml-1 transition-colors" title="Hapus lampiran" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- Drawer Sticky Footer -->
+<div class="px-6 py-4 bg-white border-t border-slate-200 flex items-center justify-between gap-3 shrink-0">
+<button class="px-4 py-2.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs transition-colors" id="cancel-drawer-btn" type="button">
+        Batal
+      </button>
+<div class="flex items-center gap-3">
+<span class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-slate-400">check</span>
+          Semua perubahan tersimpan otomatis
+        </span>
+<button class="px-5 py-2.5 rounded-lg bg-[#0bb1cb] hover:bg-[#008b99] active:scale-95 text-white font-bold text-xs flex items-center gap-2 shadow-sm shadow-cyan-300 transition-all cursor-pointer" id="submit-proof-btn" type="button">
+<span class="material-symbols-outlined text-base">send</span>
+          Submit Bukti Lamaran
+        </button>
+</div>
+</div>
+</aside>
+<!-- END: ADD PROOF OF APPLICATION DRAWER -->
+</div>
+<script>
+  (function initDrawerLogic() {
+    const backdrop = document.getElementById('drawer-backdrop');
+    const drawer = document.getElementById('drawer-modal');
+    const closeBtn = document.getElementById('close-drawer-btn');
+    const cancelBtn = document.getElementById('cancel-drawer-btn');
+    const openTrigger = document.getElementById('open-drawer-trigger');
+    const submitBtn = document.getElementById('submit-proof-btn');
+
+    function closeDrawer() {
+      drawer.style.transform = 'translateX(100%)';
+      drawer.style.transition = 'transform 0.25s ease-in-out';
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      backdrop.classList.remove('opacity-100');
+    }
+
+    function openDrawer() {
+      drawer.style.transform = 'translateX(0)';
+      drawer.style.transition = 'transform 0.25s ease-in-out';
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100');
+    }
+
+    closeBtn?.addEventListener('click', closeDrawer);
+    cancelBtn?.addEventListener('click', closeDrawer);
+    backdrop?.addEventListener('click', closeDrawer);
+    openTrigger?.addEventListener('click', openDrawer);
+
+    submitBtn?.addEventListener('click', function() {
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> Mengirim Bukti...';
+      setTimeout(() => {
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">check_circle</span> Berhasil Terkirim!';
+        submitBtn.classList.replace('bg-[#0bb1cb]', 'bg-emerald-600');
+        setTimeout(() => {
+          closeDrawer();
+          setTimeout(() => {
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">send</span> Submit Bukti Lamaran';
+            submitBtn.classList.replace('bg-emerald-600', 'bg-[#0bb1cb]');
+          }, 400);
+        }, 900);
+      }, 700);
+    });
+  })();
+</script>
+</body></html>

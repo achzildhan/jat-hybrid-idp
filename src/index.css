@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+
+  --color-primary: #006878;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #0bb1cb;
+  --color-on-primary-container: #003e49;
+  --color-brand-accent-teal: #00a5b5;
+  --color-brand-accent-sky: #0ea5e9;
+
+  --color-secondary: #356570;
+  --color-secondary-container: #b7e8f4;
+  --color-on-secondary-container: #3a6974;
+  --color-secondary-fixed: #baebf7;
+
+  --color-surface: #f9f9ff;
+  --color-surface-canvas: #f8fafc;
+  --color-surface-subtle: #f1f5f9;
+  --color-surface-card: #ffffff;
+
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+
+  --color-border-subtle: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  --color-status-accepted-bg: #ecfdf5;
+  --color-status-accepted-border: #10b981;
+  --color-status-accepted-text: #047857;
+
+  --color-status-waiting-bg: #fffbeb;
+  --color-status-waiting-border: #f59e0b;
+  --color-status-waiting-text: #b45309;
+
+  --color-status-declined-bg: #fef2f2;
+  --color-status-declined-border: #ef4444;
+  --color-status-declined-text: #b91c1c;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface-canvas);
+    color: var(--color-text-primary);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
