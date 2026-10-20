@@ -468,7 +468,7 @@ export const AdminStudentDetailPage: React.FC = () => {
             <span className="material-symbols-outlined text-[18px] text-[#006878]">
               work_history
             </span>
-            <span>Ringkasan Tahapan Rekrutmen Perusahaan (BR-28 — Terpisah dari Validasi JAT):</span>
+            <span>Ringkasan Tahapan Rekrutmen Perusahaan (Terpisah dari Validasi JAT):</span>
           </div>
           <div className="flex flex-wrap items-center gap-2 text-[11px]">
             <span className="px-2.5 py-1 rounded-md bg-white border border-[#E2E8F0] font-semibold text-[#475569]">
@@ -508,7 +508,7 @@ export const AdminStudentDetailPage: React.FC = () => {
               Status Validasi JAT (<span className="font-semibold text-[#1E293B]">Approved</span>,{' '}
               <span className="font-semibold text-[#1E293B]">Waiting Confirmation</span>,{' '}
               <span className="font-semibold text-[#1E293B]">Rejected</span>) terpisah dari Tahapan
-              Rekrutmen perusahaan (BR-28).
+              Rekrutmen perusahaan.
             </p>
           </div>
 
@@ -566,7 +566,7 @@ export const AdminStudentDetailPage: React.FC = () => {
                         Filter Applied Jobs
                       </h3>
                       <p className="text-[11px] text-[#64748B]">
-                        Saring lamaran berdasarkan Phase, Date Range, atau Status (BR-31)
+                        Saring lamaran berdasarkan Phase, Date Range, atau Status
                       </p>
                     </div>
                     <button
@@ -765,7 +765,7 @@ export const AdminStudentDetailPage: React.FC = () => {
                     <th className="py-3 px-3.5">Position</th>
                     <th className="py-3 px-3.5">Job Level</th>
                     <th className="py-3 px-3.5">Work System</th>
-                    <th className="py-3 px-3.5">Tahapan Rekrutmen (BR-28)</th>
+                    <th className="py-3 px-3.5">Tahapan Rekrutmen Perusahaan</th>
                     <th className="py-3 px-3.5">Bukti</th>
                     <th className="py-3 px-3.5">Status JAT</th>
                     <th className="py-3 px-3.5 rounded-r-lg text-right">Aksi</th>

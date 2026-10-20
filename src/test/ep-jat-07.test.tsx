@@ -99,11 +99,11 @@ describe('EP-JAT-07 — Validation Feedback: Penyajian status validasi dan feedb
       name: /Bank Negara Indonesia \(BNI\)/i,
     });
     expect(
-      within(dialogWaiting).getByLabelText(/Label Simulasi Validasi Prototype/i)
-    ).toHaveTextContent(/Simulasi Prototype.*Hasil Validasi Mock \(BR-37\)/i);
+      within(dialogWaiting).getByLabelText(/Informasi Status Verifikasi/i)
+    ).toHaveTextContent(/Status Verifikasi Lamaran/i);
     expect(
       within(dialogWaiting).getByLabelText(/Status Validasi Bukti: Waiting Confirmation/i)
-    ).toHaveTextContent(/Belum ada hasil validasi akhir \(Unprocessed \/ Menunggu Verifikasi\)/i);
+    ).toHaveTextContent(/Belum ada hasil validasi akhir/i);
 
     await user.click(within(dialogWaiting).getByRole('button', { name: /Tutup Detail/i }));
 
@@ -140,7 +140,7 @@ describe('EP-JAT-07 — Validation Feedback: Penyajian status validasi dan feedb
       /Status Validasi Bukti: Rejected/i
     );
     expect(rejectedBanner).toHaveTextContent(
-      /Screenshot terpotong dan nama perusahaan tidak terlihat jelas \(BR-17\)\./i
+      /Screenshot terpotong dan nama perusahaan tidak terlihat jelas\./i
     );
     expect(rejectedBanner).toHaveTextContent(
       /Mohon unggah ulang screenshot utuh yang menampilkan nama perusahaan Bukalapak/i

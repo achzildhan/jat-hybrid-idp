@@ -158,7 +158,7 @@ export const AdminShell: React.FC<AdminShellProps> = ({ children }) => {
         <header className="sticky top-0 h-16 bg-white/95 backdrop-blur-md border-b border-[#E2E8F0] z-30 flex items-center justify-between px-6">
           <div className="flex items-center gap-3">
             <span className="px-2.5 py-1 rounded-full bg-[#E6F7F9] text-[#006878] border border-[#0BB1CB]/30 text-[11px] font-bold">
-              Prototype Mode • Synthetic Data (BR-35 / BR-37)
+              Mode Simulasi • Data Uji
             </span>
           </div>
 
@@ -205,7 +205,7 @@ export const AdminShell: React.FC<AdminShellProps> = ({ children }) => {
             <div className="flex items-center gap-2 bg-[#F1F5F9] px-2.5 py-1 rounded-lg border border-[#E2E8F0] text-xs">
               <span className="text-[#64748B] font-semibold">Peran:</span>
               <select
-                aria-label="Pilih Peran Simulasi Prototype"
+                aria-label="Pilih Peran Pengguna"
                 value={actorRole}
                 onChange={(e) => setActorRole(e.target.value as PrototypeActorRole)}
                 className="bg-transparent font-bold text-[#006878] focus:outline-none cursor-pointer"
@@ -248,10 +248,10 @@ export const AdminShell: React.FC<AdminShellProps> = ({ children }) => {
                 </span>
                 <div>
                   <h4 className="text-sm font-bold text-[#991B1B]">
-                    Akses Ditolak (BR-33 / BR-43): Akses Terbatas Peran Student
+                    Akses Ditolak: Halaman Khusus Admin &amp; Talent Support
                   </h4>
                   <p className="text-xs text-[#B91C1C] mt-0.5">
-                    Peran simulasi aktif saat ini adalah <strong>Student</strong>. Halaman manajemen Admin/Talent Support dilindungi dan tindakan administratif tidak diizinkan. Silakan beralih ke Portal Student atau ganti peran ke Admin.
+                    Peran aktif saat ini adalah <strong>Student</strong>. Halaman manajemen Admin/Talent Support dilindungi dan tindakan administratif tidak diizinkan. Silakan beralih ke Portal Student atau ganti peran ke Admin.
                   </p>
                 </div>
               </div>

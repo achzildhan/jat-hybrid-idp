@@ -224,7 +224,7 @@ export const AdminBatchDetailPage: React.FC = () => {
 
         {!phase.enabled || phase.dateRanges.length === 0 ? (
           <div className="p-6 text-center text-xs text-[#64748B] flex-1 flex items-center justify-center">
-            Phase 2 tidak diaktifkan untuk batch ini (Opsional sesuai BR-04).
+            Phase 2 tidak diaktifkan untuk batch ini (Opsional).
           </div>
         ) : (
           <div className="overflow-x-auto">
@@ -343,7 +343,7 @@ export const AdminBatchDetailPage: React.FC = () => {
               className="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-[#FFFBEB] border border-[#F59E0B]/30 text-[11px] font-semibold text-[#B45309]"
             >
               <span className="material-symbols-outlined text-[15px]">lock</span>
-              <span>Recalculate khusus Admin / Super Admin (BR-30)</span>
+              <span>Sinkronisasi khusus Admin / Super Admin</span>
             </span>
           )}
 
@@ -436,7 +436,7 @@ export const AdminBatchDetailPage: React.FC = () => {
                   Monitoring Progres Kuota &amp; Sinkronisasi Batch
                 </h2>
                 <span className="px-2 py-0.5 rounded bg-[#E6F7F9] text-[#006878] text-[10px] font-bold uppercase tracking-wider">
-                  Single Source of Truth (BR-06)
+                  Data Terpusat &amp; Terpadu
                 </span>
               </div>
               <p className="text-xs text-[#64748B]">
@@ -453,7 +453,7 @@ export const AdminBatchDetailPage: React.FC = () => {
               >
                 <span className="material-symbols-outlined text-[14px]">rule</span>
                 <span>
-                  Formula Kuota ({PROGRESS_CALCULATION_POLICY.decisionId}): Lamaran Approved
+                  Formula Kuota: Hanya Lamaran Approved
                 </span>
               </span>
               <span
@@ -461,7 +461,7 @@ export const AdminBatchDetailPage: React.FC = () => {
                 className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#F1F5F9] border border-[#E2E8F0] text-[#475569] font-semibold"
               >
                 <span className="material-symbols-outlined text-[14px]">verified_user</span>
-                <span>Otorisasi Recalculate (DSN-TBD-02 / TBD-PERM-01): Admin &amp; Super Admin</span>
+                <span>Hak Akses Perhitungan: Admin &amp; Super Admin</span>
               </span>
             </div>
           </div>
@@ -610,7 +610,7 @@ export const AdminBatchDetailPage: React.FC = () => {
               className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] space-y-2"
             >
               <div className="flex items-center justify-between text-xs font-bold text-[#64748B]">
-                <span>Tahapan Rekrutmen (BR-28)</span>
+                <span>Tahapan Rekrutmen Perusahaan</span>
                 <span className="material-symbols-outlined text-[18px] text-[#006878]">
                   work_history
                 </span>
@@ -966,7 +966,7 @@ export const AdminBatchDetailPage: React.FC = () => {
                             aria-label={`Hapus ${student.name} dari batch`}
                             onClick={() => setParticipantToRemove(student)}
                             className="w-8 h-8 rounded-lg border border-[#E2E8F0] text-[#64748B] hover:text-[#B91C1C] hover:bg-[#FEF2F2] hover:border-[#EF4444]/30 flex items-center justify-center transition-colors cursor-pointer"
-                            title="Hapus Student dari Batch (BR-09)"
+                            title="Hapus Student dari Batch"
                           >
                             <span className="material-symbols-outlined text-[16px]">
                               person_remove

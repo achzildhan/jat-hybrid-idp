@@ -279,7 +279,7 @@ export const AdminBatchManagementPage: React.FC = () => {
                             aria-label={`Hapus ${batch.name}`}
                             onClick={() => setBatchToDelete(batch)}
                             className="p-1.5 rounded-lg border border-[#E2E8F0] text-[#64748B] hover:text-[#B91C1C] hover:bg-[#FEF2F2] hover:border-[#EF4444]/30 transition-colors cursor-pointer"
-                            title="Hapus Batch (BR-09)"
+                            title="Hapus Batch"
                           >
                             <span className="material-symbols-outlined text-[16px]">delete</span>
                           </button>

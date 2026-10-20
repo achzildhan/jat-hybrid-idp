@@ -293,7 +293,7 @@ describe('EP-JAT-11 — Access Control: Pembatasan hak akses dan pengamanan tind
     const alertBanner = await screen.findByRole('alert');
     expect(alertBanner).toBeInTheDocument();
     expect(alertBanner).toHaveTextContent(/Akses Ditolak/i);
-    expect(alertBanner).toHaveTextContent(/Peran simulasi aktif saat ini adalah Student/i);
+    expect(alertBanner).toHaveTextContent(/Peran aktif saat ini adalah Student/i);
 
     // 2. Action buttons exist: "Ke Portal Student" and "Ganti ke Admin"
     const switchToStudentLink = within(alertBanner).getByRole('link', {
@@ -314,7 +314,7 @@ describe('EP-JAT-11 — Access Control: Pembatasan hak akses dan pengamanan tind
 
     // 4. Header role selector allows switching between roles
     const roleSelector = screen.getByRole('combobox', {
-      name: /Pilih Peran Simulasi Prototype/i,
+      name: /Pilih Peran Pengguna/i,
     });
     expect(roleSelector).toHaveValue('Admin (Talent Support)');
 

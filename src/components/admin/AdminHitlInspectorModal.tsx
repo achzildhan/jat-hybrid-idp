@@ -106,7 +106,7 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
 
     if (!isAuthorizedAdmin) {
       setValidationError(
-        'Akses ditolak: Hanya peran Admin (Talent Support) atau Super Admin yang berwenang meninjau Request JAT (BR-33 / BR-43).'
+        'Akses ditolak: Hanya peran Admin (Talent Support) atau Super Admin yang berwenang meninjau Request JAT.'
       );
       return;
     }
@@ -114,15 +114,15 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
     if (decision === 'Approved' && isDeterministicApprovalBlocked) {
       setValidationError(
         !item.isSupportedEvidenceFormat
-          ? 'Keputusan Approved ditolak oleh aturan deterministik (BR-11 / BR-26): Format berkas bukti harus JPG, JPEG, atau PNG.'
-          : 'Keputusan Approved ditolak oleh aturan deterministik (BR-14 / BR-26 / BR-45): Date Applied berada di luar rentang tanggal batch yang berlaku.'
+          ? 'Keputusan disetujui ditolak: Format berkas bukti harus berupa file JPG, JPEG, atau PNG.'
+          : 'Keputusan disetujui ditolak: Tanggal melamar (Date Applied) berada di luar rentang tanggal batch yang berlaku.'
       );
       return;
     }
 
     if (decision === 'Rejected' && !rejectionReason.trim()) {
       setValidationError(
-        'Alasan penolakan (rejection reason) wajib diisi saat menolak Request JAT (BR-24).'
+        'Alasan penolakan wajib diisi saat menolak Request JAT.'
       );
       return;
     }
@@ -278,14 +278,14 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
                           <span className="material-symbols-outlined text-[14px]">
                             check_circle
                           </span>
-                          Within active batch dates (BR-14)
+                          Sesuai rentang tanggal batch
                         </span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#B91C1C]">
                           <span className="material-symbols-outlined text-[14px]">
                             error
                           </span>
-                          Di luar rentang tanggal aktif (BR-14 / BR-45)
+                          Di luar rentang tanggal batch
                         </span>
                       )}
                     </dd>
@@ -392,7 +392,7 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
                       }`}
                     >
                       {item.isSupportedEvidenceFormat
-                        ? 'Format Valid (BR-11)'
+                        ? 'Format Berkas Sesuai'
                         : 'Format Tidak Didukung'}
                     </span>
                   </div>
@@ -401,12 +401,12 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
 
               {/* Traceable Human Review History Card (BR-25 & Requirement 10) */}
               <section
-                aria-label="Jejak Audit Review Manusia (BR-25)"
+                aria-label="Riwayat Peninjauan Talent Support"
                 className="bg-white rounded-xl p-5 shadow-xs border border-[#E2E8F0] space-y-3"
               >
                 <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-2.5">
                   <h3 className="text-xs font-extrabold uppercase tracking-wider text-[#0F172A]">
-                    Jejak Audit Human Review (BR-25)
+                    Riwayat Peninjauan Talent Support
                   </h3>
                   <span className="text-[11px] font-semibold text-[#64748B]">
                     {application.reviewHistory?.length ?? 0} tindakan tercatat
@@ -444,7 +444,7 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
                           Oleh: {entry.reviewedBy || entry.actorRole} &bull;{' '}
                           {entry.reviewedAt
                             ? `Waktu: ${entry.reviewedAt}`
-                            : 'Timestamp server belum tersedia (Simulasi Prototype)'}
+                            : 'Waktu peninjauan belum tercatat'}
                         </p>
                       </li>
                     ))}
@@ -456,7 +456,7 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
             {/* Right Column (5 Cols): Evidence Inspector & All 7 Attributes Checklist (DSN-TBD-06 & BR-39) */}
             <div className="lg:col-span-5 space-y-4">
               <section
-                aria-label="Evidence Inspector dan Checklist 7 Atribut BR-39"
+                aria-label="Pemeriksaan Berkas Bukti dan 7 Atribut Kelayakan"
                 className="bg-white rounded-xl shadow-xs border border-[#E2E8F0] overflow-hidden flex flex-col"
               >
                 <div className="px-4 py-3 bg-[#F1F5F9] border-b border-[#E2E8F0] flex items-center justify-between">
@@ -501,7 +501,7 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
                 <div className="p-4 space-y-2.5">
                   <div className="flex items-center justify-between">
                     <h4 className="text-xs font-extrabold text-[#0F172A]">
-                      Checklist 7 Atribut Wajib (BR-39 / DSN-TBD-06)
+                      Pemeriksaan 7 Atribut Kelayakan
                     </h4>
                     <span className="text-[10px] font-bold text-[#006878] bg-[#E6F7F9] px-2 py-0.5 rounded">
                       7 / 7 Atribut
@@ -542,7 +542,7 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
                               </span>
                               <strong className="text-[#0F172A]">
                                 {finding.extractedValue ??
-                                  'Unknown / Belum Diekstraksi (BR-18)'}
+                                  'Tidak terdeteksi pada bukti'}
                               </strong>
                             </div>
                           </div>
@@ -569,12 +569,12 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
                 </span>
                 <div className="space-y-1">
                   <span className="font-extrabold block text-[#92400E]">
-                    Demo Extraction Assistant &mdash; Human Review Required (BR-37)
+                    Asisten Ekstraksi Otomatis &mdash; Butuh Peninjauan Manual
                   </span>
                   <p className="text-[11px] leading-relaxed">
-                    Checklist di atas adalah simulasi alat bantu (assistive preview). Aturan
-                    deterministik untuk format berkas dan rentang tanggal tetap berlaku mutlak
-                    (BR-26), dan keputusan akhir wajib dikonfirmasi oleh Talent Support.
+                    Pemeriksaan di atas adalah hasil analisis otomatis sebagai alat bantu peninjauan.
+                    Format berkas dan rentang tanggal diverifikasi oleh sistem, dan keputusan kelayakan akhir
+                    ditetapkan oleh Talent Support.
                   </p>
                 </div>
               </div>
@@ -640,7 +640,7 @@ export const AdminHitlInspectorModal: React.FC<AdminHitlInspectorModalProps> = (
                 >
                   <span>
                     Berikan alasan mengapa request JAT ini tidak valid{' '}
-                    <span className="text-[#DC2626]">*</span> (Wajib &mdash; BR-24)
+                    <span className="text-[#DC2626]">*</span> (Wajib diisi)
                   </span>
                 </label>
                 <textarea

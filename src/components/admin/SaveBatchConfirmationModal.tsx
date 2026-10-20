@@ -99,7 +99,7 @@ export const SaveBatchConfirmationModal: React.FC<SaveBatchConfirmationModalProp
                 <span className="material-symbols-outlined text-[16px] text-[#B45309]">
                   warning
                 </span>
-                <span>Dampak Perubahan Konsekuensial (BR-08 &amp; BR-29)</span>
+                <span>Dampak Perubahan Konsekuensial</span>
               </span>
               <span className="px-2 py-0.5 rounded bg-amber-100 text-[#B45309] text-[10px]">
                 {consequentialImpact.affectedParticipantsCount} Peserta Terdampak
@@ -119,7 +119,7 @@ export const SaveBatchConfirmationModal: React.FC<SaveBatchConfirmationModalProp
               sync
             </span>
             <span>
-              <strong>Catatan Sinkronisasi (BR-06, BR-08, BR-14, BR-42):</strong> Perubahan periode
+              <strong>Catatan Sinkronisasi:</strong> Perubahan periode
               dan target akan disinkronkan ke tampilan Student tanpa duplikasi range. Bukti lamaran
               yang diajukan sebelum perubahan rentang tanggal tetap mempertahankan validitas
               historisnya.

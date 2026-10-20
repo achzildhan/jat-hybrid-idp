@@ -171,8 +171,8 @@ export const AdminRequestQueuePage: React.FC = () => {
           </h1>
           <p className="text-xs text-[#64748B] max-w-2xl leading-relaxed">
             Antrean verifikasi bukti lamaran kerja mandiri peserta (Human-in-the-Loop). Hanya
-            menampilkan pengajuan dengan status <strong>Waiting Confirmation</strong> (BR-32).
-            Pemeriksaan dilakukan satu per satu melalui HITL Evidence Inspector (DSN-TBD-03).
+            menampilkan pengajuan dengan status <strong>Waiting Confirmation</strong>.
+            Pemeriksaan dilakukan secara individual melalui peninjauan bukti berkas.
           </p>
         </div>
 
@@ -183,7 +183,7 @@ export const AdminRequestQueuePage: React.FC = () => {
               htmlFor="admin-request-role-simulator"
               className="text-[11px] font-bold text-[#475569]"
             >
-              Simulasi Peran (BR-33):
+              Peran Pengguna:
             </label>
             <select
               id="admin-request-role-simulator"
@@ -201,7 +201,7 @@ export const AdminRequestQueuePage: React.FC = () => {
             <span className="material-symbols-outlined text-[16px] text-[#0BB1CB]">
               info
             </span>
-            <span>Status Verifikasi Admin &ne; Status Rekrutmen Perusahaan (BR-28)</span>
+            <span>Status Verifikasi Admin &ne; Status Rekrutmen Perusahaan</span>
           </div>
         </div>
       </div>
@@ -412,7 +412,7 @@ export const AdminRequestQueuePage: React.FC = () => {
                   </span>
                   <div className="text-[11px] text-[#92400E]">
                     <span className="font-extrabold uppercase tracking-wider block">
-                      Antrean Aktif (BR-32)
+                      Antrean Aktif
                     </span>
                     <span>
                       Menampilkan berkas dengan status{' '}

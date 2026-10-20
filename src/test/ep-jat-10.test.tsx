@@ -268,7 +268,7 @@ describe('EP-JAT-10 — Progress Monitoring: Sinkronisasi target, progres dan mo
     const dialog = screen.getByRole('dialog');
     expect(within(dialog).getByTestId('consequential-edit-impact-panel')).toBeInTheDocument();
     expect(
-      within(dialog).getByText(/Dampak Perubahan Konsekuensial \(BR-08 & BR-29\)/i)
+      within(dialog).getByText(/Dampak Perubahan Konsekuensial/i)
     ).toBeInTheDocument();
 
     fireEvent.click(within(dialog).getByRole('button', { name: /Ya, Simpan & Aktifkan/i }));

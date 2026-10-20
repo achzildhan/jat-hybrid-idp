@@ -64,7 +64,7 @@ export const RemoveParticipantModal: React.FC<RemoveParticipantModalProps> = ({
                 Hapus Student dari {batchName}?
               </h3>
               <span className="text-[11px] font-bold text-[#64748B] uppercase tracking-wider">
-                Konfirmasi Tindakan Destruktif (BR-09)
+                Konfirmasi Penghapusan Peserta
               </span>
             </div>
           </div>

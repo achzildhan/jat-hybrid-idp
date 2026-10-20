@@ -75,7 +75,7 @@ export const DeleteBatchModal: React.FC<DeleteBatchModalProps> = ({
                 Hapus Batch JAT?
               </h3>
               <p className="text-xs text-[#64748B]">
-                Tindakan destruktif permanen (BR-09)
+                Tindakan ini tidak dapat dibatalkan.
               </p>
             </div>
           </div>

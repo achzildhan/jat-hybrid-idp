@@ -273,7 +273,7 @@ export const AddProofOfApplicationDrawer: React.FC<
             </div>
             <div className="space-y-1 text-xs">
               <h3 className="font-extrabold text-[#0F172A] text-xs">
-                Catatan Penting Persyaratan Unggah (BR-11, BR-12, BR-15)
+                Persyaratan Berkas Bukti Lamaran
               </h3>
               <p className="text-[#334155] leading-relaxed">
                 Format bukti yang diterima:{' '}
@@ -284,13 +284,13 @@ export const AddProofOfApplicationDrawer: React.FC<
                 <strong>
                   Berhasil mengunggah berkas hanya berarti bukti telah diterima untuk
                   pemrosesan (status awal: Waiting Confirmation), bukan bahwa pengajuan telah
-                  disetujui (BR-15).
+                  disetujui.
                 </strong>
               </p>
               <p className="text-[11px] text-[#475569]">
-                Catatan Arsitektur (BR-12): Validasi format &amp; tipe MIME pada prototype ini
-                dilakukan di sisi klien; pemeriksaan ulang wajib dijalankan di sisi server saat
-                backend aktif.
+                Pastikan nama perusahaan, posisi pekerjaan, dan tanggal lamaran terlihat jelas pada berkas tangkapan layar.
+
+
               </p>
             </div>
           </div>
@@ -345,13 +345,13 @@ export const AddProofOfApplicationDrawer: React.FC<
                     role="status"
                     className="rounded-lg p-2 bg-[#FFFBEB] border border-[#F59E0B]/40 text-[11px] text-[#B45309] leading-snug"
                   >
-                    <strong>Peringatan Rentang Tanggal (BR-14 &amp; BR-45):</strong> Tanggal{' '}
+                    <strong>Peringatan Rentang Tanggal:</strong> Tanggal{' '}
                     {formatDateId(dateApplied)} berada di luar rentang aktif (
                     {access.activeDateRange
                       ? `${formatDateId(access.activeDateRange.startDate)} – ${formatDateId(access.activeDateRange.endDate)}`
                       : 'periode aktif'}
                     ). Anda tetap dapat mengirimkannya, namun status validasi otomatis menjadi{' '}
-                    <strong>Rejected</strong> (DSN-TBD-04).
+                    <strong>Rejected</strong>.
                   </div>
                 ) : (
                   <p className="text-[10px] text-[#64748B] leading-tight">
@@ -359,7 +359,7 @@ export const AddProofOfApplicationDrawer: React.FC<
                     {access.activeDateRange
                       ? `${formatDateId(access.activeDateRange.startDate)} – ${formatDateId(access.activeDateRange.endDate)}`
                       : '-'}
-                    . Tanggal masa depan ditolak (BR-13).
+                    . Tanggal masa depan tidak diizinkan.
                   </p>
                 )}
               </div>

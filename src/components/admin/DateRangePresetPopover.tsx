@@ -38,7 +38,7 @@ export const DateRangePresetPopover: React.FC<DateRangePresetPopoverProps> = ({
         <div className="flex items-center gap-2">
           <span className="material-symbols-outlined text-[#0BB1CB] text-[18px]">date_range</span>
           <span className="text-xs font-bold text-[#1E293B]">
-            Asisten Pilih Rentang Tanggal (BR-03: Start Date &le; End Date)
+            Pilihan Cepat Rentang Tanggal
           </span>
         </div>
         <button

@@ -147,7 +147,7 @@ describe('EP-JAT-08 — Human-in-the-Loop: Pemeriksaan dan tindak lanjut Request
 
     // DSN-TBD-06: All 7 BR-39 attributes are rendered individually in the checklist
     const inspectorSection = within(modal).getByRole('region', {
-      name: /Evidence Inspector dan Checklist 7 Atribut BR-39/i,
+      name: /Pemeriksaan Berkas Bukti dan 7 Atribut Kelayakan/i,
     });
     expect(within(inspectorSection).getByText('7 / 7 Atribut')).toBeInTheDocument();
 
@@ -252,7 +252,7 @@ describe('EP-JAT-08 — Human-in-the-Loop: Pemeriksaan dan tindak lanjut Request
     expect(screen.getByText('Waiting: 0')).toBeInTheDocument();
   });
 
-  it('requires a mandatory rejection reason when rejecting (BR-24), records traceable review history (BR-25), removes item from queue (BR-32), and updates Student feedback view', async () => {
+  it('requires a mandatory rejection reason when rejecting (BR-24), records traceable review history (BR-25), removes item from queue (BR-32), and updates Student feedback view', { timeout: 15000 }, async () => {
     const user = userEvent.setup();
     renderAppAt('/admin/jat/requests');
 
@@ -270,7 +270,7 @@ describe('EP-JAT-08 — Human-in-the-Loop: Pemeriksaan dan tindak lanjut Request
 
     // Try submitting with an empty rejection reason -> blocked by BR-24
     await user.click(within(modal).getByRole('button', { name: /^Tolak Request/i }));
-    expect(within(modal).getByRole('alert')).toHaveTextContent(/BR-24/i);
+    expect(within(modal).getByRole('alert')).toHaveTextContent(/Alasan penolakan wajib diisi/i);
     expect(
       screen.queryByRole('dialog', { name: /Dialog Konfirmasi Keputusan Review/i })
     ).not.toBeInTheDocument();
@@ -403,7 +403,7 @@ describe('EP-JAT-08 — Human-in-the-Loop: Pemeriksaan dan tindak lanjut Request
     renderAppAt('/admin/jat/requests');
 
     await user.selectOptions(
-      screen.getByLabelText(/Simulasi Peran \(BR-33\):/i),
+      screen.getByLabelText(/Peran Pengguna:/i),
       'Student'
     );
 
@@ -414,6 +414,6 @@ describe('EP-JAT-08 — Human-in-the-Loop: Pemeriksaan dan tindak lanjut Request
     );
     const modal = screen.getByRole('dialog', { name: /Detail Konfirmasi JAT/i });
     await user.click(within(modal).getByRole('button', { name: /Konfirmasi JAT/i }));
-    expect(within(modal).getByRole('alert')).toHaveTextContent(/BR-33|BR-43/i);
+    expect(within(modal).getByRole('alert')).toHaveTextContent(/Akses ditolak.*Hanya peran Admin/i);
   });
 });

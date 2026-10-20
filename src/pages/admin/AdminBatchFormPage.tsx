@@ -265,7 +265,7 @@ export const AdminBatchFormPage: React.FC = () => {
                   </span>
                 ) : (
                   <span className="px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-[#F1F5F9] text-[#64748B] rounded-md">
-                    Opsional (BR-04)
+                    Opsional
                   </span>
                 )}
               </div>
@@ -308,7 +308,7 @@ export const AdminBatchFormPage: React.FC = () => {
         {!phaseData.enabled ? (
           <div className="p-6 text-center bg-[#F8FAFC]/40">
             <p className="text-xs text-[#64748B]">
-              Phase 2 saat ini dinonaktifkan (Opsional sesuai BR-04). Centang{' '}
+              Phase 2 saat ini dinonaktifkan (Opsional). Centang{' '}
               <strong>Aktifkan Phase 2</strong> di atas jika batch ini memiliki jadwal tahap kedua.
             </p>
           </div>
@@ -457,7 +457,7 @@ export const AdminBatchFormPage: React.FC = () => {
                   <div className="space-y-3 pt-2 border-t border-[#E2E8F0]">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold uppercase tracking-wider text-[#64748B]">
-                        Target Job Level &amp; Jumlah Lamaran (BR-05)
+                        Target Job Level &amp; Jumlah Lamaran
                       </span>
                       <button
                         type="button"

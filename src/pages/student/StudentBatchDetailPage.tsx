@@ -260,7 +260,7 @@ export const StudentBatchDetailPage: React.FC = () => {
               ) : (
                 <p className="text-xs text-[#94A3B8] mt-1">
                   {!phase.enabled
-                    ? 'Fase opsional ini tidak diaktifkan pada batch ini (BR-04).'
+                    ? 'Fase opsional ini tidak diaktifkan pada batch ini.'
                     : 'Belum ada rentang tanggal yang dikonfigurasi pada fase ini.'}
                 </p>
               )}
@@ -285,7 +285,7 @@ export const StudentBatchDetailPage: React.FC = () => {
                 event_Repeat
               </span>
               <h3 className="text-xs font-extrabold text-[#475569]">
-                Phase 2 Tidak Diaktifkan (Opsional &mdash; BR-04)
+                Phase 2 Tidak Diaktifkan (Opsional)
               </h3>
               <p className="text-[11px] text-[#64748B] max-w-md mx-auto">
                 Batch ini hanya mewajibkan penyelesaian kuota pada Phase 1. Anda tidak perlu
@@ -524,7 +524,7 @@ export const StudentBatchDetailPage: React.FC = () => {
                   Tidak Diaktifkan
                 </div>
                 <p className="text-[11px] text-[#94A3B8]">
-                  Phase 2 bersifat opsional (BR-04)
+                  Phase 2 bersifat opsional
                 </p>
               </>
             )}
@@ -533,7 +533,7 @@ export const StudentBatchDetailPage: React.FC = () => {
           {/* Card 4: Validation Status Summary (Strictly distinct from recruitment progress per BR-28) */}
           <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFB] p-4 space-y-1.5">
             <span className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
-              Status Validasi Bukti (BR-22)
+              Status Validasi Bukti
             </span>
             <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
               <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#ECFDF5] text-[#047857]">
@@ -547,7 +547,7 @@ export const StudentBatchDetailPage: React.FC = () => {
               </span>
             </div>
             <p className="text-[10px] text-[#64748B]">
-              Terpisah dari progres rekrutmen perusahaan (BR-28)
+              Terpisah dari tahapan rekrutmen perusahaan
             </p>
           </div>
         </div>
@@ -588,7 +588,7 @@ export const StudentBatchDetailPage: React.FC = () => {
           <div className="rounded-lg bg-[#F8FAFB] border border-[#E2E8F0] px-3.5 py-2.5 text-[11px] text-[#475569] flex items-center gap-2">
             <span className="material-symbols-outlined text-[16px] text-[#0BB1CB]">info</span>
             <span>
-              <strong>Catatan (BR-28):</strong> Status Validasi JAT (
+              <strong>Catatan:</strong> Status Validasi JAT (
               <code className="font-bold">Approved</code>,{' '}
               <code className="font-bold">Waiting Confirmation</code>,{' '}
               <code className="font-bold">Rejected</code>) merupakan status verifikasi bukti
@@ -639,7 +639,7 @@ export const StudentBatchDetailPage: React.FC = () => {
                   <th className="py-3 px-6">Fase &amp; Date Range</th>
                   <th className="py-3 px-6">Job Level &amp; Tipe</th>
                   <th className="py-3 px-6">Bukti Unggahan</th>
-                  <th className="py-3 px-6">Tahapan Rekrutmen Perusahaan (BR-28)</th>
+                  <th className="py-3 px-6">Tahapan Rekrutmen Perusahaan</th>
                   <th className="py-3 px-6">Status Validasi JAT &amp; Feedback</th>
                   <th className="py-3 px-6 text-right">Aksi</th>
                 </tr>
@@ -697,7 +697,7 @@ export const StudentBatchDetailPage: React.FC = () => {
                           <div className="flex flex-wrap items-center gap-1.5">
                             <StatusBadge status={app.validationStatus} />
                             <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#F8FAFB] text-[#475569] border border-[#CBD5E1]">
-                              {isWaiting ? 'Belum Diproses' : 'Simulasi Mock (BR-37)'}
+                              {isWaiting ? 'Menunggu Review' : 'Hasil Verifikasi'}
                             </span>
                           </div>
 
@@ -778,11 +778,11 @@ export const StudentBatchDetailPage: React.FC = () => {
           setRefreshVersion((v) => v + 1);
           if (created.validationStatus === 'Rejected') {
             setSubmissionNotice(
-              `Pengajuan untuk ${created.company} (${created.role}) telah dicatat namun otomatis berstatus Rejected karena Date Applied (${created.dateApplied}) berada di luar rentang tanggal aktif batch (BR-14 & BR-45 / DSN-TBD-04).`
+              `Pengajuan untuk ${created.company} (${created.role}) telah dicatat namun otomatis berstatus Rejected karena Date Applied (${created.dateApplied}) berada di luar rentang tanggal aktif batch.`
             );
           } else {
             setSubmissionNotice(
-              `Bukti lamaran untuk ${created.company} (${created.role}) berhasil diterima untuk pemrosesan verifikasi (Status: Waiting Confirmation). Catatan (BR-15): Berhasil mengunggah berkas berarti bukti telah diterima oleh sistem, bukan berarti pengajuan telah disetujui (Approved).`
+              `Bukti lamaran untuk ${created.company} (${created.role}) berhasil diterima untuk pemrosesan verifikasi (Status: Waiting Confirmation). Catatan: Berhasil mengunggah berkas berarti bukti telah diterima oleh sistem, bukan berarti pengajuan telah disetujui (Approved).`
             );
           }
           return { id: created.id };

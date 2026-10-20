@@ -378,7 +378,7 @@ export const INITIAL_MOCK_APPLICATIONS: StudentApplicationRecord[] = [
         submittedValue: 'UI/UX Designer',
         extractedValue: 'Junior UI/UX Designer',
         status: 'Fuzzy Match (>70%)',
-        note: 'Kemiripan leksikal >70% (BR-40), butuh konfirmasi Admin.',
+        note: 'Kesesuaian data membutuhkan konfirmasi Admin.',
       },
       {
         attributeKey: 'company',
@@ -416,7 +416,7 @@ export const INITIAL_MOCK_APPLICATIONS: StudentApplicationRecord[] = [
         submittedValue: 'Hybrid',
         extractedValue: null,
         status: 'Ambiguous / Unclear',
-        note: 'Work System tidak tertulis eksplisit pada screenshot email konfirmasi (BR-18 / BR-23).',
+        note: 'Sistem kerja tidak tertulis eksplisit pada tangkapan layar email konfirmasi.',
       },
     ],
   },
@@ -496,7 +496,7 @@ export const INITIAL_MOCK_APPLICATIONS: StudentApplicationRecord[] = [
     evidenceFileSize: 612400,
     evidenceMimeType: 'image/png',
     validationStatus: 'Rejected',
-    rejectionReason: 'Screenshot terpotong dan nama perusahaan tidak terlihat jelas (BR-17).',
+    rejectionReason: 'Screenshot terpotong dan nama perusahaan tidak terlihat jelas.',
     reviewFeedback:
       'Mohon unggah ulang screenshot utuh yang menampilkan nama perusahaan Bukalapak, posisi Interaction Designer, serta indikator bahwa lamaran telah dikirim.',
     reviewedAt: '2025-03-18T18:00:00Z',

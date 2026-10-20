@@ -158,7 +158,7 @@ export const StudentBatchListPage: React.FC = () => {
                 Daftar Batch Job Application Tracking Anda
               </h2>
               <p className="text-[11px] text-[#64748B]">
-                Menampilkan jadwal periode yang disinkronkan langsung dari konfigurasi Admin (BR-06).
+                Menampilkan jadwal periode yang disinkronkan langsung dari konfigurasi Admin.
               </p>
             </div>
           </div>
@@ -231,7 +231,7 @@ export const StudentBatchListPage: React.FC = () => {
                       <td className="py-4 px-6">
                         {!p2Access.enabled ? (
                           <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#F1F5F9] text-[#64748B]">
-                            Tidak Diaktifkan (Opsional &mdash; BR-04)
+                            Tidak Diaktifkan (Opsional)
                           </span>
                         ) : p2Access.startDate && p2Access.endDate ? (
                           <div className="space-y-1">

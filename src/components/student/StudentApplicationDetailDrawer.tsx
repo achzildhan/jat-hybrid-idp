@@ -114,7 +114,7 @@ export const StudentApplicationDetailDrawer: React.FC<
           {/* Simulated / Mock Outcome Disclosure Banner (BR-27 & BR-37) */}
           <div
             role="note"
-            aria-label="Label Simulasi Validasi Prototype"
+            aria-label="Informasi Status Verifikasi"
             className="rounded-xl bg-[#F8FAFB] border border-[#CBD5E1] px-4 py-3 flex items-start gap-2.5 text-xs text-[#334155]"
           >
             <span className="material-symbols-outlined text-[18px] text-[#006878] shrink-0 mt-0.5">
@@ -123,15 +123,15 @@ export const StudentApplicationDetailDrawer: React.FC<
             <div className="space-y-0.5">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="font-extrabold text-[#0F172A]">
-                  Simulasi Prototype &mdash; Hasil Validasi Mock (BR-37)
+                  Status Verifikasi Lamaran
                 </span>
                 <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#E6F7F9] text-[#006878] border border-[#0BB1CB]/30">
                   Sumber: {validationSourceLabel}
                 </span>
               </div>
               <p className="text-[11px] text-[#64748B] leading-relaxed">
-                Status dan umpan balik pada layar ini berasal dari data simulasi prototype
-                (bukan hasil mesin AI/OCR produksi).
+                Status dan hasil peninjauan diperbarui secara berkala oleh tim Talent Support berdasarkan bukti lamaran yang dikirimkan.
+
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export const StudentApplicationDetailDrawer: React.FC<
               <p className="text-xs font-semibold text-[#92400E] leading-relaxed">
                 {application.reviewFeedback?.trim()
                   ? application.reviewFeedback
-                  : 'Belum ada hasil validasi akhir (Unprocessed / Menunggu Verifikasi). Bukti pengajuan Anda telah diterima dan sedang dalam antrean pemeriksaan Talent Support (BR-15 & BR-23).'}
+                  : 'Belum ada hasil validasi akhir. Bukti pengajuan Anda telah diterima dan sedang dalam antrean pemeriksaan Talent Support.'}
               </p>
 
               <div className="pt-2 border-t border-[#FDE68A] flex flex-wrap items-center justify-between gap-2 text-[11px] text-[#B45309]">
@@ -231,7 +231,7 @@ export const StudentApplicationDetailDrawer: React.FC<
               {/* Mandatory Rejection Reason Box (BR-23 & BR-24) */}
               <div className="rounded-lg bg-white/90 border border-[#FECACA] p-3 space-y-1">
                 <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#B91C1C] block">
-                  Alasan Penolakan (Rejection Reason &mdash; BR-23 / BR-24)
+                  Alasan Penolakan
                 </span>
                 <p className="text-xs font-bold text-[#7F1D1D] leading-relaxed">
                   {application.rejectionReason?.trim()
@@ -276,7 +276,7 @@ export const StudentApplicationDetailDrawer: React.FC<
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
                 <h3 className="text-xs font-extrabold text-[#1E293B]">
-                  Tahapan Rekrutmen Perusahaan (Progres Eksternal &mdash; BR-28)
+                  Tahapan Rekrutmen Perusahaan
                 </h3>
                 <p className="text-[11px] text-[#64748B]">
                   Terpisah dari Status Validasi Bukti JAT di atas.

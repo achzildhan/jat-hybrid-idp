@@ -242,7 +242,7 @@ describe('EP-JAT-04 UI Integration Tests: Add Proof Drawer, Validation Errors, F
     // Verify BR-15 explanation is visible inside the drawer
     expect(
       within(drawer).getByText(
-        /bukan bahwa pengajuan telah disetujui \(BR-15\)/i
+        /bukan bahwa pengajuan telah disetujui/i
       )
     ).toBeInTheDocument();
 
@@ -383,7 +383,7 @@ describe('EP-JAT-04 UI Integration Tests: Add Proof Drawer, Validation Errors, F
 
     // Out-of-range warning appears immediately in the form
     expect(
-      within(secondDrawer).getByText(/Peringatan Rentang Tanggal \(BR-14 & BR-45\)/i)
+      within(secondDrawer).getByText(/Peringatan Rentang Tanggal:/i)
     ).toBeInTheDocument();
 
     fireEvent.change(within(secondDrawer).getByLabelText(/Role Applied/i), {

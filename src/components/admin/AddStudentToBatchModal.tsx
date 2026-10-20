@@ -77,7 +77,7 @@ export const AddStudentToBatchModal: React.FC<AddStudentToBatchModalProps> = ({
   const handleToggleStudent = (studentId: string) => {
     if (enrolledStudentIds.includes(studentId)) {
       setErrorMessage(
-        'Mahasiswa ini sudah terdaftar di dalam batch ini. Duplikasi peserta tidak diizinkan (BLG-JAT-007).'
+        'Mahasiswa ini sudah terdaftar di dalam batch ini. Duplikasi peserta tidak diizinkan.'
       );
       return;
     }
@@ -187,7 +187,7 @@ export const AddStudentToBatchModal: React.FC<AddStudentToBatchModalProps> = ({
             <p className="text-xs text-[#003E49] leading-relaxed">
               Siswa yang ditambahkan akan otomatis disinkronkan dengan target Phase 1 &amp; Phase 2
               pada <strong>{batchName}</strong>. Mahasiswa yang sudah terdaftar pada batch ini
-              ditandai agar tidak terjadi duplikasi peserta (BLG-JAT-007).
+              ditandai agar tidak terjadi duplikasi peserta.
             </p>
           </div>
         </div>

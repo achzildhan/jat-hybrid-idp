@@ -221,7 +221,7 @@ describe('EP-JAT-03 Student UI Integration Tests: Batch List, Empty States, Deta
     ).toBeInTheDocument();
     const phase2Section = screen.getByRole('region', { name: 'Phase 2' });
     expect(
-      within(phase2Section).getByText(/Phase 2 Tidak Diaktifkan \(Opsional — BR-04\)/i)
+      within(phase2Section).getByText(/Phase 2 Tidak Diaktifkan \(Opsional\)/i)
     ).toBeInTheDocument();
   });
 });
