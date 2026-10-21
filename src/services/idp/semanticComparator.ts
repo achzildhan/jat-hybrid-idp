@@ -77,7 +77,8 @@ export class MockSemanticComparatorAdapter implements SemanticComparator {
       submittedCompany,
       extractedCompany
     );
-    const companyMatch = companySim >= 0.7;
+    // BR-40: Strict >70% lexical similarity threshold
+    const companyMatch = companySim > 0.7;
 
     // Job level vs experience alignment
     const extractedExp =

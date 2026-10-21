@@ -102,10 +102,23 @@ $$QS = \frac{2 |X \cap Y|}{|X| + |Y|}$$
   - $|Y|$ adalah jumlah bi-gram dalam string bukti yang terekstrak.
   - $|X \cap Y|$ adalah jumlah bi-gram yang muncul di kedua string.
 
-- **Aturan Ambang Batas Ketat (`BR-17`):**
-  - Jika kemiripan Role atau Perusahaan `<= 0.70` (70%), status atribut dinyatakan `Mismatch`.
-  - Jika `jobLevel` siswa adalah `Senior Level` atau `Lead` namun bukti menyebutkan pengalaman `< 1 tahun`, sistem mendeteksi diskrepansi level (`BR-19`).
-- **Keluaran (*Output*):** Objek `DeterministicValidationResult` (`passed: boolean`, `findings: IdpAttributeFinding[]`, `violations: string[]`).
+- **Pemisahan Ambang Batas Leksikal vs Skor Kepatuhan Keseluruhan (`BR-38`, `BR-40`):**
+  1. **Skor Kemiripan Leksikal Per-Atribut (`lexicalSimilarityScore`):**
+     - Mengukur kemiripan teks spesifik (`role`, `company`, `location`, `position`, `jobLevel`, `workSystem`).
+     - Rentang: desimal `0.0 s/d 1.0`.
+     - Ambang batas (`BR-40`): **Strict `> 0.70`**.
+       * Kemiripan >= 0.90 $\rightarrow$ `'Matched'`
+       * Kemiripan > 0.70 $\rightarrow$ `'Fuzzy Match (>70%)'`
+       * Kemiripan <= 0.70 $\rightarrow$ `'Mismatch'` (skor tepat 0.70 adalah Mismatch).
+       * Atribut hilang/tidak terbaca pada bukti $\rightarrow$ `'Unverified'` dengan `lexicalSimilarityScore: null` (`BR-18`, tidak pernah diubah menjadi skor buatan 0.0).
+  2. **Skor Kepatuhan Keseluruhan Aplikasi (`overallComplianceScore`):**
+     - Merepresentasikan kepatuhan kumulatif seluruh 7 atribut `BR-39` dan kualitas bukti visual.
+     - Rentang: persentase integer `0 s/d 100%`.
+     - Ambang batas (`BR-38`):
+       * >= 90%: Potensial `Approved` (jika seluruh aturan deterministik Stage A terpenuhi).
+       * 60% s/d 89%: `Waiting Confirmation` (membutuhkan peninjauan manusia).
+       * < 60%: `Rejected` (kepatuhan rendah).
+- **Keluaran (*Output*):** Objek `DeterministicCheckResult` dan temuan terstruktur `IdpAttributeFinding[]` dengan `lexicalSimilarityScore` eksplisit.
 
 ---
 
@@ -123,14 +136,21 @@ $$QS = \frac{2 |X \cap Y|}{|X| + |Y|}$$
 - **Masukan (*Input*):** Hasil validasi deterministik, hasil komparasi semantik, dan metadata kualitas bukti.
 - **Tabel Aturan Keputusan Status Validasi (`BR-38`):**
 
-| Kondisi Evaluasi Masukan | Rekomendasi Status Validasi | Alasan yang Dihasilkan Sistem |
-|---|---|---|
-| **Pelanggaran Aturan Deterministik** (Format salah, tanggal di luar rentang, tanggal masa depan, perusahaan mismatch) | **`Rejected`** | Alasan deterministik spesifik dicatat langsung (LLM tidak dapat membatalkan per `BR-26`). |
-| **Gambar Terpotong / Sangat Tidak Relevan** (Meme/Kucing) | **`Rejected`** | *"Bukti gambar tidak relevan dengan dokumen lamaran kerja resmi."* |
-| **Gambar Buram / Metadata Hilang Sebagian** | **`Waiting Confirmation`** | *"Kualitas gambar buram atau teks penting terpotong; dialihkan ke peninjauan manual (BR-20)."* |
-| **Provider AI Error / Timeout** | **`Waiting Confirmation`** | *"Layanan ekstraksi otomatis tidak merespons; dialihkan ke peninjauan manual Talent Support (BR-21)."* |
-| **Skor Kesesuaian Marjinal (0.60 s/d 0.89)** | **`Waiting Confirmation`** | *"Terdapat perbedaan diksi minor antara formulir dan bukti; memerlukan konfirmasi manusia (BR-38)."* |
-| **Aturan Deterministik Lolos & Skor >= 0.90 & Bukti Sangat Jelas** | **`Approved`** | *"Seluruh 7 atribut lamaran terverifikasi cocok dengan bukti visual (BR-38)."* |
+| Tahap Evaluasi | Kondisi Masukan (*Condition*) | Rekomendasi Status | Tinjauan Manusia (*HITL*) | Alasan yang Dihasilkan Sistem |
+|---|---|---|---|---|
+| **Stage A: Aturan Deterministik Pasti** | File kosong (0 byte), >5MB, ekstensi tidak didukung, atau tanda tangan biner rusak (*corrupted magic bytes*) (`BR-11, 12, 34`) | **`Rejected`** | `false` | Penolakan deterministik langsung terkait integritas berkas. |
+| **Stage A: Aturan Deterministik Pasti** | Tanggal melamar di masa depan melewati tanggal referensi (`BR-13`) | **`Rejected`** | `false` | *"Tanggal melamar tidak boleh berada di masa depan melewati tanggal referensi (BR-13)."* |
+| **Stage A: Aturan Deterministik Pasti** | Tanggal melamar di luar rentang tanggal aktif batch (`BR-14, BR-45`) | **`Rejected`** | `false` | *"Tanggal melamar berada di luar rentang tanggal aktif batch (BR-14 & BR-45)."* |
+| **Stage A: Aturan Deterministik Pasti** | Indikasi lowongan pekerjaan telah ditutup atau melewati batas pendaftaran (`BR-41`) | **`Rejected`** | `false` | *"Bukti lamaran menunjukkan lowongan pekerjaan telah ditutup (BR-41)."* |
+| **Stage B: Kualitas & Relevansi Bukti** | Gambar terpotong (*cropped*) atau sama sekali tidak relevan/meme (*irrelevant*) (`BR-38`) | **`Rejected`** | `false` | *"Penolakan Otomatis (BR-38): Gambar terpotong atau tidak relevan dengan dokumen resmi."* |
+| **Stage B: Kualitas & Relevansi Bukti** | Gambar buram (*blurry*) / motion blur (`BR-20, BR-38`) | **`Waiting Confirmation`** | `true` | *"Menunggu Konfirmasi (BR-38): Gambar buram sehingga detail tidak dapat diverifikasi otomatis."* |
+| **Stage C: Konsistensi Atribut Inti** | Ketidaksesuaian terkonfirmasi pada nama perusahaan atau role (`lexicalSimilarityScore <= 0.70`) | **`Rejected`** | `false` | *"Penolakan Validasi: Terdapat ketidaksesuaian jelas pada atribut wajib: Perusahaan / Role."* |
+| **Stage C: Atribut Hilang/Tak Terbaca** | Perusahaan atau Role tidak tertera pada bukti (`Unverified` / null per `BR-18`) | **`Waiting Confirmation`** | `true` | *"Menunggu Konfirmasi (BR-38): Atribut inti tidak terdeteksi pada bukti lamaran (BR-18)."* |
+| **Stage C: Kontradiksi Level** | Kontradiksi Job Level siswa vs Pengalaman bukti (`BR-19`) | **`Waiting Confirmation`** | `true` | *"Menunggu Konfirmasi: Kontradiksi Job Level vs Pengalaman."* |
+| **Stage C: Bukti Tidak Lengkap** | Grade `incomplete` atau > 2 atribut `Unverified` | **`Waiting Confirmation`** | `true` | *"Menunggu Konfirmasi (BR-38): Sebagian atribut wajib tidak tercantum pada bukti lamaran."* |
+| **Stage D: Ambang Batas Skor** | Skor kepatuhan keseluruhan $S \ge 90\%$ dan lolos Stage A s/d C | **`Approved`** | `false` | *"Disetujui Otomatis (BR-38): Tingkat kesesuaian atribut S% (memenuhi standar minimal 90%)."* |
+| **Stage D: Ambang Batas Skor** | Skor kepatuhan keseluruhan $60\% \le S < 90\%$ | **`Waiting Confirmation`** | `true` | *"Menunggu Konfirmasi (BR-38): Tingkat kesesuaian S% (antara 60% dan 89%). Membutuhkan verifikasi human review."* |
+| **Stage D: Ambang Batas Skor** | Skor kepatuhan keseluruhan $S < 60\%$ | **`Rejected`** | `false` | *"Penolakan Validasi (BR-38): Tingkat kesesuaian bukti sangat rendah (S% < 60%)."* |
 
 ---
 

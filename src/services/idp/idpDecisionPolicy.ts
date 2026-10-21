@@ -72,8 +72,24 @@ export function evaluateValidationDecisionPolicy(
   }
 
   // -------------------------------------------------------------
-  // TIER 2: Severe Evidence Defects (BR-38: Cropped or Irrelevant Evidence)
+  // TIER 2: Severe Evidence Defects (BR-34, BR-38: Unreadable/Corrupted, Irrelevant, Cropped)
   // -------------------------------------------------------------
+  if (quality.grade === 'unreadable') {
+    return {
+      validationStatus: 'Rejected',
+      overallComplianceScore: 0,
+      summaryReason:
+        'Penolakan Otomatis (BR-34): Berkas bukti tidak dapat dibaca atau memiliki tanda tangan biner tidak valid.',
+      deterministicResult: deterministic,
+      attributeFindings: findings,
+      evidenceQualityGrade: quality.grade,
+      requiresHumanReview: false,
+      validationSource: 'Simulated Rule Check (Mock)',
+      semanticResult,
+      evaluatedAt,
+    };
+  }
+
   if (quality.grade === 'irrelevant') {
     return {
       validationStatus: 'Rejected',
@@ -158,7 +174,34 @@ export function evaluateValidationDecisionPolicy(
   }
 
   // -------------------------------------------------------------
-  // TIER 5: Job Level vs Experience Contradiction
+  // TIER 5: Missing Core Attributes (Company or Role missing in evidence)
+  // BR-18 & BR-38: Missing core fields route to Waiting Confirmation (not auto-rejected as mismatch)
+  // -------------------------------------------------------------
+  if (
+    companyFinding?.status === 'Unverified' ||
+    roleFinding?.status === 'Unverified'
+  ) {
+    const missingFields: string[] = [];
+    if (companyFinding?.status === 'Unverified') missingFields.push('Perusahaan');
+    if (roleFinding?.status === 'Unverified') missingFields.push('Role/Posisi');
+
+    return {
+      validationStatus: 'Waiting Confirmation',
+      overallComplianceScore,
+      summaryReason: `Menunggu Konfirmasi (BR-38): Atribut inti (${missingFields.join(', ')}) tidak terdeteksi pada bukti lamaran. Membutuhkan verifikasi human review.`,
+      deterministicResult: deterministic,
+      attributeFindings: findings,
+      evidenceQualityGrade: quality.grade,
+      requiresHumanReview: true,
+      humanReviewReason: `Atribut inti (${missingFields.join(', ')}) tidak tercantum atau tidak terbaca pada screenshot bukti lamaran (BR-18).`,
+      validationSource: 'Simulated Rule Check (Mock)',
+      semanticResult,
+      evaluatedAt,
+    };
+  }
+
+  // -------------------------------------------------------------
+  // TIER 6: Job Level vs Experience Contradiction
   // -------------------------------------------------------------
   if (!jobLevelExpCheck.aligned) {
     return {

@@ -60,7 +60,28 @@ export function validateDeterministicRules(
   const isNonEmptyFile =
     form.evidenceFileSizeBytes === undefined || form.evidenceFileSizeBytes > 0;
   if (!isNonEmptyFile) {
-    violations.push('Berkas bukti kosong (0 byte).');
+    violations.push('Berkas bukti kosong (0 byte) (BR-12).');
+  }
+
+  const isFileSizeValid =
+    form.evidenceFileSizeBytes === undefined ||
+    form.evidenceFileSizeBytes <= 5 * 1024 * 1024;
+  if (!isFileSizeValid) {
+    violations.push(
+      `Ukuran berkas (${Math.round((form.evidenceFileSizeBytes || 0) / 1024)} KB) melebihi batas maksimum 5MB (BR-12).`
+    );
+  }
+
+  // Header magic bytes / corrupted file check (BR-34)
+  const hasCorruptedBytes =
+    extraction?.errors?.some(
+      (e) => e.code === 'CORRUPTED_FILE' || /magic bytes/i.test(e.message)
+    ) ?? false;
+  const isMagicBytesValid = !hasCorruptedBytes;
+  if (!isMagicBytesValid) {
+    violations.push(
+      'Tanda tangan biner berkas bukti rusak atau tidak valid (corrupted magic bytes) (BR-34).'
+    );
   }
 
   // 4. Vacancy closed check (BR-41)
@@ -81,6 +102,8 @@ export function validateDeterministicRules(
     isNonFutureDate,
     isSupportedFileFormat,
     isNonEmptyFile,
+    isFileSizeValid,
+    isMagicBytesValid,
     isVacancyOpen,
     violations,
   };
@@ -99,12 +122,13 @@ export function compareJobAttributes(
   const attrs = extraction.extractedAttributes;
 
   // 1. Date Applied
+  const dateAppliedExtracted = attrs?.dateApplied.value ?? null;
   const dateAppliedStatus: IdpAttributeCheckStatus =
     !deterministicCheck.isDateWithinActiveRange
       ? 'Mismatch'
-      : attrs?.dateApplied.value === form.dateApplied
+      : dateAppliedExtracted === form.dateApplied
         ? 'Matched'
-        : attrs?.dateApplied.value
+        : dateAppliedExtracted
           ? 'Mismatch'
           : 'Matched'; // If not specifically printed on screenshot, date range validity holds
 
@@ -113,12 +137,17 @@ export function compareJobAttributes(
       attributeKey: 'dateApplied',
       label: 'Date Applied',
       submittedValue: form.dateApplied,
-      extractedValue: attrs?.dateApplied.value ?? null,
+      extractedValue: dateAppliedExtracted,
+      lexicalSimilarityScore: dateAppliedExtracted
+        ? dateAppliedExtracted === form.dateApplied
+          ? 1.0
+          : 0.0
+        : null,
       status: dateAppliedStatus,
       note: !deterministicCheck.isDateWithinActiveRange
         ? 'Tanggal melamar berada di luar rentang tanggal aktif batch (BR-14 / BR-45).'
-        : attrs?.dateApplied.value
-          ? `Tanggal pada bukti sesuai: ${attrs.dateApplied.value}.`
+        : dateAppliedExtracted
+          ? `Tanggal pada bukti sesuai: ${dateAppliedExtracted}.`
           : 'Tanggal spesifik tidak tercetak pada gambar, namun berada dalam rentang aktif batch.',
     },
   ];
@@ -142,6 +171,7 @@ export function compareJobAttributes(
         label,
         submittedValue: submittedVal,
         extractedValue: null,
+        lexicalSimilarityScore: null, // BR-18: strictly null, never 0.0
         status: 'Unverified',
         note: 'Informasi tidak tercantum atau tidak terbaca pada bukti lamaran (BR-18).',
       };
@@ -155,13 +185,13 @@ export function compareJobAttributes(
     if (similarity >= 0.9) {
       status = 'Matched';
       note = `Kesesuaian tinggi (${Math.round(similarity * 100)}%).`;
-    } else if (similarity >= 0.7) {
-      // BR-40: Exact Fuzzy Match Policy (>70% lexically considered same role/company)
+    } else if (similarity > 0.7) {
+      // BR-40: Exact Fuzzy Match Policy (>70% lexically considered match/fuzzy match)
       status = 'Fuzzy Match (>70%)';
       note = `Kesesuaian leksikal kontekstual ${Math.round(similarity * 100)}% (memenuhi ambang batas >70% BR-40).`;
     } else {
       status = 'Mismatch';
-      note = `Ketidaksesuaian nilai: input "${submittedVal}" vs bukti "${extractedVal}" (similarity ${Math.round(similarity * 100)}% < 70%).`;
+      note = `Ketidaksesuaian nilai: input "${submittedVal}" vs bukti "${extractedVal}" (similarity ${Math.round(similarity * 100)}% <= 70%).`;
     }
 
     return {
@@ -169,6 +199,7 @@ export function compareJobAttributes(
       label,
       submittedValue: submittedVal,
       extractedValue: extractedVal,
+      lexicalSimilarityScore: similarity,
       status,
       note,
     };

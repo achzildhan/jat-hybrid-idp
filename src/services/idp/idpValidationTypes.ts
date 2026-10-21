@@ -52,6 +52,8 @@ export interface DeterministicCheckResult {
   isNonFutureDate: boolean;
   isSupportedFileFormat: boolean;
   isNonEmptyFile: boolean;
+  isFileSizeValid?: boolean;
+  isMagicBytesValid?: boolean;
   isVacancyOpen: boolean;
   violations: string[];
 }
@@ -61,7 +63,12 @@ export interface AttributeComparisonItem {
   label: string;
   submittedValue: string;
   extractedValue: string | null;
-  similarityScore: number; // 0.0 to 1.0
+  /**
+   * Attribute-level Sørensen–Dice lexical similarity score (0.0 to 1.0).
+   * Preserved as null when extracted attribute is missing/unverified (BR-18, BR-40).
+   */
+  lexicalSimilarityScore?: number | null;
+  similarityScore: number; // 0.0 to 1.0 compatibility alias
   status: IdpAttributeCheckStatus;
   note?: string;
 }

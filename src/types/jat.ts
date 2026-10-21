@@ -149,6 +149,11 @@ export interface IdpAttributeFinding {
   submittedValue: string;
   extractedValue: string | null; // BR-18: null when unknown/unreadable, never guessed
   status: IdpAttributeCheckStatus;
+  /**
+   * Attribute-level Sørensen–Dice lexical similarity score (0.0 to 1.0).
+   * Strictly null when extracted value is missing or unverified (BR-18, BR-40).
+   */
+  lexicalSimilarityScore?: number | null;
   note?: string;
 }
 
